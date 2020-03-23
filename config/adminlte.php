@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'DUITS',
+    'title' => 'Fight For Life',
 
     'title_prefix' => '',
 
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>DU</b>ITS',
+    'logo' => '<b>Fight</b>ForLife',
 
-    'logo_mini' => '<b>DU</b>ITS',
+    'logo_mini' => '<b>FF</b>L',
 
     /*
     |--------------------------------------------------------------------------
@@ -110,30 +110,9 @@ return [
     'menu' => [
         'MAIN NAVIGATION',
         [
-            'text'   => 'Committee',
-            'route'  => 'dashboard.committee',
+            'text'   => 'Dashboard',
+            'route'  => 'dashboard.index',
             'icon'   => 'users',
-        ],
-        [
-            'text'   => 'News',
-            'route'  => 'dashboard.news',
-            'icon'   => 'newspaper-o',
-        ],
-        [
-            'text'   => 'Events',
-            'route'  => 'dashboard.events',
-            'icon'   => 'bullhorn',
-        ],
-        [
-            'text' => 'Gallery',
-            'route'  => 'dashboard.gallery',
-            'icon' => 'picture-o',
-        ],
-        'BLOG',
-        [
-            'text' => 'Category',
-            'route'  => 'dashboard.blogs',
-            'icon' => 'ticket',
         ],
         'MEMBERSHIP',
         [

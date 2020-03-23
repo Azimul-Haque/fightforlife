@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'IIT Alumni | Members')
+@section('title', 'Fight For Life | Members')
 
 @section('css')
 

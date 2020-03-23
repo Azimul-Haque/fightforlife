@@ -35,7 +35,7 @@ class IndexController extends Controller
         return view('index.donatepage');
     }
 
-    public function getDonateNext(Request $request)
+    public function storeDonateNext(Request $request)
     {
         $this->validate($request,array(
             'name'                          => 'required|max:255',
@@ -59,80 +59,83 @@ class IndexController extends Controller
             $donation->trxid = 'CRN' . strtotime('now') . random_string(5);
 
             $donation->save();
+
+            Session::flash('success', 'Complete your donation now!');
+            return redirect()->route('index.donatenext', $donation->donation_id);
             
-            $url = 'http://secure.aamarpay.com/request.php';
-            $fields = array(
-                        'store_id' => 'sererl',
-                        'amount' => $donation->amount,
-                        'payment_type' => 'VISA',
-                        'currency' => 'BDT',
-                        'tran_id' => $donation->trxid,
-                        'cus_name' => $donation->name,
-                        'cus_email' => $donation->phone . '@iitdualumni.com',
-                        'cus_add1' => 'Housing Society',
-                        'cus_add2' => 'Mohammadpur',
-                        'cus_city' => 'Dhaka',
-                        'cus_state' => 'Dhaka',
-                        'cus_postcode' => '1207',
-                        'cus_country' => 'Bangladesh',
-                        'cus_phone' => $donation->phone,
-                        'cus_fax' => 'Not-Applicable',
-                        'ship_name' => 'Fight For Life',
-                        'ship_add1' => 'IIT',
-                        'ship_add2' => 'University of Dhaka',
-                        'ship_city' => 'Dhaka',
-                        'ship_state' => 'Dhaka',
-                        'ship_postcode' => '1205',
-                        'ship_country' => 'Bangladesh',
-                        'desc' => 'Ticket',
-                        'success_url' => 'https://donate.iitdualumni.com/donate/success/'.$donation->donation_id,
-                        'fail_url' => 'https://donate.iitdualumni.com/donate/failed',
-                        'cancel_url' => 'donate.iitdualumni.com/donate/cancel',
-                        'opt_a' => 'Optional Value A',
-                        'opt_b' => 'Optional Value B',
-                        'opt_c' => 'Optional Value C',
-                        'opt_d' => 'Optional Value D',
-                        'signature_key' => '3c831409a577666bd9c49b6a46473acc'
-                    );
+            // $url = 'http://secure.aamarpay.com/request.php';
+            // $fields = array(
+            //             'store_id' => 'sererl',
+            //             'amount' => $donation->amount,
+            //             'payment_type' => 'VISA',
+            //             'currency' => 'BDT',
+            //             'tran_id' => $donation->trxid,
+            //             'cus_name' => $donation->name,
+            //             'cus_email' => $donation->phone . '@iitdualumni.com',
+            //             'cus_add1' => 'Housing Society',
+            //             'cus_add2' => 'Mohammadpur',
+            //             'cus_city' => 'Dhaka',
+            //             'cus_state' => 'Dhaka',
+            //             'cus_postcode' => '1207',
+            //             'cus_country' => 'Bangladesh',
+            //             'cus_phone' => $donation->phone,
+            //             'cus_fax' => 'Not-Applicable',
+            //             'ship_name' => 'Fight For Life',
+            //             'ship_add1' => 'IIT',
+            //             'ship_add2' => 'University of Dhaka',
+            //             'ship_city' => 'Dhaka',
+            //             'ship_state' => 'Dhaka',
+            //             'ship_postcode' => '1205',
+            //             'ship_country' => 'Bangladesh',
+            //             'desc' => 'Ticket',
+            //             'success_url' => 'https://donate.iitdualumni.com/donate/success/'.$donation->donation_id,
+            //             'fail_url' => 'https://donate.iitdualumni.com/donate/failed',
+            //             'cancel_url' => 'donate.iitdualumni.com/donate/cancel',
+            //             'opt_a' => 'Optional Value A',
+            //             'opt_b' => 'Optional Value B',
+            //             'opt_c' => 'Optional Value C',
+            //             'opt_d' => 'Optional Value D',
+            //             'signature_key' => '3c831409a577666bd9c49b6a46473acc'
+            //         );
 
-            //$domain = $_SERVER["SERVER_NAME"]; // or Manually put your domain name
-            $domain = "donate.iitdualumni.com";
-            $ip = request()->ip();
+            // //$domain = $_SERVER["SERVER_NAME"]; // or Manually put your domain name
+            // $domain = "donate.iitdualumni.com";
+            // $ip = request()->ip();
 
-            //url-ify the data for the POST
-            $fields_string = '';
-            foreach($fields as $key => $value) 
-            { 
-                $fields_string .= $key.'='.$value.'&'; 
-            }
+            // //url-ify the data for the POST
+            // $fields_string = '';
+            // foreach($fields as $key => $value) 
+            // { 
+            //     $fields_string .= $key.'='.$value.'&'; 
+            // }
 
-            rtrim($fields_string, '&');
+            // rtrim($fields_string, '&');
 
-            //open connection
-            $ch = curl_init();
+            // //open connection
+            // $ch = curl_init();
 
-            //set the url, number of POST vars, POST data
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array("REMOTE_ADDR: $ip", "HTTP_X_FORWARDED_FOR: $ip"));
-            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_REFERER, $domain);
-            curl_setopt($ch, CURLOPT_INTERFACE, $ip);
-            curl_setopt($ch, CURLOPT_POST, count($fields));
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // //set the url, number of POST vars, POST data
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array("REMOTE_ADDR: $ip", "HTTP_X_FORWARDED_FOR: $ip"));
+            // curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt($ch, CURLOPT_REFERER, $domain);
+            // curl_setopt($ch, CURLOPT_INTERFACE, $ip);
+            // curl_setopt($ch, CURLOPT_POST, count($fields));
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-            //execute post
-            $result = curl_exec($ch);
+            // //execute post
+            // $result = curl_exec($ch);
 
-            //print_r($result);
-            $url_forward = json_decode($result, true);
+            // //print_r($result);
+            // $url_forward = json_decode($result, true);
 
-            //close connection
-            curl_close($ch);
+            // //close connection
+            // curl_close($ch);
 
-            $redirect_url_final = "http://secure.aamarpay.com" . $url_forward;
+            // $redirect_url_final = "http://secure.aamarpay.com" . $url_forward;
 
-            $this->redirect_to_merchant($redirect_url_final);
+            // $this->redirect_to_merchant($redirect_url_final);
         } else {
             return redirect()->route('index.donate')->with('warning', 'যোগফল ভুল হয়েছে! আবার চেষ্টা করুন।')->withInput();
         }
@@ -141,7 +144,7 @@ class IndexController extends Controller
     public function redirect_to_merchant($url)
     {
         ?>
-        <html xmlns="http://www.w3.org/1999/xhtml">
+        <!-- <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
             <script type="text/javascript">
@@ -154,10 +157,16 @@ class IndexController extends Controller
         <body onLoad="closethisasap();">
             <form name="redirectpost" method="post" action="<?php echo $url; ?>"></form>
         </body>
-        </html>
+        </html> -->
         <?php
         
         exit;
+    }
+
+    public function getDonateNext($donation_id)
+    {
+        $donation = Donation::where('donation_id', $donation_id)->first();
+        return view('index.donatenext')->withDonation($donation);
     }
 
     public function donateSuccess($donation_id)
@@ -167,31 +176,32 @@ class IndexController extends Controller
 
     public function donateSuccessOrFailed(Request $request)
     {
-        // $registration_id = $request->get('opt_a');
-        // if($request->get('pay_status') == 'Failed') {
-        //     Session::flash('info',$registration_id.': You need to make the payment!');
-        //     return redirect(Route('application.payorcheck', $registration_id));
-        // }
+        $donation_id = $request->get('opt_a');
+        if($request->get('pay_status') == 'Failed') {
+            Session::flash('info',$donation_id.': You need to make the payment!');
+            return redirect(Route('index.donatenext', $donation_id));
+        }
         
-        // $amount_request = $request->get('opt_b');
-        // $amount_paid = $request->get('amount');
+        $amount_request = $request->get('opt_b');
+        $amount_paid = $request->get('amount');
         
-        // if($amount_paid == $amount_request)
-        // {
-        //   $registration = Application::where('registration_id', $registration_id)->first();
-        //   $registration->trxid = $request->get('pg_txnid');
-        //   $registration->payment_status = 1;
-        //   $registration->card_type = $request->get('card_type');
-        //   $registration->save();
-        //   Session::flash('success','Registration is complete!');
-        // } else {
-        //    // Something went wrong.
-        //   Session::flash('info', $registration_id.': Something went wrong, please reload this page!');
-        //   return redirect(Route('application.payorcheck', $registration_id));
-        // }
+        if($amount_paid == $amount_request)
+        {
+          $donation = Donation::where('donation_id', $donation_id)->first();
+          // $donation->trxid = $request->get('pg_txnid');
+          $donation->payment_status = 1;
+          $donation->card_type = $request->get('card_type');
+          $donation->save();
+
+          Session::flash('success','Donation is complete!');
+        } else {
+           // Something went wrong.
+          Session::flash('info', $donation_id.': Something went wrong, please reload this page!');
+          return redirect(Route('index.donatenext', $donation_id));
+        }
         
-        // //return $request->all();
-        // return redirect(Route('application.payorcheck', $registration_id));
+        //return $request->all();
+        return redirect()->route('index.donatenext', $donation->donation_id);
     }
 
     public function getFaq()

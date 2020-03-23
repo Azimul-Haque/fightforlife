@@ -1,28 +1,28 @@
 <?php return array (
   'aamarpay' => 
   array (
-    'store_id' => 'duits',
-    'signature_key' => '4170582cc27b67e484153f90131bcf05',
+    'store_id' => 'sererl',
+    'signature_key' => '3c831409a577666bd9c49b6a46473acc',
     'sandbox' => false,
     'redirect_url' => 
     array (
       'success' => 
       array (
-        'route' => 'payment.success',
+        'route' => 'donate.success',
       ),
       'cancel' => 
       array (
-        'route' => 'payment.cancel',
+        'route' => 'donate.cancel',
       ),
     ),
   ),
   'adminlte' => 
   array (
-    'title' => 'DUITS',
+    'title' => 'Fight For Life',
     'title_prefix' => '',
     'title_postfix' => '',
-    'logo' => '<b>DU</b>ITS',
-    'logo_mini' => '<b>DU</b>ITS',
+    'logo' => '<b>Fight</b>ForLife',
+    'logo_mini' => '<b>FF</b>L',
     'skin' => 'blue',
     'layout' => 'fixed',
     'collapse_sidebar' => false,
@@ -40,43 +40,18 @@
       0 => 'MAIN NAVIGATION',
       1 => 
       array (
-        'text' => 'Committee',
-        'route' => 'dashboard.committee',
+        'text' => 'Dashboard',
+        'route' => 'dashboard.index',
         'icon' => 'users',
       ),
-      2 => 
-      array (
-        'text' => 'News',
-        'route' => 'dashboard.news',
-        'icon' => 'newspaper-o',
-      ),
+      2 => 'MEMBERSHIP',
       3 => 
-      array (
-        'text' => 'Events',
-        'route' => 'dashboard.events',
-        'icon' => 'bullhorn',
-      ),
-      4 => 
-      array (
-        'text' => 'Gallery',
-        'route' => 'dashboard.gallery',
-        'icon' => 'picture-o',
-      ),
-      5 => 'BLOG',
-      6 => 
-      array (
-        'text' => 'Category',
-        'route' => 'dashboard.blogs',
-        'icon' => 'ticket',
-      ),
-      7 => 'MEMBERSHIP',
-      8 => 
       array (
         'text' => 'Applications &amp; Payments',
         'route' => 'dashboard.applications',
         'icon' => 'line-chart',
       ),
-      9 => 
+      4 => 
       array (
         'text' => 'Members',
         'route' => 'dashboard.members',

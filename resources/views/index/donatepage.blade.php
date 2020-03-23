@@ -31,7 +31,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
-                    {!! Form::open(['route' => 'index.donatenext', 'method' => 'POST']) !!}
+                    {!! Form::open(['route' => 'index.donatestore', 'method' => 'POST']) !!}
                         <div id="success" class="no-margin-lr"></div>
                         <input name="name" type="text" value="{{ old('name') }}" placeholder="Your Name (আপনার নাম)" required="" />
                         <input name="amount" type="text" value="{{ old('amount') }}" placeholder="Donation Amount (অনুদানের পরিমাণ)"  required="" />
@@ -47,7 +47,7 @@
                         <input type="text" name="contact_sum_result" id="" class="form-control" placeholder="{{ $contact_num1 }} + {{ $contact_num2 }} = ?" required="">
                         
                         <button id="contact-us-button" type="submit" class="highlight-button-dark btn btn-small button xs-margin-bottom-five"><i class="fa fa-paper-plane"></i> Send</button>
-                    </form>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

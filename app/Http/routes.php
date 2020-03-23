@@ -18,9 +18,10 @@ Route::get('/clear', ['as'=>'clear','uses'=>'IndexController@clear']);
 // index routes
 Route::get('/', ['as'=>'index.index','uses'=>'IndexController@index']);
 Route::get('/donate', ['as'=>'index.donate','uses'=>'IndexController@getDonate']);
-Route::post('/donate/next', ['as'=>'index.donatenext','uses'=>'IndexController@getDonateNext']);
+Route::post('/donate/store', ['as'=>'index.donatestore','uses'=>'IndexController@storeDonateNext']);
+Route::get('/donate/next/{donation_id}', ['as'=>'index.donatenext','uses'=>'IndexController@getDonateNext']);
 
-Route::get('donate/success/{donation_id}', 'IndexController@donateSuccess')->name('donate.success');
+Route::get('donate/success', 'IndexController@donateSuccess')->name('donate.success');
 Route::get('donate/failed', 'IndexController@donateSuccessOrFailed')->name('donate.failed');
 Route::get('donate/cancel', 'IndexController@donateSuccessOrFailed')->name('donate.cancel');
 

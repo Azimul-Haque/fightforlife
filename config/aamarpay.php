@@ -1,15 +1,15 @@
 <?php
 
 return [
-    'store_id' => 'duits',
-    'signature_key' => '4170582cc27b67e484153f90131bcf05',
+    'store_id' => 'sererl',
+    'signature_key' => '3c831409a577666bd9c49b6a46473acc',
     'sandbox' => false,
     'redirect_url' => [
         'success' => [
-            'route' => 'payment.success'
+            'route' => 'donate.success'
         ],
         'cancel' => [
-            'route' => 'payment.cancel'
+            'route' => 'donate.cancel'
         ]
     ]
 ];
