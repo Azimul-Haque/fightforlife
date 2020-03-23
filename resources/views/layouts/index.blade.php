@@ -2,9 +2,9 @@
 <html class="no-js" lang="en">
 
 <head>
-    <title>DUITS | @yield('title')</title>
-    <meta name="description" content="Official website of Dhaka University IT Society (DUITS) . University of Dhaka hereby established an Information Technology (IT) Society to create a friendly and constructive generation based on technology. Developed by A. H. M. Azimul Haque and Md. Abdul Mannan.">
-    <meta name="keywords" content="Dhaka University IT Society (DUITS), DUITS, University of Dhaka, IT Society in Bangladesh">
+    <title>Fight For Life | @yield('title')</title>
+    <meta name="description" content="Official website of IITDU Alumni Association, University of Dhaka. Developed by A. H. M. Azimul Haque and Md. Abdul Mannan.">
+    <meta name="keywords" content="IITDU Alumni Association, IITDU, IIT, University of Dhaka, IIT Alumni">
     <meta charset="utf-8">
     <meta name="author" content="A. H. M. Azimul Haque">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
@@ -24,9 +24,9 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('images/favicons/favicon-96x96.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicons/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('images/favicons//manifest.json') }}">
-    <meta name="msapplication-TileColor" content="#491D74">
+    <meta name="msapplication-TileColor" content="#252525">
     <meta name="msapplication-TileImage" content="{{ asset('images/favicons/ms-icon-144x144.png') }}">
-    <meta name="theme-color" content="#491D74">
+    <meta name="theme-color" content="#252525">
     <!-- animation -->
     
     <!-- animation -->
@@ -78,22 +78,22 @@
             <div class="container">
                 <div class="row margin-four">
                     <!-- phone -->
-                    <div class="col-md-4 col-sm-4 text-center wow fadeInRight" data-wow-duration="600ms">
+                    <div class="col-md-4 col-sm-4 text-center">
                         <i class="icon-phone small-icon black-text"></i>
-                        <h6 class="black-text margin-two no-margin-bottom"><a href="tel:+8801519201101">+8801519-201101</a>, <a href="tel:+8801519201102">+8801519-201102</a></h6>
+                        <h6 class="black-text margin-two no-margin-bottom"><a href="tel:+8801515297658">+88 01515297658</a></h6>
                     </div>
                     <!-- end phone -->
                     <!-- address -->
-                    <div class="col-md-4 col-sm-4 text-center wow fadeInRight" data-wow-duration="900ms">
+                    <div class="col-md-4 col-sm-4 text-center">
                         <i class="icon-map-pin small-icon black-text"></i>
-                        <h6 class="black-text margin-two no-margin-bottom"><a href="https://www.google.com/maps/place/Dhaka+University+IT+Society/@23.7313125,90.3926248,15.75z/data=!4m5!3m4!1s0x0:0x7250f88da2943ad4!8m2!3d23.7320628!4d90.3956824?hl=en" title="See on Google Map" target="_blank">Room No-208, TSC 1st Floor, University of Dhaka</a></h6>
+                        <h6 class="black-text margin-two no-margin-bottom">IIT, University of Dhaka</h6>
                     </div>
                     <!-- end address -->
                     <!-- email -->
-                    <div class="col-md-4 col-sm-4 text-center wow fadeInRight" data-wow-duration="1200ms">
+                    <div class="col-md-4 col-sm-4 text-center">
                         <i class="icon-envelope small-icon black-text"></i>
                         <h6 class="margin-two no-margin-bottom">
-                            <a href="mailto:duits.official@gmail.com" class="black-text">duits.official@gmail.com</a>
+                            <a href="mailto:info@iitdualumni.com" class="black-text">info@iitdualumni.com</a>
                         </h6>
                     </div>
                     <!-- end email -->
@@ -107,44 +107,29 @@
                     <h5>About Us</h5>
                     <!-- end headline -->
                     <!-- text -->
-                    <p class="footer-text">DUITS / IT ENABLED CAMPUS FOR BETTER EDUCATION</p>
+                    <p class="footer-text">IIT Alumni Association was established in the year 201* with a view to .... ... ...</p>
                     <!-- end text -->
                 </div>
-                <div class="col-md-2 col-sm-3 col-xs-4 footer-link2 col-md-offset-3">
+                <div class="col-md-2 col-sm-3 col-xs-4 col-md-offset-3 footer-link2">
                     
                 </div>
-                <div class="col-md-2 col-sm-3 col-xs-4  footer-link3">
-                    <!-- headline -->
-                    <h5>Others</h5>
-                    <!-- end headline -->
-                    <!-- link -->
-                    <ul>
-                        <li>
-                            <a href="{{ route('index.index') }}">Home</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('index.notice') }}">Notice</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('index.gallery') }}">Gallery</a>
-                        </li>
-                    </ul>
-                    <!-- end link -->
+                <div class="col-md-2 col-sm-3 col-xs-4 footer-link3">
+                    
                 </div>
-                <div class="col-md-2 col-sm-3 col-xs-4  footer-link4">
+                <div class="col-md-2 col-sm-3 col-xs-4 footer-link4">
                     <!-- headline -->
                     <h5>Alumni</h5>
                     <!-- end headline -->
                     <!-- link -->
                     <ul>
                         <li>
-                            <a href="{{ route('index.application') }}">Apply</a>
+                            <a href="{{ route('index.application') }}"><b>Donate</b></a>
                         </li>
                         <li>
-                            <a href="{{ route('blogs.index') }}">Blog</a>
+                            <a href="{{ route('index.application') }}">Affiliated Partners</a>
                         </li>
                         <li>
-                            <a href="{{ route('index.contact') }}">Contact Us</a>
+                            <a href="{{ route('index.members') }}">Distribution Partners</a>
                         </li>
                     </ul>
                     <!-- end link -->
@@ -156,27 +141,21 @@
                     <!-- link -->
                     <ul class="list-inline footer-link text-uppercase">
                         <li>
-                            <a href="https://du.ac.bd/">University of Dhaka</a>
+                            <a href="{{ route('index.members') }}">Donation Summary</a>
                         </li>
                         <li>
-                            <a href="https://jobs.du.ac.bd/">Jobs</a>
-                        </li>
-                        <li>
-                            <a href="https://duaa-bd.org/">Alumni Association</a>
+                            <a href="{{ route('index.contact') }}">Contact</a>
                         </li>
                     </ul>
                     <!-- end link -->
                 </div>
                 <div class="col-md-6 col-sm-12 footer-social text-right sm-text-center">
                     <!-- social media link -->
-                    <a target="_blank" href="https://www.facebook.com/Dhaka.University.IT.Society.DUITS/">
+                    <a target="_blank" href="https://www.facebook.com/">
                         <i class="fa fa-facebook"></i>
                     </a>
                     <a target="_blank" href="https://twitter.com/">
                         <i class="fa fa-twitter"></i>
-                    </a>
-                    <a target="_blank" href="https://www.youtube.com/channel/UCnIKQP4RcrpmNxsZyQUEm-A/featured?view_as=subscriber">
-                        <i class="fa fa-youtube"></i>
                     </a>
                     <a target="_blank" href="https://www.linkedin.com/">
                         <i class="fa fa-linkedin"></i>
@@ -190,8 +169,7 @@
                 <div class="row margin-three">
                     <!-- copyright -->
                     <div class="col-md-6 col-sm-6 col-xs-12 copyright text-left letter-spacing-1 xs-text-center xs-margin-bottom-one">
-                        &copy; {{ date('Y') }} DUITS. All rights reserved. <br/>
-                        Developed by <a href="http://loencebd.com/" style="color: #888888;">Loence Bangladesh</a>
+                        &copy; {{ date('Y') }} Institute of Information Technology, University of Dhaka
                     </div>
                     <!-- end copyright -->
                     <!-- logo -->
@@ -257,15 +235,15 @@
     <script type="text/javascript" src="{{ asset('vendor/hcode/js/main.js') }}"></script>
     @include('partials._messages')
     @yield('js')
+
     <script type="text/javascript">
         $(".owl-carousel").owlCarousel({
             autoPlay: 5000,
             items : 1, // THIS IS IMPORTANT
-            singleItem: true,
             responsive : {
                 480 : { items : 1  }, // from zero to 480 screen width 4 items
-                768 : { items : 1  }, // from 480 screen widthto 768 6 items
-                1024 : { items : 1 } // from 768 screen width to 1024 8 items 
+                768 : { items : 2  }, // from 480 screen widthto 768 6 items
+                1024 : { items : 3 } // from 768 screen width to 1024 8 items 
             },
       });
     </script>

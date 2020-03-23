@@ -312,7 +312,7 @@
       'sqlite' => 
       array (
         'driver' => 'sqlite',
-        'database' => 'duits',
+        'database' => 'fightforlife',
         'prefix' => '',
       ),
       'mysql' => 
@@ -320,7 +320,7 @@
         'driver' => 'mysql',
         'host' => 'localhost',
         'port' => '3306',
-        'database' => 'duits',
+        'database' => 'fightforlife',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -334,7 +334,7 @@
         'driver' => 'pgsql',
         'host' => 'localhost',
         'port' => '3306',
-        'database' => 'duits',
+        'database' => 'fightforlife',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',

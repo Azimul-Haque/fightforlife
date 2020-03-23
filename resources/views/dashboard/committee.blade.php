@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Committees & Advisory Panel')
+@section('title', 'IIT Alumni | Committee')
 
 @section('css')
 
@@ -8,7 +8,7 @@
 
 @section('content_header')
     <h1>
-      Committees & Advisory Panel
+      Committees
       <div class="pull-right">
         <button class="btn btn-success" data-toggle="modal" data-target="#addMemberModal" data-backdrop="static"><i class="fa fa-fw fa-plus" aria-hidden="true"></i> Add Member</button>
       </div>
@@ -20,40 +20,33 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Contact</th>
+          <th>Email</th>
+          <th>Phone</th>
           <th>Designation</th>
-          <th>Committee</th>
-          <th>Serial</th>
           <th>Photo</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
         @php $addmodalflag = 0; $editmodalflag = 0; @endphp
-        @foreach($committees as $committee)
+        @foreach($adhocmembers as $adhocmember)
         <tr>
-          <td>{{ $committee->name }}</td>
-          <td>{{ $committee->phone }}<br/><small>{{ $committee->email }}</small></td>
+          <td>{{ $adhocmember->name }}</td>
+          <td>{{ $adhocmember->email }}</td>
+          <td>{{ $adhocmember->phone }}</td>
+          <td>{{ $adhocmember->designation }}</td>
           <td>
-            {{ $committee->designation }}
-            @if($committee->committeetype_id == 1)
-              <br/>{{ $committee->institution }}
-            @endif
-          </td>
-          <td>{{ $committee->committeetype->name }}</td>
-          <td>{{ $committee->serial }}</td>
-          <td>
-            @if($committee->image != null)
-            <img src="{{ asset('images/committee/'.$committee->image)}}" style="height: 40px; width: auto;" />
+            @if($adhocmember->image != null)
+            <img src="{{ asset('images/committee/adhoc/'.$adhocmember->image)}}" style="height: 40px; width: auto;" />
             @else
             <img src="{{ asset('images/user.png')}}" style="height: 40px; width: auto;" />
             @endif
           </td>
           <td>
-            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editMemberModal{{ $committee->id }}" data-backdrop="static"><i class="fa fa-pencil"></i></button>
+            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editMemberModal{{ $adhocmember->id }}" data-backdrop="static"><i class="fa fa-pencil"></i></button>
             <!-- Edit Member Modal -->
             <!-- Edit Member Modal -->
-            <div class="modal fade" id="editMemberModal{{ $committee->id }}" role="dialog">
+            <div class="modal fade" id="editMemberModal{{ $adhocmember->id }}" role="dialog">
               <div class="modal-dialog modal-md">
                 <div class="modal-content">
                   <div class="modal-header modal-header-success">
@@ -61,7 +54,7 @@
                     <h4 class="modal-title">Edit Member</h4>
                   </div>
                   <div class="modal-body">
-                    {!! Form::model($committee, ['route' => ['dashboard.updatecommittee', $committee->id], 'method' => 'PUT', 'class' => 'form-default', 'enctype' => 'multipart/form-data']) !!}
+                    {!! Form::model($adhocmember, ['route' => ['dashboard.updatecommittee', $adhocmember->id], 'method' => 'PUT', 'class' => 'form-default', 'enctype' => 'multipart/form-data']) !!}
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
@@ -107,31 +100,14 @@
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
+                              {!! Form::label('gplus', 'G. Plus Url: (optional)') !!}
+                              {!! Form::text('gplus', null, array('class' => 'form-control', 'placeholder' => 'G. Plus Url')) !!}
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
                               {!! Form::label('linkedin', 'Linkedin Url: (optional)') !!}
                               {!! Form::text('linkedin', null, array('class' => 'form-control', 'placeholder' => 'Linkedin Url')) !!}
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            {!! Form::label('committeetype_id', 'Committee Type') !!}
-                            <select class="form-control" name="committeetype_id" required="">
-                              <option value="" selected="" disabled="">Select Committee Type</option>
-                              @foreach($committeetypes as $committeetype)
-                                <option value="{{ $committeetype->id }}" @if($committeetype->id == $committee->committeetype_id) selected="" @endif>{{ $committeetype->name }}</option>
-                              @endforeach
-                            </select>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              {!! Form::label('serial', 'Serial') !!}
-                              {!! Form::number('serial', null, array('class' => 'form-control', 'placeholder' => 'Serial (1, 2, 3...)', 'required' => '')) !!}
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              {!! Form::label('institution', 'Institution (Optional)') !!}
-                              {!! Form::text('institution', null, array('class' => 'form-control', 'placeholder' => 'Institution')) !!}
                             </div>
                           </div>
                         </div>
@@ -142,7 +118,7 @@
                                   <div class="input-group">
                                       <span class="input-group-btn">
                                           <span class="btn btn-default btn-file">
-                                              Browse <input type="file" id="image{{ $committee->id }}" name="image">
+                                              Browse <input type="file" id="image{{ $adhocmember->id }}" name="image">
                                           </span>
                                       </span>
                                       <input type="text" class="form-control" readonly>
@@ -151,13 +127,13 @@
                           </div>
                           <div class="col-md-6">
                             <center>
-                              <img src="{{ asset('images/user.png')}}" id='img-update{{ $committee->id }}' style="height: 100px; width: auto; padding: 5px;" />
+                              <img src="{{ asset('images/user.png')}}" id='img-update{{ $adhocmember->id }}' style="height: 100px; width: auto; padding: 5px;" />
                             </center>
                           </div>
                         </div>
                   </div>
                   <div class="modal-footer">
-                        {!! Form::submit('Update Member', array('class' => 'btn btn-success')) !!}
+                        {!! Form::submit('Add Member', array('class' => 'btn btn-success')) !!}
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                   </div>
                   {!! Form::close() !!}
@@ -186,25 +162,25 @@
                     if (input.files && input.files[0]) {
                         var reader = new FileReader();
                         reader.onload = function (e) {
-                            $('#img-update{{ $committee->id }}').attr('src', e.target.result);
+                            $('#img-update{{ $adhocmember->id }}').attr('src', e.target.result);
                         }
                         reader.readAsDataURL(input.files[0]);
                     }
                 }
-                $("#image{{ $committee->id }}").change(function(){
+                $("#image{{ $adhocmember->id }}").change(function(){
                     readURL(this);
                     var filesize = parseInt((this.files[0].size)/1024);
                     if(filesize > 400) {
-                      $("#image{{ $committee->id }}").val('');
+                      $("#image{{ $adhocmember->id }}").val('');
                       toastr.warning('File size is: '+filesize+' Kb. try uploading less than 400Kb', 'WARNING').css('width', '400px;');
                         setTimeout(function() {
-                          $("#img-update{{ $committee->id }}").attr('src', '{{ asset('images/user.png') }}');
+                          $("#img-update{{ $adhocmember->id }}").attr('src', '{{ asset('images/user.png') }}');
                         }, 1000);
                     }
                 });
 
                 @if ((count($errors) > 0) && ($editmodalflag == 0))
-                  $('#editMemberModal{{ $committee->id }}').modal({backdrop: "static"});
+                  $('#editMemberModal{{ $adhocmember->id }}').modal({backdrop: "static"});
                   @php $editmodalflag = 1; @endphp
                 @endif
               });
@@ -212,10 +188,10 @@
             <!-- Edit Member Modal -->
             <!-- Edit Member Modal -->
 
-            <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteMemberModal{{ $committee->id }}" data-backdrop="static"><i class="fa fa-trash-o"></i></button>
+            <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteMemberModal{{ $adhocmember->id }}" data-backdrop="static"><i class="fa fa-trash-o"></i></button>
             <!-- Delete Member Modal -->
             <!-- Delete Member Modal -->
-            <div class="modal fade" id="deleteMemberModal{{ $committee->id }}" role="dialog">
+            <div class="modal fade" id="deleteMemberModal{{ $adhocmember->id }}" role="dialog">
               <div class="modal-dialog modal-md">
                 <div class="modal-content">
                   <div class="modal-header modal-header-danger">
@@ -223,10 +199,10 @@
                     <h4 class="modal-title">Delete Member</h4>
                   </div>
                   <div class="modal-body">
-                    Confirm Delete <b>{{ $committee->name }}</b>
+                    Confirm Delete <b>{{ $adhocmember->name }}</b>
                   </div>
                   <div class="modal-footer">
-                    {!! Form::model($committee, ['route' => ['dashboard.deletecommittee', $committee->id], 'method' => 'DELETE', 'class' => 'form-default', 'enctype' => 'multipart/form-data']) !!}
+                    {!! Form::model($adhocmember, ['route' => ['dashboard.deletecommittee', $adhocmember->id], 'method' => 'DELETE', 'class' => 'form-default', 'enctype' => 'multipart/form-data']) !!}
                         {!! Form::submit('Delete Member', array('class' => 'btn btn-danger')) !!}
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     {!! Form::close() !!}
@@ -241,10 +217,6 @@
         @endforeach
       </tbody>
     </table>
-
-    <div>
-      {{ $committees->links() }}
-    </div>
 
 
     <!-- Add Member Modal -->
@@ -303,33 +275,14 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
+                      {!! Form::label('gplus', 'G. Plus Url: (optional)') !!}
+                      {!! Form::text('gplus', null, array('class' => 'form-control', 'placeholder' => 'G. Plus Url')) !!}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
                       {!! Form::label('linkedin', 'Linkedin Url: (optional)') !!}
                       {!! Form::text('linkedin', null, array('class' => 'form-control', 'placeholder' => 'Linkedin Url')) !!}
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      {!! Form::label('committeetype_id', 'Committee Type') !!}
-                      <select class="form-control" name="committeetype_id" required="">
-                        <option value="" selected="" disabled="">Select Committee Type</option>
-                        @foreach($committeetypes as $committeetype)
-                          <option value="{{ $committeetype->id }}">{{ $committeetype->name }}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      {!! Form::label('serial', 'Serial') !!}
-                      {!! Form::number('serial', null, array('class' => 'form-control', 'placeholder' => 'Serial (1, 2, 3...)', 'required' => '')) !!}
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      {!! Form::label('institution', 'Institution (Optional)') !!}
-                      {!! Form::text('institution', null, array('class' => 'form-control', 'placeholder' => 'Institution')) !!}
                     </div>
                   </div>
                 </div>

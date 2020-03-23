@@ -41,15 +41,9 @@
             <!-- Logo -->
             <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">
-                  <img src="{{ asset('images/logo-light.png') }}" style="height: 30px; width: auto;">
-                  {{-- {!! config('adminlte.logo_mini', '<b>A</b>LT') !!} --}}
-                </span>
+                <span class="logo-mini">{!! config('adminlte.logo_mini', '<b>A</b>LT') !!}</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg">
-                  <img src="{{ asset('images/logo-light.png') }}" style="height: 30px; width: auto;">
-                  {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
-                </span>
+                <span class="logo-lg">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</span>
             </a>
 
             <!-- Header Navbar -->
@@ -63,27 +57,13 @@
                 <div class="navbar-custom-menu">
 
                     <ul class="nav navbar-nav">
-                        <li class="tasks-menu">
-                            <a href="{{ url('/') }}" target="_blank" title="View Website" data-placement="bottom">
-                                <i class="fa fa-fw fa-eye" aria-hidden="true"></i>
-                            </a>
-                        </li>
                         <li class="dropdown user user-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                            @if(Auth::User()->image != null || Auth::User()->image != '')
-                              <img src="{{ asset('images/users/' . Auth::User()->image)}}" class="user-image" alt="User Image">
-                            @else
-                              <img src="{{ asset('images/user.png')}}" class="user-image" alt="User Image">
-                            @endif
-                            
+                            <img src="{{ asset('images/user.png')}}" class="user-image" alt="User Image">
                             {{ Auth::User()->name }}</a>
                             <ul class="dropdown-menu" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                               <!-- User image -->
                               <li class="user-header">
-                                @if(Auth::User()->image != null || Auth::User()->image != '')
-                                  <img src="{{ asset('images/users/' . Auth::User()->image)}}" class="img-circle" alt="User Image">
-                                @else
-                                  <img src="{{ asset('images/user.png')}}" class="img-circle" alt="User Image">
-                                @endif
+                                <img src="{{ asset('images/user.png') }}" class="img-circle" alt="User Image">
                                 <p>
                                   {{ Auth::User()->name }}
                                   <small>Member since {{ date('F, Y', strtotime(Auth::User()->created_at)) }}</small>
@@ -147,57 +127,7 @@
 
                 <!-- Sidebar Menu -->
                 <ul class="sidebar-menu" data-widget="tree">
-                    {{-- @each('adminlte::partials.menu-item', $adminlte->menu(), 'item') --}}
-                    <li class="{{ Request::is('dashboard') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.index') }}">
-                            <i class="fa fa-fw fa-tachometer"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    @if(Auth::user()->role == 'admin')
-                    <li class="{{ Request::is('dashboard/members') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.members') }}">
-                            <i class="fa fa-fw fa-users"></i>
-                            <span>Admins</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/committee') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.committee') }}">
-                            <i class="fa fa-fw fa-briefcase"></i>
-                            <span>Committees</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/notice') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.notice') }}">
-                            <i class="fa fa-fw fa-bell"></i>
-                            <span>Notice</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/gallery') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.gallery') }}">
-                            <i class="fa fa-fw fa-picture-o"></i>
-                            <span>Gallery</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/recruitment/applications') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.recruitment.applications') }}">
-                            <i class="fa fa-fw fa-user"></i>
-                            <span>Recruitment Applications</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/applications') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.applications') }}">
-                            <i class="fa fa-fw fa-trophy"></i>
-                            <span>IT Fest Applications</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/blogs') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.blogs') }}">
-                            <i class="fa fa-fw fa-pencil"></i>
-                            <span>Blogs</span>
-                        </a>
-                    </li>
-                    @endif
+                    @each('adminlte::partials.menu-item', $adminlte->menu(), 'item')
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>

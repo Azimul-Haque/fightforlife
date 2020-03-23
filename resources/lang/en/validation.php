@@ -93,7 +93,10 @@ return [
 
     'custom' => [
         'attribute-name' => [
-            'rule-name' => 'custom-message',
+            'confirmed' => 'The sum is '
+        ],
+        'contact_sum_result' => [
+            'numeric' => 'The sum must be a number!'
         ],
     ],
 

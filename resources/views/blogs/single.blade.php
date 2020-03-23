@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('title')
-    {{ $blog->title }}
+    IIT Alumni | {{ $blog->title }}
 @endsection
 
 @section('css')
@@ -149,19 +149,23 @@
                                 <h5 class="widget-title">About The Author</h5>
                                 <a href="{{ route('blogger.profile', $blog->user->unique_key) }}"><p class="blog-date no-padding-top">{{ $blog->user->name }}</p></a>
                                 <p class="about-author-text no-margin">
+                                    {{ $blog->user->degree }} {{ $blog->user->batch }}, {{ $blog->user->passing_year }}<br/>
                                     {{ $blog->user->designation }}, {{ $blog->user->current_job }}
                                 </p>
                             </div>
                             <!-- end author text -->
                         </div>
-                        <div class="text-center margin-two">
-                            <a href="{{ $blog->user->fb }}" class="btn social-icon social-icon-large button"><i class="fa fa-facebook"></i></a>
-                            <a href="{{ $blog->user->twitter }}" class="btn social-icon social-icon-large button"><i class="fa fa-twitter"></i></a>
-                            <a href="{{ $blog->user->linkedin }}" class="btn social-icon social-icon-large button"><i class="fa fa-linkedin"></i></a>
-                        </div>
                     </div>
-                    
-                    <div class="border-bottom padding-two margin-two"></div>
+                    <!-- end about author -->
+                    <!-- social icon -->
+                    <div class="text-center border-bottom margin-ten padding-four no-margin-top">
+                        <a href="{{ $blog->user->fb }}" class="btn social-icon social-icon-large button"><i class="fa fa-facebook"></i></a>
+                        <a href="{{ $blog->user->twitter }}" class="btn social-icon social-icon-large button"><i class="fa fa-twitter"></i></a>
+                        <a href="{{ $blog->user->gplus }}" class="btn social-icon social-icon-large button"><i class="fa fa-google-plus"></i></a>
+                        <a href="{{ $blog->user->linkedin }}" class="btn social-icon social-icon-large button"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                    <!-- end social icon -->
+                    <!-- blog comment -->
 
                     <div class="blog-comment-main xs-no-padding-top">
                         <h5 class="widget-title">Blog Comments</h5>

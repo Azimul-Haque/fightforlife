@@ -1,25 +1,41 @@
+<!-- navigation panel -->
 <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-border-bottom @if(\Request::is('/')) nav-white @endif" role="navigation">
     <div class="container">
         <div class="row">
             <!-- logo -->
-            <div class="col-md-3 pull-left">
+            <div class="col-md-2 pull-left">
                 <a class="logo-light" href="{{ route('index.index') }}">
                     @if(\Request::is('/'))
-                        <img alt="" src="{{ asset('images/logo-light.png') }}" class="logo" style="float: left;" />
+                        <img alt="" src="{{ asset('images/logo-light.png') }}" class="logo" />
                     @else
-                        <img alt="" src="{{ asset('images/logo.png') }}" class="logo" style="float: left;" />
-                    @endif
-                    @if(\Request::is('/'))
-                        <span style="float: left; font-size: 18px; font-weight: bold; letter-spacing: -0.3px; margin-top: 10px; text-shadow: 2px 2px 2px rgba(0,0,0,0.30); display: block; color: #ffffff;">Dhaka University<br/>IT Society (DUITS)</span>
-                    @else
-                        <span style="float: left; font-size: 18px; font-weight: bold; letter-spacing: -0.3px; margin-top: 10px; text-shadow: 1px 1px 1px rgba(0,0,0,0.14); display: block;">Dhaka University<br/>IT Society (DUITS)</span>
+                        <img alt="" src="{{ asset('images/logo.png') }}" class="logo" />
                     @endif
                 </a>
                 <a class="logo-dark" href="{{ route('index.index') }}">
-                    <img alt="" src="{{ asset('images/logo.png') }}" class="logo" style="float: left;" />
-                    <span style="float: left; font-size: 18px; font-weight: bold; letter-spacing: -0.3px; margin-top: 10px; text-shadow: 1px 1px 1px rgba(0,0,0,0.14); display: block;">Dhaka University<br/>IT Society (DUITS)</span>
+                    <img alt="" src="{{ asset('images/logo.png') }}" class="logo" />
                 </a>
             </div>
+            <!-- end logo -->
+            <!-- search and cart  -->
+            {{-- <div class="col-md-1 no-padding-left search-cart-header pull-right">
+                <div id="top-search">
+                    <!-- nav search -->
+                    <a href="#search-header" class="header-search-form">
+                        <i class="fa fa-search search-button"></i>
+                    </a>
+                    <!-- end nav search -->
+                </div>
+                <!-- search input-->
+                <form id="search-header" method="post" action="#!" name="search-header" class="mfp-hide search-form-result">
+                    <div class="search-form position-relative">
+                        <button type="submit" class="fa fa-search close-search search-button"></button>
+                        <input type="text" name="search" class="search-input" placeholder="Enter your keywords..." autocomplete="off">
+                    </div>
+                </form>
+
+            </div> --}}
+            <!-- end search and cart  -->
+            <!-- toggle navigation -->
             <div class="navbar-header col-sm-8 col-xs-2 pull-right">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -36,43 +52,40 @@
                         <li>
                             <a href="{{ route('index.index') }}" class="inner-link">Home</a>
                         </li>
-                        <li class="dropdown panel simple-dropdown">
-                            <a href="#committee_dropdown" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Committee ▽
+                        <!-- menu item -->
+                        {{-- <li class="dropdown panel simple-dropdown">
+                            <a href="#about_dropdown" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">About ▽
                             </a>
-                            <ul id="committee_dropdown" class="dropdown-menu panel-collapse collapse" role="menu">
-                                @foreach($committeetypes as $committeetype)
+                            <ul id="about_dropdown" class="dropdown-menu panel-collapse collapse" role="menu">
                                 <li>
-                                    <a href="{{ route('index.committee', $committeetype->id) }}"><i class="icon-strategy i-plain"></i> {{ $committeetype->name }}</a>
+                                    <a href="{{ route('index.journey') }}"><i class="icon-presentation i-plain"></i> Journey of DUIITAA</a>
                                 </li>
-                                @endforeach
+                                <li>
+                                    <a href="{{ route('index.constitution') }}"><i class=" icon-book-open i-plain"></i> Constitution</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('index.faq') }}"><i class="icon-search i-plain"></i> FAQ</a>
+                                </li>
                             </ul>
-                        </li>
+                        </li> --}}
+                        
 
                         <li>
-                            <a href="{{ route('index.gallery') }}">Photo Gallery</a>
+                            <a href="{{ route('index.members') }}">Donation Summary</a>
                         </li>
                         <li>
-                            <a href="{{ route('index.notice') }}">Notice</a>
+                            <a href="{{ route('index.members') }}">Affiliated Partners</a>
                         </li>
                         <li>
-                            <a href="{{ route('blogs.index') }}">Blog</a>
+                            <a href="{{ route('index.members') }}">Distribution Partners</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('index.donate') }}">Donate</a>
                         </li>
                         <li>
                             <a href="{{ route('index.contact') }}">Contact</a>
                         </li>
-                        <li class="dropdown panel simple-dropdown">
-                            <a href="#activities_dropdown" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Ongoing Activities ▽
-                            </a>
-                            <ul id="activities_dropdown" class="dropdown-menu panel-collapse collapse" role="menu">
-                                <li>
-                                    <a href="{{ route('ongoingactivities.recruitment') }}" title="Recruitment Application">Member Recruitment</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('index.application') }}" title="6th DUITS National Campus IT Fest">6th IT Fest</a>
-                                </li>
-                            </ul>
-                        </li>
-                        @if(Auth::check())
+                        {{-- @if(Auth::check())
                         <li class="dropdown panel simple-dropdown">
                             <a href="#nav_auth_user" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">
                                 @php
@@ -81,29 +94,12 @@
                                 @endphp
                                 {{ $last_name }}
                             </a>
-                            <!-- sub menu single -->
-                            <!-- sub menu item  -->
                             <ul id="nav_auth_user" class="dropdown-menu panel-collapse collapse" role="menu">
-                                @if(Auth::user()->role == 'admin')
-                                <li>
-                                    <a href="{{ route('dashboard.index') }}"><i class="icon-speedometer i-plain"></i> Dashboard</a>
-                                </li>
-                                @endif
                                 <li>
                                     <a href="{{ route('index.profile', Auth::user()->unique_key) }}"><i class="icon-profile-male i-plain"></i> Profile</a>
                                 </li>
                                 <li>
-                                    @if(config('adminlte.logout_method') == 'GET' || !config('adminlte.logout_method') && version_compare(\Illuminate\Foundation\Application::VERSION, '5.3.0', '<'))
-                                        <a href="{{ url(config('adminlte.logout_url', 'auth/logout')) }}"><i class="icon-key i-plain"></i> Logout</a>
-                                    @else
-                                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="icon-key i-plain"></i> Logout</a>
-                                        <form id="logout-form" action="{{ url(config('adminlte.logout_url', 'auth/logout')) }}" method="POST" style="display: none;" class="btn btn-default btn-flat">
-                                            @if(config('adminlte.logout_method'))
-                                                {{ method_field(config('adminlte.logout_method')) }}
-                                            @endif
-                                            {{ csrf_field() }}
-                                        </form>
-                                    @endif
+                                    <a href="{{ url(config('adminlte.logout_url', 'auth/logout')) }}"><i class="icon-key i-plain"></i> Logout</a>
                                 </li>
                             </ul>
                         </li>
@@ -112,7 +108,7 @@
                             <a href="{{ route('index.login') }}" class="">Login</a>
                         </li>
                         @endif
-                        <!-- end menu item -->
+                        --}}
                     </ul>
                 </div>
             </div>
@@ -120,3 +116,4 @@
         </div>
     </div>
 </nav>
+<!--end navigation panel -->

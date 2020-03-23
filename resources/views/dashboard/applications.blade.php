@@ -1,102 +1,119 @@
 @extends('adminlte::page')
 
-@section('title', 'Applications')
+@section('title', 'IIT Alumni | Applications')
 
 @section('css')
-  <style type="text/css">
-    .badge-success {
-      background: #5CB85C;
-      color: #FFFFFF;
-    }
-    .badge-warning {
-      background: #F0AD4E;
-      color: #FFFFFF;
-    }
-  </style>
+
 @stop
 
 @section('content_header')
     <h1>
-      Applications (Total <b>{{ $applications->count() }}</b> Applications)
+      Applications
       <div class="pull-right">
-        <a class="btn btn-primary" href="{{ route('dashboard.applications.pdf') }}"><i class="fa fa-fw fa-download" aria-hidden="true"></i> Download List</a>
-        <a class="btn btn-success" href="{{ route('index.application') }}" target="_blank"><i class="fa fa-fw fa-plus" aria-hidden="true"></i> Register New Participant</a>
+        <a class="btn btn-success" href="{{ route('index.application') }}" target="_blank"><i class="fa fa-fw fa-plus" aria-hidden="true"></i> Add Member</a>
       </div>
     </h1>
 @stop
 
 @section('content')
-  <div class="table-responsive">
-    <table class="table table-condensed">
+    <table class="table">
       <thead>
         <tr>
-          <th>Team</th>
-          <th>Members</th>
-          <th>Event & Amount</th>
-          <th>TrxId</th>
-          <th>Registration ID</th>
-          <th>Institution</th>
-          <th>Contact</th>
-          <th>Payment Status</th>
-          <th>Image</th>
-          <th>Registered at</th>
+          <th>Name</th>
+          <th>Email & Phone</th>
+          <th>Degree, Batch & Roll</th>
+          <th>Job & Designation</th>
+          <th>Photo</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
+        @php $addmodalflag = 0; $editmodalflag = 0; @endphp
         @foreach($applications as $application)
         <tr>
-          <td>{{ $application->team }}</td>
-          <td>{{ $application->member1 }}</td>
-          <td>{{ $application->event_name }}<br/>৳ {{ $application->amount }}</td>
-          <td>{{ $application->trxid }}</td>
-          <td><big><b>{{ $application->registration_id }}</b></big></td>
-          <td>{{ $application->institution }}</td>
-          <td>{{ $application->mobile }}<br/><small>{{ $application->email }}</small></td>
-          <td>
-            @if($application->payment_status == 1)
-              <span class="badge badge-success"><i class="fa fa-check-circle"></i> {{ payment_status($application->payment_status) }}</span>
-            @else
-              <span class="badge badge-warning"><i class="fa fa-hourglass-start"></i> {{ payment_status($application->payment_status) }}</span>
-            @endif
-          </td>
+          <td>{{ $application->name }}</td>
+          <td>{{ $application->email }}<br/>{{ $application->phone }}</td>
+          <td>{{ $application->degree }} {{ $application->batch }}, {{ $application->roll }}</td>
+          <td>{{ $application->designation }}<br/>{{ $application->current_job }}</td>
           <td>
             @if($application->image != null)
-            <img src="{{ asset('images/registrations/'.$application->image)}}" style="height: 40px; width: auto;" />
+            <img src="{{ asset('images/users/'.$application->image)}}" style="height: 40px; width: auto;" />
             @else
             <img src="{{ asset('images/user.png')}}" style="height: 40px; width: auto;" />
             @endif
           </td>
-          <td><small>{{ date('F d, Y', strtotime($application->created_at)) }}<br/>{{ date('h:i A', strtotime($application->created_at)) }} </small></td>
           <td>
-            @if($application->payment_status == 1)
-            <a href="{{ route('application.printreceipt', $application->registration_id) }}" class="btn btn-sm btn-primary" title="Print Receipt" target="_blank"><i class="fa fa-print"></i></a>
-            @endif
+            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#approveMemberModal{{ $application->id }}" data-backdrop="static" title="Approve Application"><i class="fa fa-check"></i></button>
+            <!-- Approve Application Modal -->
+            <!-- Approve Application Modal -->
+            <div class="modal fade" id="approveMemberModal{{ $application->id }}" role="dialog">
+              <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                  <div class="modal-header modal-header-success">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Approve Application</h4>
+                  </div>
+                  <div class="modal-body">
+                    {!! Form::model($application, ['route' => ['dashboard.approveapplication', $application->id], 'method' => 'PATCH', 'class' => 'form-default', 'enctype' => 'multipart/form-data']) !!}
+                        Confirm approve this application of <b>{{ $application->name }}</b>?<br/>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group no-margin-bottom">
+                                <label for="amount">Amount</label>
+                                <input type="text" name="amount" id="amount" class="form-control" required="">
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group no-margin-bottom">
+                                <label for="trxid">Transaction ID (Optional)</label>
+                                <input type="text" name="trxid" id="trxid" class="form-control"> 
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="modal-footer">
+                        {!! Form::submit('Approve', array('class' => 'btn btn-success')) !!}
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                  </div>
+                  {!! Form::close() !!}
+                </div>
+              </div>
+            </div>
+            <!-- Approve Application Modal -->
+            <!-- Approve Application Modal -->
+
+            <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteApplicationModal{{ $application->id }}" data-backdrop="static" title="Delete Application"><i class="fa fa-trash-o"></i></button>
+            <!-- Delete Application Modal -->
+            <!-- Delete Application Modal -->
+            <div class="modal fade" id="deleteApplicationModal{{ $application->id }}" role="dialog">
+              <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                  <div class="modal-header modal-header-danger">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete Application</h4>
+                  </div>
+                  <div class="modal-body">
+                    Confirm Delete the application of <b>{{ $application->name }}</b>
+                  </div>
+                  <div class="modal-footer">
+                    {!! Form::model($application, ['route' => ['dashboard.deleteapplication', $application->id], 'method' => 'DELETE', 'class' => 'form-default', 'enctype' => 'multipart/form-data']) !!}
+                        {!! Form::submit('Delete', array('class' => 'btn btn-danger')) !!}
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    {!! Form::close() !!}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Delete Application Modal -->
+            <!-- Delete Application Modal -->
           </td>
         </tr>
         @endforeach
       </tbody>
     </table>
-  </div>
-  <div>
-    {{ $applications->links() }}
-  </div>
-  <br/>
-  <div class="row">
-    <div class="col-md-3">
-      <div class="small-box bg-green">
-        <div class="inner">
-          <h3>{{ $totalcollection->totalamount }}<sup style="font-size: 20px">৳</sup></h3>
 
-          <p>Total Collection</p>
-        </div>
-        <div class="icon">
-          <i class="fa fa-line-chart"></i>
-        </div>
-        <a href="#!" class="small-box-footer"></a>
-      </div>
-    </div>
-  </div>
+
+    
 @stop
 
 @section('js')

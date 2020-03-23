@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Committee')
+@section('title', 'IIT Alumni | Committee')
 
 @section('css')
 

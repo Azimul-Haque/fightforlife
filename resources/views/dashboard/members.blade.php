@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Admins')
+@section('title', 'IIT Alumni | Members')
 
 @section('css')
 
@@ -8,7 +8,7 @@
 
 @section('content_header')
     <h1>
-      Admins
+      Members
       <div class="pull-right">
         
       </div>
@@ -21,6 +21,8 @@
         <tr>
           <th>Name</th>
           <th>Email & Phone</th>
+          <th>Degree, Batch & Roll</th>
+          <th>Job & Designation</th>
           <th>Photo</th>
           <th>Action</th>
         </tr>
@@ -31,6 +33,8 @@
         <tr>
           <td>{{ $members->name }}</td>
           <td>{{ $members->email }}<br/>{{ $members->phone }}</td>
+          <td>{{ $members->degree }} {{ $members->batch }}, {{ $members->roll }}</td>
+          <td>{{ $members->designation }}<br/>{{ $members->current_job }}</td>
           <td>
             @if($members->image != null)
             <img src="{{ asset('images/users/'.$members->image)}}" style="height: 40px; width: auto;" />

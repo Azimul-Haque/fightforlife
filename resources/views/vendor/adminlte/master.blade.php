@@ -3,14 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DUITS | @yield('title_prefix', config('adminlte.title_prefix', ''))
+    <title>@yield('title_prefix', config('adminlte.title_prefix', ''))
 @yield('title', config('adminlte.title', 'AdminLTE 2'))
 @yield('title_postfix', config('adminlte.title_postfix', ''))</title>
-    <meta name="description" content="Official website of Dhaka University IT Society (DUITS) . University of Dhaka hereby established an Information Technology (IT) Society to create a friendly and constructive generation based on technology. Developed by A. H. M. Azimul Haque and Md. Abdul Mannan.">
-    <meta name="keywords" content="Dhaka University IT Society (DUITS), DUITS, University of Dhaka, IT Society in Bangladesh">
-    <meta name="author" content="A. H. M. Azimul Haque">
     <!-- Tell the browser to be responsive to screen width -->
-    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
@@ -40,7 +36,7 @@
     <![endif]-->
 
     <!-- Google Font -->
-    {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition @yield('body_class')">
 

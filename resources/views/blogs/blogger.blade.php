@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('title')
-    {{ $blogger->name }}
+    IIT Alumni | {{ $blogger->name }}
 @endsection
 
 @section('css')
@@ -18,6 +18,7 @@
                     <!-- end page title -->
                     <!-- page title tagline -->
                     <span class="">
+                      <i class="fa fa-graduation-cap" aria-hidden="true"></i> {{ $blogger->degree }} {{ ordinal($blogger->batch) }}, {{ $blogger->passing_year }}<br/>
                       <i class="fa fa-briefcase" aria-hidden="true"></i> {{ $blogger->designation }}, {{ $blogger->current_job }}
                     </span>
                     <!-- end title tagline -->
@@ -46,6 +47,7 @@
               <div class="text-center no-margin-top">
                   <a href="{{ $blogger->fb }}" class="btn social-icon social-icon-large button"><i class="fa fa-facebook"></i></a>
                   <a href="{{ $blogger->twitter }}" class="btn social-icon social-icon-large button"><i class="fa fa-twitter"></i></a>
+                  <a href="{{ $blogger->gplus }}" class="btn social-icon social-icon-large button"><i class="fa fa-google-plus"></i></a>
                   <a href="{{ $blogger->linkedin }}" class="btn social-icon social-icon-large button"><i class="fa fa-linkedin"></i></a>
               </div>
               <!-- end social icon -->
