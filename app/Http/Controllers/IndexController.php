@@ -204,6 +204,12 @@ class IndexController extends Controller
         return redirect()->route('index.donatenext', $donation->donation_id);
     }
 
+    public function donateCancelled()
+    {
+        Session::flash('info','Donation is cancelled!');
+        return view('index.donatepage');
+    }
+
     public function getFaq()
     {
         return view('index.faq');
