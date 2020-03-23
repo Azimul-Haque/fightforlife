@@ -27,17 +27,3 @@
         $random_string = substr(str_shuffle(str_repeat($pool, $length)), 0, $length);
         return $random_string;
   }
-  
-  function generate_token($length){
-        $pool = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-        $random_string = substr(str_shuffle(str_repeat($pool, $length)), 0, $length);
-        return $random_string;
-  }
-  
-  function payment_status($var){
-      if($var == 0) {
-        return 'Not Paid';
-      } elseif($var == 1) {
-        return 'Paid';
-      }
-  }

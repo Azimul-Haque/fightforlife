@@ -6,15 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
-use App\Blog;
-use App\Category;
-use App\Adhocmember;
-use App\Application;
-use App\Notice;
-use App\Committee;
-use App\Committeetype;
-use App\Album;
-use App\Member;
+use App\Donation;
 
 use Carbon\Carbon;
 use DB;
@@ -29,68 +21,182 @@ class IndexController extends Controller
 {
     public function __construct()
     {
-        parent::__construct();
         $this->middleware('guest')->only('getLogin');
         $this->middleware('auth')->only('getProfile');
     }
 
     public function index()
     {
-        $notices = Notice::orderBy('id', 'desc')->get()->take(4);
-        $blogs = Blog::orderBy('id', 'DESC')->get()->take(3);
+        return view('index.index');
+    }
+
+    public function getDonate()
+    {
+        return view('index.donatepage');
+    }
+
+    public function getDonateNext(Request $request)
+    {
+        $this->validate($request,array(
+            'name'                          => 'required|max:255',
+            'amount'                        => 'required|numeric',
+            'institute'                      => 'sometimes|max:255',
+            'phone'                         => 'required|numeric',
+            'contact_sum_result'            => 'required|numeric',
+            'contact_sum_result_hidden'     => 'required|numeric',
+        ));
+
+        if($request->contact_sum_result_hidden == $request->contact_sum_result)
+        {
+            $donation = new Donation;
+            $donation->donation_id = random_string(10);
+            $donation->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
+            $donation->amount = $request->amount;
+            $donation->institute = htmlspecialchars(preg_replace("/\s+/", " ", $request->institute));
+            $donation->phone = $request->phone;
+            $donation->payment_status = 0;
+
+            $donation->trxid = 'CRN' . strtotime('now') . random_string(5);
+
+            $donation->save();
+            
+            $url = 'http://secure.aamarpay.com/request.php';
+            $fields = array(
+                        'store_id' => 'sererl',
+                        'amount' => $donation->amount,
+                        'payment_type' => 'VISA',
+                        'currency' => 'BDT',
+                        'tran_id' => $donation->trxid,
+                        'cus_name' => $donation->name,
+                        'cus_email' => $donation->phone . '@iitdualumni.com',
+                        'cus_add1' => 'Housing Society',
+                        'cus_add2' => 'Mohammadpur',
+                        'cus_city' => 'Dhaka',
+                        'cus_state' => 'Dhaka',
+                        'cus_postcode' => '1207',
+                        'cus_country' => 'Bangladesh',
+                        'cus_phone' => $donation->phone,
+                        'cus_fax' => 'Not-Applicable',
+                        'ship_name' => 'Fight For Life',
+                        'ship_add1' => 'IIT',
+                        'ship_add2' => 'University of Dhaka',
+                        'ship_city' => 'Dhaka',
+                        'ship_state' => 'Dhaka',
+                        'ship_postcode' => '1205',
+                        'ship_country' => 'Bangladesh',
+                        'desc' => 'Ticket',
+                        'success_url' => 'https://donate.iitdualumni.com/donate/success/'.$donation->donation_id,
+                        'fail_url' => 'https://donate.iitdualumni.com/donate/failed',
+                        'cancel_url' => 'donate.iitdualumni.com/donate/cancel',
+                        'opt_a' => 'Optional Value A',
+                        'opt_b' => 'Optional Value B',
+                        'opt_c' => 'Optional Value C',
+                        'opt_d' => 'Optional Value D',
+                        'signature_key' => '3c831409a577666bd9c49b6a46473acc'
+                    );
+
+            //$domain = $_SERVER["SERVER_NAME"]; // or Manually put your domain name
+            $domain = "donate.iitdualumni.com";
+            $ip = request()->ip();
+
+            //url-ify the data for the POST
+            $fields_string = '';
+            foreach($fields as $key => $value) 
+            { 
+                $fields_string .= $key.'='.$value.'&'; 
+            }
+
+            rtrim($fields_string, '&');
+
+            //open connection
+            $ch = curl_init();
+
+            //set the url, number of POST vars, POST data
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array("REMOTE_ADDR: $ip", "HTTP_X_FORWARDED_FOR: $ip"));
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_REFERER, $domain);
+            curl_setopt($ch, CURLOPT_INTERFACE, $ip);
+            curl_setopt($ch, CURLOPT_POST, count($fields));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            //execute post
+            $result = curl_exec($ch);
+
+            //print_r($result);
+            $url_forward = json_decode($result, true);
+
+            //close connection
+            curl_close($ch);
+
+            $redirect_url_final = "http://secure.aamarpay.com" . $url_forward;
+
+            $this->redirect_to_merchant($redirect_url_final);
+        } else {
+            return redirect()->route('index.donate')->with('warning', 'যোগফল ভুল হয়েছে! আবার চেষ্টা করুন।')->withInput();
+        }
+    }
+
+    public function redirect_to_merchant($url)
+    {
+        ?>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <script type="text/javascript">
+                function closethisasap() 
+                {
+                document.forms["redirectpost"].submit();
+                }
+            </script>
+        </head>
+        <body onLoad="closethisasap();">
+            <form name="redirectpost" method="post" action="<?php echo $url; ?>"></form>
+        </body>
+        </html>
+        <?php
         
-        $appinlife = Application::where('event_id', 1)->count();
-        $roboproject = Application::where('event_id', 2)->count();
-        $itproject = Application::where('event_id', 3)->count();
-        $gamingcontest = Application::where('event_id', 6)
-                                    ->orWhere('event_id', 7)
-                                    ->orWhere('event_id', 8)
-                                    ->count();
-
-
-        return view('index.index')
-                    ->withBlogs($blogs)
-                    ->withNotices($notices)
-                    ->withAppinlife($appinlife)
-                    ->withRoboproject($roboproject)
-                    ->withItproject($itproject)
-                    ->withGamingcontest($gamingcontest);
+        exit;
     }
 
-    public function getJourney()
+    public function donateSuccess($donation_id)
     {
-        return view('index.journey');
+        return view('index.faq');
     }
 
-    public function getConstitution()
+    public function donateSuccessOrFailed(Request $request)
     {
-        return view('index.constitution');
+        // $registration_id = $request->get('opt_a');
+        // if($request->get('pay_status') == 'Failed') {
+        //     Session::flash('info',$registration_id.': You need to make the payment!');
+        //     return redirect(Route('application.payorcheck', $registration_id));
+        // }
+        
+        // $amount_request = $request->get('opt_b');
+        // $amount_paid = $request->get('amount');
+        
+        // if($amount_paid == $amount_request)
+        // {
+        //   $registration = Application::where('registration_id', $registration_id)->first();
+        //   $registration->trxid = $request->get('pg_txnid');
+        //   $registration->payment_status = 1;
+        //   $registration->card_type = $request->get('card_type');
+        //   $registration->save();
+        //   Session::flash('success','Registration is complete!');
+        // } else {
+        //    // Something went wrong.
+        //   Session::flash('info', $registration_id.': Something went wrong, please reload this page!');
+        //   return redirect(Route('application.payorcheck', $registration_id));
+        // }
+        
+        // //return $request->all();
+        // return redirect(Route('application.payorcheck', $registration_id));
     }
 
     public function getFaq()
     {
         return view('index.faq');
-    }
-
-    public function getAdhoc()
-    {
-        $adhocmembers = Adhocmember::orderBy('id', 'asc')->get();
-        return view('index.adhoc')->withAdhocmembers($adhocmembers);
-    }
-
-    public function getExecutive()
-    {
-        return view('index.executive');
-    }
-
-    public function getNews()
-    {
-        return view('index.news');
-    }
-
-    public function getEvents()
-    {
-        return view('index.events');
     }
 
     public function getMembers()
@@ -133,6 +239,11 @@ class IndexController extends Controller
         // }
     }
 
+    public function getApplication()
+    {
+        return view('index.application');
+    }
+
     public function getLogin()
     {
         return view('index.login');
@@ -140,18 +251,18 @@ class IndexController extends Controller
 
     public function getProfile($unique_key)
     {
-        $blogs = Blog::where('user_id', Auth::user()->id)->get();
-        $categories = Category::all();
-        $user = User::where('unique_key', $unique_key)->first();
-        if(Auth::user()->unique_key == $unique_key) {
-            return view('index.profile')
-                    ->withUser($user)
-                    ->withCategories($categories)
-                    ->withBlogs($blogs);
-        } else {
-            Session::flash('info', 'Redirected to your profile!');
-            return redirect()->route('index.profile', Auth::user()->unique_key); 
-        }
+        // $blogs = Blog::where('user_id', Auth::user()->id)->get();
+        // $categories = Category::all();
+        // $user = User::where('unique_key', $unique_key)->first();
+        // if(Auth::user()->unique_key == $unique_key) {
+        //     return view('index.profile')
+        //             ->withUser($user)
+        //             ->withCategories($categories)
+        //             ->withBlogs($blogs);
+        // } else {
+        //     Session::flash('info', 'Redirected to your profile!');
+        //     return redirect()->route('index.profile', Auth::user()->unique_key); 
+        // }
         
     }
 
@@ -225,215 +336,16 @@ class IndexController extends Controller
         return redirect()->route('index.profile', $unique_key);
     }
 
-    public function getApplication()
+    public function coronaAwareness()
     {
-        return view('index.application.application');
-    }
-
-    public function storeITFestApplication(Request $request)
-    {
-        $this->validate($request,array(
-            'event'             => 'required',
-            'team'              => 'required|max:255',
-            'member1'           => 'sometimes|max:255',
-            'member2'           => 'sometimes|max:255',
-            'member3'           => 'sometimes|max:255',
-            'member4'           => 'sometimes|max:255',
-            'institution'       => 'required|max:255',
-            'address'           => 'required|max:255',
-            'email'            => 'required|email',
-            'mobile'            => 'required|numeric',
-            'emergencycontact'  => 'required|numeric',
-            'image'             => 'required|image|max:300'
-        ));
-        $application = new Application;
-        $event = explode(',', $request->event);
-        $application->event_id = $event[0];
-        $application->event_name = $event[1];
-        
-        $application->team = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->team)));
-        $application->member1 = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->member1)));
-        $application->member2 = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->member2)));
-        $application->member3 = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->member3)));
-        $application->member4 = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->member4)));
-        $application->institution = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->institution)));
-        $application->class = 'text';
-        $application->address = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->address)));
-        $application->email = $request->email;
-        $application->mobile = $request->mobile;
-        $application->emergencycontact = $request->emergencycontact;
-        
-        // image upload
-        if($request->hasFile('image')) {
-            $image      = $request->file('image');
-            $nowdatetime = Carbon::now();
-            $filename   = str_replace(' ','',$application->team).$nowdatetime->format('YmdHis') .'.' . $image->getClientOriginalExtension();
-            $location   = public_path('images/registrations/'. $filename);
-            Image::make($image)->resize(200, 200)->save($location);
-            $application->image = $filename;
-        }
-        
-        $application->registration_id = $event[0]. random_string(6);
-        
-        // amounts to register
-        $amounts=array("1"=>"1500","2"=>"1500","3"=>"1500","4"=>"1000","5"=>"1500","6"=>"300","7"=>"500","8"=>"2000");
-        if($amounts[$event[0]]) {
-            $application->amount = $amounts[$event[0]];
-        }
-        $application->payment_status = 0;
-        $application->card_type = '';
-        //dd($application);
-        $application->save();
-        Session::flash('success','Registration is complete!');
-        Session::flash('warning','You need to make the payment');
-        return redirect(Route('application.payorcheck', $application->registration_id));
-    }
-
-    public function getPayorCheck($registration_id)
-    {
-        $application = Application::where('registration_id', $registration_id)->first();
-        
-        return view('index.application.payorcheck')->withApplication($application);
-    }
-
-    public function getPrintReceipt($registration_id)
-    {
-        $application = Application::where('registration_id', $registration_id)->first();
-        return view('index.application.printreceipt')->withApplication($application);
-    }
-
-    public function getCommittee($committeetype_id)
-    {
-        $committeetype = Committeetype::where('id', $committeetype_id)->first();
-
-        $committees = Committee::where('committeetype_id', $committeetype_id)
-                               ->orderBy('serial', 'asc')
-                               ->get();
-        return view('index.committee')
-                        ->withCommitteetype($committeetype)
-                        ->withCommittees($committees);
-    }
-
-    public function getNotice()
-    {
-        $notices = Notice::orderBy('id', 'desc')->paginate(6);
-        return view('index.notice')->withNotices($notices);
-    }
-
-    public function getGallery()
-    {
-        $albums = Album::orderBy('id', 'desc')->get();
-        return view('index.gallery')->withAlbums($albums);
-    }
-
-    public function getSingleGalleryAlbum($id)
-    {
-        $album = Album::where('id', $id)->get()->first();
-
-        return view('index.singlegallery')->withAlbum($album);
-    }
-
-    public function getRecruitmentApplication()
-    {
-        return view('index.recruitment.application');
-    }
-
-    public function storeRecruitmentApplication(Request $request)
-    {
-        $this->validate($request,array(
-            'name'                      => 'required|max:255',
-            'dept'                      => 'required|max:255',
-            'hall'                      => 'required|max:255',
-            'residency'                 => 'required',
-            'session'                   => 'required',
-            'email'                     => 'required|email',
-            'contact1'                  => 'required|numeric',
-            'contact2'                  => 'required|numeric',
-            'dob'                       => 'required',
-            'bloodgroup'                => 'required',
-            'father'                    => 'required|max:255',
-            'fcontact'                  => 'sometimes|numeric',
-            'mother'                    => 'required|max:255',
-            'mcontact'                  => 'sometimes|numeric',
-            'ssc'                       => 'required|max:255',
-            'ssc_passing_year'          => 'required|max:255',
-            'hsc'                       => 'required|max:255',
-            'hsc_passing_year'          => 'required|max:255',
-            'cocurricular'              => 'required|max:255',
-            'hobby'                     => 'required|max:255',
-            'reason'                    => 'required',
-            'blogs'                     => 'sometimes|max:255',
-            'othersocieties'            => 'sometimes|max:255',
-            'image'                     => 'required|image|max:200',
-            'payment_method'            => 'required|max:255',
-            'trxid'                     => 'required|max:255'
-        ));
-
-        $application = new Member;
-        $application->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
-        $application->dept = htmlspecialchars(preg_replace("/\s+/", " ", $request->dept));
-        $application->hall = $request->hall;
-        $application->residency = $request->residency;
-        $application->session = $request->session;
-        $application->email = htmlspecialchars(preg_replace("/\s+/", " ", $request->email));
-        $application->contact1 = htmlspecialchars(preg_replace("/\s+/", " ", $request->contact1));
-        $application->contact2 = htmlspecialchars(preg_replace("/\s+/", " ", $request->contact2));
-        $dob = htmlspecialchars(preg_replace("/\s+/", " ", $request->dob));
-        $application->dob = new Carbon($dob);
-        $application->bloodgroup = $request->bloodgroup;
-        $application->father = htmlspecialchars(preg_replace("/\s+/", " ", $request->father));
-        $application->father = htmlspecialchars(preg_replace("/\s+/", " ", $request->father));
-        $application->fcontact = htmlspecialchars(preg_replace("/\s+/", " ", $request->fcontact));
-        $application->mother = htmlspecialchars(preg_replace("/\s+/", " ", $request->mother));
-        $application->mcontact = htmlspecialchars(preg_replace("/\s+/", " ", $request->mcontact));
-        $application->ssc = htmlspecialchars(preg_replace("/\s+/", " ", $request->ssc));
-        $application->ssc_passing_year = htmlspecialchars(preg_replace("/\s+/", " ", $request->ssc_passing_year));
-        $application->hsc = htmlspecialchars(preg_replace("/\s+/", " ", $request->hsc));
-        $application->hsc_passing_year = htmlspecialchars(preg_replace("/\s+/", " ", $request->hsc_passing_year));
-        $application->cocurricular = htmlspecialchars(preg_replace("/\s+/", " ", $request->cocurricular));
-        $application->hobby = htmlspecialchars(preg_replace("/\s+/", " ", $request->hobby));
-        $application->reason = htmlspecialchars(preg_replace("/\s+/", " ", $request->reason));
-        $application->blogs = htmlspecialchars(preg_replace("/\s+/", " ", $request->blogs));
-        $application->othersocieties = htmlspecialchars(preg_replace("/\s+/", " ", $request->othersocieties));
-
-        // image upload
-        if($request->hasFile('image')) {
-            $image      = $request->file('image');
-            $filename   = str_replace(' ','',$request->name).time() .'.' . $image->getClientOriginalExtension();
-            $location   = public_path('/images/members/'. $filename);
-            Image::make($image)->resize(250, 250)->save($location);
-            $application->image = $filename;
-        }
-        
-        $application->payment_method = $request->payment_method;
-        $application->trxid = htmlspecialchars(preg_replace("/\s+/", " ", $request->trxid));
-        $application->status = 0;
-
-        $lastapplication = Member::orderBy('member_id', 'desc')->first();
-        if(!empty($lastapplication)) {
-            $application->member_id = date('Y') . str_pad(((int) $lastapplication->id + 1), 3, 0, STR_PAD_LEFT );
-        } else {
-            $application->member_id = date('Y') . '001';
-        }
-        
-        $application->save();
-        
-        Session::flash('success', 'You have registered Successfully!');
-        return redirect()->route('ongoingactivities.recruitment.newapplicant', $application->member_id);
-    }
-
-    public function getNewApplicant($member_id)
-    {
-        $application = Member::where('member_id', $member_id)->first();
-
-        return view('index.recruitment.newapplicant')->withApplication($application);
+        return view('index.coronaawareness');
     }
 
     // clear configs, routes and serve
     public function clear()
     {
         Artisan::call('config:cache');
-        Artisan::call('route:cache');
+        // Artisan::call('route:cache');
         Artisan::call('cache:clear');
         Artisan::call('view:clear');
         echo 'Config and Route Cached. All Cache Cleared';

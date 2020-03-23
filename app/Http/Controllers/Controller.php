@@ -18,9 +18,7 @@ class Controller extends BaseController
 
     public function __construct() 
     {
-      $committeetypes = Committeetype::all();
-
-      View::share('committeetypes', $committeetypes);
+      
     }
 
 }
