@@ -53,7 +53,7 @@
                 <div class="col-md-6 col-sm-6">
                     <span class="text-large letter-spacing-2 black-text font-weight-600 agency-title">Contact Form</span><br/><br/><br/>
                     {!! Form::open(['route' => 'index.storeformmessage', 'method' => 'POST']) !!}
-                        <div id="success" class="no-margin-lr"></div>
+                        {{-- <div id="success" class="no-margin-lr"></div> --}}
                         <input name="name" type="text" value="{{ old('name') }}" placeholder="Name" required="" />
                         <input name="email" type="email" value="{{ old('email') }}" placeholder="Email"  required="" />
                         <input name="phone" type="text" value="{{ old('phone') }}" placeholder="Contact"  required="" />
