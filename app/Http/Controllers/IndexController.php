@@ -144,9 +144,19 @@ class IndexController extends Controller
 
 
         return view('index.donationsummary')
-                    ->withtoTaldonations($totaldonations);
-                    ->withtoTotaldonationamount($totaldonationamount);
-                    ->withtoDonors($donors);
+                    ->withTotaldonations($totaldonations)
+                    ->withTotaldonationamount($totaldonationamount)
+                    ->withDonors($donors);
+    }
+
+    public function getAffiliated()
+    {
+        return view('index.affiliated');
+    }
+
+    public function getDistribution()
+    {
+        return view('index.distribution');
     }
 
     public function getFaq()

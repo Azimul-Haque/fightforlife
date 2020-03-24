@@ -26,7 +26,7 @@
             position:absolute;
             left:50%;
             top:50%;
-            background-image:url({{ asset('images/3362406.gif') }}); /* path to your loading animation */
+            background-image:url({{ asset('/images/3362406.gif') }}); /* path to your loading animation */
             background-repeat:no-repeat;
             background-position:center;
             margin:-100px 0 0 -100px;
@@ -122,7 +122,7 @@
     </section>
 
     <section class="parallax2 parallax-fix">
-        <img class="parallax-background-img" src="images/donation_background.jpg" alt="" />
+        <img class="parallax-background-img" src="/images/donation_background.jpg" alt="" />
         <div class="slider-overlay bg-slider"></div>
         <div class="container">
             <div class="row">
@@ -163,26 +163,26 @@
                 </div>
                 <div class="carousel-inner margin-seven no-margin-bottom">
                     <div class="item active"> 
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Fringila Auctor</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Vitae nidh mauris</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">In fringilla auctor</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center"><a href="#"><img alt="" src="images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Aliquam gravida molis</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Fringila Auctor</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Vitae nidh mauris</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">In fringilla auctor</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Aliquam gravida molis</h5></div>
                     </div>
                     <div class="item"> 
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Fringila Auctor</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Vitae nidh mauris</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">In fringilla auctor</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center"><a href="#"><img alt="" src="images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Aliquam gravida molis</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Fringila Auctor</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Vitae nidh mauris</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">In fringilla auctor</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Aliquam gravida molis</h5></div>
                     </div>
                 </div>
             </div>
             <!-- slider controls --> 
-            <a data-slide="prev" href="#myCarousel3" class="left carousel-control"> <img alt="" src="images/arrow-pre.png"> </a> <a data-slide="next" href="#myCarousel3" class="right carousel-control"> <img alt="" src="images/arrow-next.png"> </a>
+            <a data-slide="prev" href="#myCarousel3" class="left carousel-control"> <img alt="" src="/images/arrow-pre.png"> </a> <a data-slide="next" href="#myCarousel3" class="right carousel-control"> <img alt="" src="/images/arrow-next.png"> </a>
         </div>
     </section>
 
     <section class="parallax2 parallax-fix">
-        <img class="parallax-background-img" src="images/iit_du.jpg" alt="" />
+        <img class="parallax-background-img" src="/images/iit_du.jpg" alt="" />
         <div class="slider-overlay bg-slider"></div>
         <div class="container">
             <div class="row">

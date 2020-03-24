@@ -72,13 +72,13 @@
                         
 
                         <li>
-                            <a href="{{ route('index.members') }}">Donation Summary</a>
+                            <a href="{{ route('index.donationsummary') }}">Donation Summary</a>
                         </li>
+                        {{-- <li>
+                            <a href="{{ route('index.affiliated') }}">Affiliated Partners</a>
+                        </li> --}}
                         <li>
-                            <a href="{{ route('index.members') }}">Affiliated Partners</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('index.members') }}">Distribution Partners</a>
+                            <a href="{{ route('index.distribution') }}">Distribution Partners</a>
                         </li>
                         {{-- <li>
                             <a href="{{ route('index.donate') }}">Donate</a>

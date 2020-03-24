@@ -26,6 +26,8 @@ Route::get('donate/failed', 'IndexController@donateSuccessOrFailed')->name('dona
 Route::get('donate/cancel', 'IndexController@donateCancelled')->name('donate.cancel');
 
 Route::get('/donation/summary', ['as'=>'index.donationsummary','uses'=>'IndexController@getDonationSummary']);
+Route::get('/donation/affiliated', ['as'=>'index.affiliated','uses'=>'IndexController@getAffiliated']);
+Route::get('/donation/distribution', ['as'=>'index.distribution','uses'=>'IndexController@getDistribution']);
 
 Route::get('/faq', ['as'=>'index.faq','uses'=>'IndexController@getFaq']);
 Route::get('/members', ['as'=>'index.members','uses'=>'IndexController@getMembers']);
