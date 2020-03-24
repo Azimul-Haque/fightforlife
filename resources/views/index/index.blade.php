@@ -155,13 +155,11 @@
         <div class="carousel slide carousel-slide" id="myCarousel3"> 
             <div class="container">
                 <div class="row">
-                    <!-- section title -->
                     <div class="col-md-12 text-center">
-                        <h3 class="section-title section-title-services no-padding-bottom">Our Partners</h3>
+                        {{-- <h3 class="section-title section-title-services no-padding-bottom">Our Partners</h3> --}}
                     </div>
-                    <!-- end section title -->
                 </div>
-                <div class="carousel-inner margin-seven no-margin-bottom">
+                {{-- <div class="carousel-inner margin-seven no-margin-bottom">
                     <div class="item active"> 
                         <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 1</h5></div>
                         <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 2</h5></div>
@@ -174,10 +172,9 @@
                         <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 7</h5></div>
                         <div class="col-md-3 col-sm-6 text-center"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 8</h5></div>
                     </div>
-                </div>
-            </div>
-            <!-- slider controls --> 
-            <a data-slide="prev" href="#myCarousel3" class="left carousel-control"> <img alt="" src="/images/arrow-pre.png"> </a> <a data-slide="next" href="#myCarousel3" class="right carousel-control"> <img alt="" src="/images/arrow-next.png"> </a>
+                </div> --}}
+            </div> 
+            {{-- <a data-slide="prev" href="#myCarousel3" class="left carousel-control"> <img alt="" src="/images/arrow-pre.png"> </a> <a data-slide="next" href="#myCarousel3" class="right carousel-control"> <img alt="" src="/images/arrow-next.png"> </a> --}}
         </div>
     </section>
 

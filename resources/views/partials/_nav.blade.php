@@ -77,9 +77,9 @@
                         {{-- <li>
                             <a href="{{ route('index.affiliated') }}">Affiliated Partners</a>
                         </li> --}}
-                        <li>
+                        {{-- <li>
                             <a href="{{ route('index.distribution') }}">Distribution Partners</a>
-                        </li>
+                        </li> --}}
                         {{-- <li>
                             <a href="{{ route('index.donate') }}">Donate</a>
                         </li> --}}
