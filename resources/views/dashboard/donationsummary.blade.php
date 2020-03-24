@@ -34,7 +34,7 @@
               @foreach($donors as $donor)
                   <tr>
                       <td><a href="{{ route('index.donatenext', $donor->donation_id) }}">{{ $donor->name }}</a></td>
-                      <td>{{ substr($donor->phone, 0, -4) }}****</td>
+                      <td>{{ $donor->phone }}</td>
                       <td>{{ $donor->institute }}</td>
                       <td><big><b>৳ {{ $donor->amount }}</b></big><br/>{{ $donor->trxid }}</td>
                       <td>{{ $donor->card_type }}</td>
