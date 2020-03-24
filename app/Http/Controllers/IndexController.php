@@ -169,16 +169,12 @@ class IndexController extends Controller
         return view('index.donatenext')->withDonation($donation);
     }
 
-    public function donateSuccess($donation_id)
-    {
-        return view('index.faq');
-    }
-
     public function donateSuccessOrFailed(Request $request)
     {
         $donation_id = $request->get('opt_a');
+        
         if($request->get('pay_status') == 'Failed') {
-            Session::flash('info',$donation_id.': You need to make the payment!');
+            Session::flash('info', $donation_id.': You need to make the payment!');
             return redirect(Route('index.donatenext', $donation_id));
         }
         
