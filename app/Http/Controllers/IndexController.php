@@ -352,7 +352,7 @@ class IndexController extends Controller
     // clear configs, routes and serve
     public function clear()
     {
-        Artisan::call('config:clear');
+        Artisan::call('config:cache');
         Artisan::call('route:clear');
         Artisan::call('cache:clear');
         Artisan::call('view:clear');
