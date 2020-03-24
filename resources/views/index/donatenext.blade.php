@@ -73,7 +73,7 @@
                                         </tr>
                                         <tr>
                                             <td>Amount</td>
-                                            <td>: ৳ ***</td>
+                                            <td>: ৳ *****</td>
                                         </tr>
                                         <tr>
                                             <td>Donation Date</td>
@@ -95,7 +95,7 @@
                                         </tr>
                                         <tr>
                                             <td><big>Amount</big></td>
-                                            <td><big>: ৳ ***</big></td>
+                                            <td><big>: ৳ *****</big></td>
                                         </tr>
                                         <tr>
                                             <td><big>Donation Date</big></td>
