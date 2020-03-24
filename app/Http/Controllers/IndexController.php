@@ -62,82 +62,8 @@ class IndexController extends Controller
 
             Session::flash('success', 'Complete your donation now!');
             return redirect()->route('index.donatenext', $donation->donation_id);
-            
-            // $url = 'http://secure.aamarpay.com/request.php';
-            // $fields = array(
-            //             'store_id' => 'sererl',
-            //             'amount' => $donation->amount,
-            //             'payment_type' => 'VISA',
-            //             'currency' => 'BDT',
-            //             'tran_id' => $donation->trxid,
-            //             'cus_name' => $donation->name,
-            //             'cus_email' => $donation->phone . '@iitdualumni.com',
-            //             'cus_add1' => 'Housing Society',
-            //             'cus_add2' => 'Mohammadpur',
-            //             'cus_city' => 'Dhaka',
-            //             'cus_state' => 'Dhaka',
-            //             'cus_postcode' => '1207',
-            //             'cus_country' => 'Bangladesh',
-            //             'cus_phone' => $donation->phone,
-            //             'cus_fax' => 'Not-Applicable',
-            //             'ship_name' => 'Fight For Life',
-            //             'ship_add1' => 'IIT',
-            //             'ship_add2' => 'University of Dhaka',
-            //             'ship_city' => 'Dhaka',
-            //             'ship_state' => 'Dhaka',
-            //             'ship_postcode' => '1205',
-            //             'ship_country' => 'Bangladesh',
-            //             'desc' => 'Ticket',
-            //             'success_url' => 'https://donate.iitdualumni.com/donate/success/'.$donation->donation_id,
-            //             'fail_url' => 'https://donate.iitdualumni.com/donate/failed',
-            //             'cancel_url' => 'donate.iitdualumni.com/donate/cancel',
-            //             'opt_a' => 'Optional Value A',
-            //             'opt_b' => 'Optional Value B',
-            //             'opt_c' => 'Optional Value C',
-            //             'opt_d' => 'Optional Value D',
-            //             'signature_key' => '3c831409a577666bd9c49b6a46473acc'
-            //         );
-
-            // //$domain = $_SERVER["SERVER_NAME"]; // or Manually put your domain name
-            // $domain = "donate.iitdualumni.com";
-            // $ip = request()->ip();
-
-            // //url-ify the data for the POST
-            // $fields_string = '';
-            // foreach($fields as $key => $value) 
-            // { 
-            //     $fields_string .= $key.'='.$value.'&'; 
-            // }
-
-            // rtrim($fields_string, '&');
-
-            // //open connection
-            // $ch = curl_init();
-
-            // //set the url, number of POST vars, POST data
-            // curl_setopt($ch, CURLOPT_HTTPHEADER, array("REMOTE_ADDR: $ip", "HTTP_X_FORWARDED_FOR: $ip"));
-            // curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-            // curl_setopt($ch, CURLOPT_URL, $url);
-            // curl_setopt($ch, CURLOPT_REFERER, $domain);
-            // curl_setopt($ch, CURLOPT_INTERFACE, $ip);
-            // curl_setopt($ch, CURLOPT_POST, count($fields));
-            // curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
-            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-            // //execute post
-            // $result = curl_exec($ch);
-
-            // //print_r($result);
-            // $url_forward = json_decode($result, true);
-
-            // //close connection
-            // curl_close($ch);
-
-            // $redirect_url_final = "http://secure.aamarpay.com" . $url_forward;
-
-            // $this->redirect_to_merchant($redirect_url_final);
         } else {
-            return redirect()->route('index.donate')->with('warning', 'যোগফল ভুল হয়েছে! আবার চেষ্টা করুন।')->withInput();
+            return redirect()->route('index.index')->with('warning', 'যোগফল ভুল হয়েছে! আবার চেষ্টা করুন।')->withInput();
         }
     }
 
