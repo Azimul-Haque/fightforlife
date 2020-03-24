@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Donation;
+use App\Formmessage;
 
 use Carbon\Carbon;
 use DB;
@@ -222,26 +223,28 @@ class IndexController extends Controller
 
     public function storeFormMessage(Request $request)
     {
-        // $this->validate($request,array(
-        //     'name'                      => 'required|max:255',
-        //     'email'                     => 'required|max:255',
-        //     'message'                   => 'required',
-        //     'contact_sum_result_hidden'   => 'required',
-        //     'contact_sum_result'   => 'required'
-        // ));
+        $this->validate($request,array(
+            'name'                      => 'required|max:255',
+            'email'                     => 'required|max:255',
+            'phone'                     => 'required|max:255',
+            'message'                   => 'required',
+            'contact_sum_result_hidden'   => 'required',
+            'contact_sum_result'   => 'required'
+        ));
 
-        // if($request->contact_sum_result_hidden == $request->contact_sum_result) {
-        //     $message = new Formmessage;
-        //     $message->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
-        //     $message->email = htmlspecialchars(preg_replace("/\s+/", " ", $request->email));
-        //     $message->message = htmlspecialchars(preg_replace("/\s+/", " ", $request->message));
-        //     $message->save();
+        if($request->contact_sum_result_hidden == $request->contact_sum_result) {
+            $message = new Formmessage;
+            $message->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
+            $message->email = htmlspecialchars(preg_replace("/\s+/", " ", $request->email));
+            $message->phone = htmlspecialchars(preg_replace("/\s+/", " ", $request->phone));
+            $message->message = htmlspecialchars(preg_replace("/\s+/", " ", $request->message));
+            $message->save();
             
-        //     Session::flash('success', 'আপনার বার্তা আমাদের কাছে পৌঁছেছে। ধন্যবাদ!');
-        //     return redirect()->route('index.contact');
-        // } else {
-        //     return redirect()->route('index.contact')->with('warning', 'যোগফল ভুল হয়েছে! আবার চেষ্টা করুন।')->withInput();
-        // }
+            Session::flash('success', 'Thank you for your message!');
+            return redirect()->route('index.contact');
+        } else {
+            return redirect()->route('index.contact')->with('warning', 'Sum is incorrect! Try again.')->withInput();
+        }
     }
 
     public function getApplication()

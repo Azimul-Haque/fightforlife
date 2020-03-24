@@ -36,7 +36,7 @@
                       <td><a href="{{ route('index.donatenext', $donor->donation_id) }}">{{ $donor->name }}</a></td>
                       <td>{{ substr($donor->phone, 0, -4) }}****</td>
                       <td>{{ $donor->institute }}</td>
-                      <td>৳ {{ $donor->amount }}<br/>{{ $donor->trxid }}</td>
+                      <td><big><b>৳ {{ $donor->amount }}</b></big><br/>{{ $donor->trxid }}</td>
                       <td>{{ $donor->card_type }}</td>
                       <td>{{ date('F d, Y', strtotime($donor->created_at)) }}</td>
                       <td></td>

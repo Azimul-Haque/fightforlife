@@ -56,6 +56,7 @@
                         <div id="success" class="no-margin-lr"></div>
                         <input name="name" type="text" value="{{ old('name') }}" placeholder="Name" required="" />
                         <input name="email" type="email" value="{{ old('email') }}" placeholder="Email"  required="" />
+                        <input name="phone" type="text" value="{{ old('phone') }}" placeholder="Contact"  required="" />
                         <textarea name="message" placeholder="Message"  required="">{{ old('message') }}</textarea>
                         
                         @php
@@ -66,7 +67,7 @@
                         <input type="hidden" name="contact_sum_result_hidden" value="{{ $contact_sum_result_hidden }}">
                         <input type="text" name="contact_sum_result" id="" class="form-control" placeholder="{{ $contact_num1 }} + {{ $contact_num2 }} = ?" required="">
                         
-                        <button id="contact-us-button" type="submit" class="highlight-button-dark btn btn-small button xs-margin-bottom-five" disabled=""><i class="fa fa-paper-plane"></i> Send</button>
+                        <button id="contact-us-button" type="submit" class="highlight-button-dark btn btn-small button xs-margin-bottom-five"><i class="fa fa-paper-plane"></i> Send</button>
                     </form>
                 </div>
             </div>
