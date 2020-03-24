@@ -39,6 +39,7 @@ Route::get('/application', ['as'=>'index.application','uses'=>'IndexController@g
 Route::get('/member/login', ['as'=>'index.login','uses'=>'IndexController@getLogin']);
 Route::get('/member/profile/{unique_key}', ['as'=>'index.profile','uses'=>'IndexController@getProfile']);
 Route::post('/member/application/store', ['as'=>'index.storeapplication','uses'=>'IndexController@storeApplication']);
+
 Route::get('/corona/awareness', ['as'=>'corona.awareness','uses'=>'IndexController@coronaAwareness']);
 // index routes
 // index routes
@@ -52,6 +53,7 @@ Route::resource('users','UserController');
 Route::get('/dashboard', ['as'=>'dashboard.index','uses'=>'DashboardController@index']);
 
 Route::get('/dashboard/donations', ['as'=>'dashboard.donations','uses'=>'DashboardController@getDonations']);
+Route::get('/dashboard/contact/messages', ['as'=>'dashboard.contactmessages','uses'=>'DashboardController@getContactMessage']);
 
 Route::get('/dashboard/members', ['as'=>'dashboard.members','uses'=>'DashboardController@getMembers']);
 Route::delete('/dashboard/deletemember/{id}', ['as'=>'dashboard.deletemember','uses'=>'DashboardController@deleteMember']);

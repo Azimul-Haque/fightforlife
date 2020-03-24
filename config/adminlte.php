@@ -119,6 +119,10 @@ return [
             'text' => 'Donations',
             'route'  => 'dashboard.donations',
             'icon' => 'line-chart',
+        ],[
+            'text' => 'Messages',
+            'route'  => 'dashboard.contactmessages',
+            'icon' => 'envelope',
         ],
     ],
 

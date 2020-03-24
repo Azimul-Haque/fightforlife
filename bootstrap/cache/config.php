@@ -51,6 +51,12 @@
         'route' => 'dashboard.donations',
         'icon' => 'line-chart',
       ),
+      4 => 
+      array (
+        'text' => 'Messages',
+        'route' => 'dashboard.contactmessages',
+        'icon' => 'envelope',
+      ),
     ),
     'filters' => 
     array (

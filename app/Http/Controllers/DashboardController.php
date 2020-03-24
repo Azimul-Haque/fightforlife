@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Adhocmember;
 use App\User;
 use App\Donation;
+use App\Formmessage;
 
 use DB;
 use Auth;
@@ -237,4 +238,10 @@ class DashboardController extends Controller
         // Session::flash('success', 'Deleted Successfully!');
         // return redirect()->route('dashboard.committee');
     }
+
+    public function getContactMessage() 
+    {
+        $messages = Formmessage::orderBy('id', 'desc')->paginate(15);
+        return view('dashboard.contactmessages')->withMessages($messages);
+    } 
 }
