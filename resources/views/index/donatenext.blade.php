@@ -76,7 +76,7 @@
                                             <td>: ৳ {{ $donation->amount }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Donation Date:</td>
+                                            <td>Donation Date</td>
                                             <td>: {{ date('F d, Y', strtotime($donation->created_at)) }}</td>
                                         </tr>
                                     </table>
@@ -98,7 +98,7 @@
                                             <td><big>: ৳ {{ $donation->amount }}</big></td>
                                         </tr>
                                         <tr>
-                                            <td><big>Donation Date:</big></td>
+                                            <td><big>Donation Date</big></td>
                                             <td><big>: {{ date('F d, Y', strtotime($donation->created_at)) }}</big></td>
                                         </tr>
                                     </table>
