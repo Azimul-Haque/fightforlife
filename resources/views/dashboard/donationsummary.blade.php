@@ -24,6 +24,7 @@
           <th>Institution/ Organization</th>
           <th>Donation Amount</th>
           <th>Donation Date</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -35,6 +36,7 @@
                     <td>{{ $donor->institute }}</td>
                     <td>৳ {{ $donor->amount }}</td>
                     <td>{{ date('F d, Y', strtotime($donor->created_at)) }}</td>
+                    <td></td>
                 </tr>
             @endforeach
         </tbody>
