@@ -22,6 +22,7 @@
         <tr>
           <th width="20%">Name</th>
           <th width="20%">Email</th>
+          <th width="20%">Contact</th>
           <th>Message</th>
         </tr>
       </thead>
@@ -30,6 +31,7 @@
         <tr>
           <td>{{ $message->name }}</td>
           <td>{{ $message->email }}</td>
+          <td>{{ $message->phone }}</td>
           <td>{{ $message->message }}</td>
         </tr>
         @endforeach
