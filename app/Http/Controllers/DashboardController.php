@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Adhocmember;
 use App\User;
+use App\Donation;
 
 use DB;
 use Auth;
@@ -35,6 +36,25 @@ class DashboardController extends Controller
     public function index()
     {
         return view('dashboard.index');
+    }
+    
+    public function getDonations()
+    {
+        $totaldonations = Donation::where('payment_status', 1)->count();
+        $totaldonationamount = DB::table('donations')
+                                 ->where('payment_status', 1)
+                                 ->select(DB::raw('SUM(amount) AS total'))
+                                 ->first();
+
+        $donors = Donation::where('payment_status', 1)
+                          ->orderBy('id', 'desc')
+                          ->paginate(20);
+
+
+        return view('dashboard.donationsummary')
+                    ->withTotaldonations($totaldonations)
+                    ->withTotaldonationamount($totaldonationamount)
+                    ->withDonors($donors);
     }
 
     public function getCommittee()

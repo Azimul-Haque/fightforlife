@@ -44,18 +44,12 @@
         'route' => 'dashboard.index',
         'icon' => 'users',
       ),
-      2 => 'MEMBERSHIP',
+      2 => 'DONATIONS',
       3 => 
       array (
-        'text' => 'Applications &amp; Payments',
-        'route' => 'dashboard.applications',
+        'text' => 'Donations',
+        'route' => 'dashboard.donations',
         'icon' => 'line-chart',
-      ),
-      4 => 
-      array (
-        'text' => 'Members',
-        'route' => 'dashboard.members',
-        'icon' => 'address-book-o',
       ),
     ),
     'filters' => 

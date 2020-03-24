@@ -114,16 +114,11 @@ return [
             'route'  => 'dashboard.index',
             'icon'   => 'users',
         ],
-        'MEMBERSHIP',
+        'DONATIONS',
         [
-            'text' => 'Applications &amp; Payments',
-            'route'  => 'dashboard.applications',
+            'text' => 'Donations',
+            'route'  => 'dashboard.donations',
             'icon' => 'line-chart',
-        ],
-        [
-            'text' => 'Members',
-            'route'  => 'dashboard.members',
-            'icon' => 'address-book-o',
         ],
     ],
 
