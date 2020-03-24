@@ -73,7 +73,7 @@
                                         </tr>
                                         <tr>
                                             <td>Amount</td>
-                                            <td>: ৳ {{ $donation->amount }}</td>
+                                            <td>: ৳ ***</td>
                                         </tr>
                                         <tr>
                                             <td>Donation Date</td>
@@ -95,7 +95,7 @@
                                         </tr>
                                         <tr>
                                             <td><big>Amount</big></td>
-                                            <td><big>: ৳ {{ $donation->amount }}</big></td>
+                                            <td><big>: ৳ ***</big></td>
                                         </tr>
                                         <tr>
                                             <td><big>Donation Date</big></td>
