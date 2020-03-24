@@ -68,6 +68,7 @@
                                 <tr>
                                     <th>Donor Name</th>
                                     <th>Donor Contact</th>
+                                    <th>Institution/ Organization</th>
                                     <th>Donor Amount</th>
                                     <th>Donation Date</th>
                                 </tr>
@@ -76,7 +77,8 @@
                                 @foreach($donors as $donor)
                                     <tr>
                                         <td>{{ $donor->name }}</td>
-                                        <td>{{ $donor->phone }}</td>
+                                        <td>{{ substr($donor->phone, 0, -4) }}****</td>
+                                        <td>{{ $donor->institute }}</td>
                                         <td>৳ {{ $donor->amount }}</td>
                                         <td>{{ date('F d, Y', strtotime($donor->created_at)) }}</td>
                                     </tr>
