@@ -23,6 +23,8 @@ Route::get('/donate/next/{donation_id}', ['as'=>'index.donatenext','uses'=>'Inde
 
 Route::post('donate/success', 'IndexController@donateSuccessOrFailed')->name('donate.success');
 Route::get('donate/failed', 'IndexController@donateSuccessOrFailed')->name('donate.failed');
+
+Route::post('donate/cancel', 'IndexController@donateSuccessOrFailed')->name('donate.cancel');
 Route::get('donate/cancel', 'IndexController@donateCancelled')->name('donate.cancel');
 
 Route::get('/donation/summary', ['as'=>'index.donationsummary','uses'=>'IndexController@getDonationSummary']);
