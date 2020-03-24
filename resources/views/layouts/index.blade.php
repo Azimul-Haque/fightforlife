@@ -101,47 +101,19 @@
             </div>
         </div>
         <div class="container footer-middle">
-            <div class="row">
-                <div class="col-md-3 col-sm-3 footer-link1 xs-display-none">
-                    <!-- headline -->
-                    <h5>About Us</h5>
-                    <!-- end headline -->
-                    <!-- text -->
-                    <p class="footer-text">IIT Alumni Association was established in the year 201* with a view to .... ... ...</p>
-                    <!-- end text -->
-                </div>
-                <div class="col-md-2 col-sm-3 col-xs-4 col-md-offset-3 footer-link2">
-                    
-                </div>
-                <div class="col-md-2 col-sm-3 col-xs-4 footer-link3">
-                    
-                </div>
-                <div class="col-md-2 col-sm-3 col-xs-4 footer-link4">
-                    <!-- headline -->
-                    <h5>Alumni</h5>
-                    <!-- end headline -->
-                    <!-- link -->
-                    <ul>
-                        <li>
-                            <a href="{{ route('index.application') }}"><b>Donate</b></a>
-                        </li>
-                        <li>
-                            <a href="{{ route('index.application') }}">Affiliated Partners</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('index.members') }}">Distribution Partners</a>
-                        </li>
-                    </ul>
-                    <!-- end link -->
-                </div>
-            </div>
-            <div class="wide-separator-line bg-mid-gray no-margin-lr margin-three no-margin-bottom"></div>
-            <div class="row margin-four no-margin-bottom">
-                <div class="col-md-6 col-sm-12 sm-text-center sm-margin-bottom-four">
+            
+            <div class="row no-margin-bottom">
+                <div class="col-md-8 col-sm-12 sm-text-center sm-margin-bottom-four">
                     <!-- link -->
                     <ul class="list-inline footer-link text-uppercase">
                         <li>
                             <a href="{{ route('index.members') }}">Donation Summary</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('index.members') }}">Affiliated Partners</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('index.members') }}">Distribution Partners</a>
                         </li>
                         <li>
                             <a href="{{ route('index.contact') }}">Contact</a>
@@ -149,7 +121,7 @@
                     </ul>
                     <!-- end link -->
                 </div>
-                <div class="col-md-6 col-sm-12 footer-social text-right sm-text-center">
+                <div class="col-md-4 col-sm-12 footer-social text-right sm-text-center">
                     <!-- social media link -->
                     <a target="_blank" href="https://www.facebook.com/">
                         <i class="fa fa-facebook"></i>

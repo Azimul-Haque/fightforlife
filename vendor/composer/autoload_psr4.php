@@ -32,6 +32,7 @@ return array(
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Shipu\\Aamarpay\\' => array($vendorDir . '/shipu/php-aamarpay-payment/src'),
+    'Riverskies\\Laravel\\MobileDetect\\' => array($vendorDir . '/riverskies/laravel-mobile-detect/src'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
     'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),

@@ -74,6 +74,7 @@ class ComposerStaticInit5ba844acaeab7533148c65467b83a279
         ),
         'R' => 
         array (
+            'Riverskies\\Laravel\\MobileDetect\\' => 32,
             'Ramsey\\Uuid\\' => 12,
         ),
         'P' => 
@@ -243,6 +244,10 @@ class ComposerStaticInit5ba844acaeab7533148c65467b83a279
         array (
             0 => __DIR__ . '/..' . '/shipu/php-aamarpay-payment/src',
         ),
+        'Riverskies\\Laravel\\MobileDetect\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/riverskies/laravel-mobile-detect/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -382,6 +387,13 @@ class ComposerStaticInit5ba844acaeab7533148c65467b83a279
                 0 => __DIR__ . '/..' . '/ezyang/htmlpurifier/library',
             ),
         ),
+        'D' => 
+        array (
+            'Detection' => 
+            array (
+                0 => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced',
+            ),
+        ),
     );
 
     public static $classMap = array (
@@ -479,6 +491,7 @@ class ComposerStaticInit5ba844acaeab7533148c65467b83a279
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',

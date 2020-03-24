@@ -1,15 +1,16 @@
 <!-- navigation panel -->
-<nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-border-bottom @if(\Request::is('/')) nav-white @endif" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-border-bottom {{-- @if(\Request::is('/')) nav-white @endif --}}" role="navigation">
     <div class="container">
         <div class="row">
             <!-- logo -->
             <div class="col-md-2 pull-left">
                 <a class="logo-light" href="{{ route('index.index') }}">
-                    @if(\Request::is('/'))
+                    {{-- @if(\Request::is('/'))
                         <img alt="" src="{{ asset('images/logo-light.png') }}" class="logo" />
                     @else
                         <img alt="" src="{{ asset('images/logo.png') }}" class="logo" />
-                    @endif
+                    @endif --}}
+                    <img alt="" src="{{ asset('images/logo.png') }}" class="logo" />
                 </a>
                 <a class="logo-dark" href="{{ route('index.index') }}">
                     <img alt="" src="{{ asset('images/logo.png') }}" class="logo" />
@@ -79,9 +80,9 @@
                         <li>
                             <a href="{{ route('index.members') }}">Distribution Partners</a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="{{ route('index.donate') }}">Donate</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="{{ route('index.contact') }}">Contact</a>
                         </li>
