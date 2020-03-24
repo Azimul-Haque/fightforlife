@@ -16,35 +16,35 @@
 @stop
 
 @section('content')
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Donor Name</th>
-          <th>Donor Contact</th>
-          <th>Institution/ Organization</th>
-          <th>Donation Amount</th>
-          <th>Donation Date</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Donor Name</th>
+            <th>Donor Contact</th>
+            <th>Institution/ Organization</th>
+            <th>Donation Amount</th>
+            <th>Donation Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
         <tbody>
-            @foreach($donors as $donor)
-                <tr>
-                    <td><a href="{{ route('index.donatenext', $donor->donation_id) }}">{{ $donor->name }}</a></td>
-                    <td>{{ substr($donor->phone, 0, -4) }}****</td>
-                    <td>{{ $donor->institute }}</td>
-                    <td>৳ {{ $donor->amount }}</td>
-                    <td>{{ date('F d, Y', strtotime($donor->created_at)) }}</td>
-                    <td></td>
-                </tr>
-            @endforeach
+          <tbody>
+              @foreach($donors as $donor)
+                  <tr>
+                      <td><a href="{{ route('index.donatenext', $donor->donation_id) }}">{{ $donor->name }}</a></td>
+                      <td>{{ substr($donor->phone, 0, -4) }}****</td>
+                      <td>{{ $donor->institute }}</td>
+                      <td>৳ {{ $donor->amount }}</td>
+                      <td>{{ date('F d, Y', strtotime($donor->created_at)) }}</td>
+                      <td></td>
+                  </tr>
+              @endforeach
+          </tbody>
         </tbody>
-      </tbody>
-    </table>
-
-
-    
+      </table>
+    </div>
+    {{ $donors->links() }}    
 @stop
 
 @section('js')
