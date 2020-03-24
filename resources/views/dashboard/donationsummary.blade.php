@@ -17,13 +17,14 @@
 
 @section('content')
     <div class="table-responsive">
-      <table class="table">
+      <table class="table table-condensed">
         <thead>
           <tr>
             <th>Donor Name</th>
             <th>Donor Contact</th>
             <th>Institution/ Organization</th>
-            <th>Donation Amount</th>
+            <th>Amount, TrxID</th>
+            <th>Payment Method</th>
             <th>Donation Date</th>
             <th>Action</th>
           </tr>
@@ -35,7 +36,8 @@
                       <td><a href="{{ route('index.donatenext', $donor->donation_id) }}">{{ $donor->name }}</a></td>
                       <td>{{ substr($donor->phone, 0, -4) }}****</td>
                       <td>{{ $donor->institute }}</td>
-                      <td>৳ {{ $donor->amount }}</td>
+                      <td>৳ {{ $donor->amount }}<br/>{{ $donor->trxid }}</td>
+                      <td>{{ $donor->card_type }}</td>
                       <td>{{ date('F d, Y', strtotime($donor->created_at)) }}</td>
                       <td></td>
                   </tr>
