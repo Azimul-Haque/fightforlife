@@ -133,6 +133,37 @@ class IndexController extends Controller
         return redirect()->route('index.donatenext', $donation->donation_id);
     }
 
+    public function donateCancelledPost(Request $request)
+    {
+        $donation_id = $request->get('opt_a');
+        
+        if($request->get('pay_status') == 'Failed') {
+            Session::flash('info', 'Something went wrong, please try again!');
+            return redirect(Route('index.index'));
+        }
+        
+        $amount_request = $request->get('opt_b');
+        $amount_paid = $request->get('amount');
+        
+        if($amount_paid == $amount_request)
+        {
+          $donation = Donation::where('donation_id', $donation_id)->first();
+          // $donation->trxid = $request->get('pg_txnid');
+          $donation->payment_status = 1;
+          $donation->card_type = $request->get('card_type');
+          $donation->save();
+
+          Session::flash('success','Donation is complete!');
+        } else {
+           // Something went wrong.
+          Session::flash('info', 'Something went wrong, please try again!');
+          return redirect(Route('index.index'));
+        }
+        
+        //return $request->all();
+        return redirect()->route('index.donatenext', $donation->donation_id);
+    }
+
     public function donateCancelled()
     {
         Session::flash('info','Donation is cancelled!');
@@ -147,7 +178,9 @@ class IndexController extends Controller
                                  ->select(DB::raw('SUM(amount) AS total'))
                                  ->first();
 
-        $donors = Donation::where('payment_status', 1)->paginate(20);
+        $donors = Donation::where('payment_status', 1)
+                          ->orderBy('id', 'desc')
+                          ->paginate(20);
 
 
         return view('index.donationsummary')
