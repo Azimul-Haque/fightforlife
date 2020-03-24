@@ -167,7 +167,7 @@ class IndexController extends Controller
     public function donateCancelled()
     {
         Session::flash('info','Donation is cancelled!');
-        return view('index.donatepage');
+        return view('index.index');
     }
 
     public function getDonationSummary()
