@@ -27,7 +27,14 @@ class IndexController extends Controller
 
     public function index()
     {
-        return view('index.index');
+        $totaldonations = Donation::where('payment_status', 1)->count();
+        $totaldonationamount = DB::table('donations')
+                                 ->where('payment_status', 1)
+                                 ->select(DB::raw('SUM(amount) AS total'))
+                                 ->first();
+        return view('index.index')
+                    ->withTotaldonations($totaldonations)
+                    ->withTotaldonationamount($totaldonationamount);
     }
 
     public function getDonate()

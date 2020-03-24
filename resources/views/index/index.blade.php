@@ -129,21 +129,21 @@
                 <!-- counter -->
                 <div class="col-md-4 col-sm-4 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten" data-wow-duration="600ms">
                     <i class="icon-happy medium-icon"></i>
-                    <span class="timer counter-number white-text" data-to="749" data-speed="7000"></span>
+                    <span class="timer counter-number white-text" data-to="{{ $totaldonations }}" data-speed="7000"></span>
                     <span class="counter-title gray-text">Donors</span>
                 </div>
                 <!-- end counter -->
                 <!-- counter -->
                 <div class="col-md-4 col-sm-4 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten" data-wow-duration="300ms">
                     <i class="icon-heart medium-icon"></i>
-                    <span class="timer counter-number white-text" data-to="5620" data-speed="5000"></span>
+                    <span class="timer counter-number white-text" data-to="{{ $totaldonationamount->total }}" data-speed="5000"></span>
                     <span class="counter-title gray-text">Donation (Tk.)</span>
                 </div>
                 <!-- end counter -->
                 <!-- counter -->
                 <div class="col-md-4 col-sm-4 bottom-margin-small text-center counter-section wow fadeInUp xs-margin-bottom-ten" data-wow-duration="900ms">
                     <i class="icon-anchor medium-icon"></i>
-                    <span class="timer counter-number white-text" data-to="782" data-speed="7000"></span>
+                    <span class="timer counter-number white-text" data-to="3" data-speed="7000"></span>
                     <span class="counter-title gray-text">Partners</span>
                 </div>
                 <!-- end counter -->
