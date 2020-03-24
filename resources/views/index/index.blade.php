@@ -163,16 +163,16 @@
                 </div>
                 <div class="carousel-inner margin-seven no-margin-bottom">
                     <div class="item active"> 
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Fringila Auctor</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Vitae nidh mauris</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">In fringilla auctor</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Aliquam gravida molis</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 1</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 2</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 3</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 4</h5></div>
                     </div>
                     <div class="item"> 
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Fringila Auctor</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Vitae nidh mauris</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">In fringilla auctor</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Aliquam gravida molis</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 5</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 6</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 7</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 8</h5></div>
                     </div>
                 </div>
             </div>
