@@ -69,7 +69,7 @@
                                         </tr>
                                         <tr>
                                             <td>Contact</td>
-                                            <td>: {{ $donation->phone }}</td>
+                                            <td>: {{ substr($donation->phone, 0, -4) }}****</td>
                                         </tr>
                                         <tr>
                                             <td>Amount</td>
@@ -91,7 +91,7 @@
                                         </tr>
                                         <tr>
                                             <td><big>Contact</big></td>
-                                            <td><big>: {{ $donation->phone }}</big></td>
+                                            <td><big>: {{ substr($donation->phone, 0, -4) }}****</big></td>
                                         </tr>
                                         <tr>
                                             <td><big>Amount</big></td>
