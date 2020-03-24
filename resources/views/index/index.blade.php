@@ -40,13 +40,22 @@
     </div>
     {{-- @include('partials._slider') --}}
     <!-- about section -->
-    <section class="content-top-margin  wow fadeIn bg-gray">
+    <section class="content-top-margin wow fadeIn bg-gray">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-10 text-center center-col">
+                <div class="col-md-12 col-sm-12 text-center center-col">
                     {{-- <span class="margin-five no-margin-top display-block letter-spacing-2">EST. 2016</span> --}}
                     <h1>Fight For Life</h1>
-                    <p class="text-med width-90 center-col margin-seven no-margin-bottom"> We've been crafting beautiful websites, launching stunning brands and making clients happy for years. With our prestigious craftsmanship, remarkable client care and passion for design.</p>
+                    <p class="text-med width-90 center-col margin-five no-margin-bottom">
+                        বিদ্যানন্দ, এক টাকায় আহার, গিফট ফর গুডস - এই সংগঠনগুলো কাজ করছে আপনাকে, আমাকে বাঁচিয়ে রাখতে। তৈরি করছে ডাক্তারদের জন্য পারসোনাল প্রোটেক্টিভ ইকুইপমেন্ট (পিপিই), আমাদের জন্য স্যানিটাইজার। খাবার পৌঁছে দিচ্ছে লকডাউনে আটকে পরা মানুষগুলোর কাছে। অসহায় খেটে খাওয়া মানুষগুলো, যাদের রোজগা্রের পথ অনির্দিষ্টকালের জন্য বন্ধ, তাদের বেঁচে থাকার ব্যবস্থা করছে।
+                        তাদের কাছে পৌঁছে যাবে আপনার এ অনুদান।<br/><br/>
+
+                        আপনার দেয়া অর্থ দিয়ে তৈরি হবে ডাক্তার এবং সকল স্বাস্থ্যকর্মীদের জন্য পারসোনাল প্রোটেক্টিভ ইকুইপমেন্ট (পিপিই)। লকডাউনের দিনগুলোয় উপার্জন করতে না পারা অসহায় শ্রমজীবী মানুষগুলোর জন্য কেনা হবে বেঁচে থাকার জন্য প্রয়োজনীয় খাবার।<br/><br/>
+
+                        যারা আপনার জন্য লড়াই করছে, তাদের সাহায্য করুন। আর অসহায় খেটে খাওয়া মানুষগুলোর পাশে দাঁড়ান।<br/><br/>
+
+                        Let’s Fight For Life. Stay Home. Stay Safe.
+                    </p>
                 </div>
             </div>
         </div>
@@ -79,7 +88,7 @@
                     <input name="name" type="text" value="{{ old('name') }}" placeholder="Your Name (আপনার নাম)" required="" />
                     <input name="amount" id="amount" type="text" value="{{ old('amount') }}" placeholder="Donation Amount (অনুদানের পরিমাণ)" onchange="checkAmount()" required="" />
                     <input name="institute" type="text" value="{{ old('institute') }}" placeholder="Institution/Organization (প্রতিষ্ঠানের নাম)"  required="" />
-                    <input name="phone" type="text" value="{{ old('phone') }}" placeholder="Phone Number (ফোন নাম্বার)"  required="" />
+                    <input name="phone" type="text" value="{{ old('phone') }}" placeholder="Contact Number (যোগাযোগের নাম্বার)"  required="" />
                     
                     @php
                       $contact_num1 = rand(1,20);
@@ -96,16 +105,16 @@
             <div class="map-contact col-md-6 col-sm-6 bg-light-orange" @desktop style="height: 460px !important;" @enddesktop>
                 <ul>
                     <li>
-                        <span><i class="fa fa-map-marker"></i></span>
-                        <strong>Our Studio</strong><br>301 The Greenhouse, Custard Factory, London, e2 8dy.
+                        <span><i class="fa fa-home"></i></span>
+                        ঘরে বসেই আপনার সামর্থ্য অনুযায়ী অর্থ দিয়ে এই লড়াইয়ে অংশ নিন।                        
                     </li>
                     <li>
-                        <span><i class="fa fa-envelope"></i></span>
-                        <strong>General Enquiries</strong><br><a href="mailto:no-reply@domain.com">no-reply@domain.com</a>
+                        <span><i class="fa fa-university"></i></span>
+                        অনুদান জমা হবে ঢাকা বিশ্ববিদ্যালয়ের তথ্য প্রযুক্তি ইন্সটিটিউট এর শিক্ষার্থীদের উদ্যোগ "ফাইট ফর লাইফ" প্রজেক্ট এর তহবিল এ। এই অর্থ পৌঁছে যাবে বিদ্যানন্দ  ও গিফট ফর গুডস এর কাছে।
                     </li> 
                     <li>
-                        <span><i class="fa fa-phone"></i></span>
-                        <strong>call us today!</strong><br>+44 (0) 123 456 7890
+                        <span><i class="fa fa-ambulance"></i></span>
+                        এ অনুদান দিয়ে ডাক্তার এবং স্বাস্থ্যকর্মীর জন্য তৈরি হবে পারসোনাল প্রোটেক্টিভ ইকুইপমেন্ট (PPE)। লকডাউনের দিনগুলোয় উপার্জন করতে না পারা অসহায় শ্রমজীবী মানুষগুলোর জন্য কেনা হবে বেঁচে থাকার জন্য প্রয়োজনীয় খাবার আর স্যানিটাইজার।
                     </li>
                 </ul>
             </div> 
@@ -169,6 +178,31 @@
             </div>
             <!-- slider controls --> 
             <a data-slide="prev" href="#myCarousel3" class="left carousel-control"> <img alt="" src="images/arrow-pre.png"> </a> <a data-slide="next" href="#myCarousel3" class="right carousel-control"> <img alt="" src="images/arrow-next.png"> </a>
+        </div>
+    </section>
+
+    <section class="parallax2 parallax-fix">
+        <img class="parallax-background-img" src="images/iit_du.jpg" alt="" />
+        <div class="slider-overlay bg-slider"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 text-center center-col">
+                    {{-- <span class="margin-five no-margin-top display-block letter-spacing-2">EST. 2016</span> --}}
+                    <h1 class="white-text">About Us</h1><br/>
+                    <p class="text-med width-90 center-col white-text smargin-five no-margin-bottom">
+                        ঢাকা বিশ্ববিদ্যালয়ের তথ্য প্রযুক্তি ইনস্টিটিউটের শিক্ষার্থীদের উদ্যোগে এই পেমেন্ট গেটওয়ে তৈরি। ঢাকা বিশ্ববিদ্যালয়ের শিক্ষার্থীরা সবসময় দেশের যেকোনো সংকট মোকাবেলায় সামনে থেকে নেতৃত্ব দিয়েছে। 
+                        করোনা ভাইরাসের সংক্রমণের ফলে যে সংকট তৈরি হয়েছে তা নিরসন করার জন্যও তাই এগিয়ে এসেছি আমরা।<br/><br/>
+
+                        সারাদেশে আক্রান্ত এলাকাগুলো লকডাউন করে দেয়া হচ্ছে, সারা বিশ্বে আক্রান্তের সংখ্যা আর মৃতের সংখ্যা বেড়েই চলেছে। মৃত্যুর মিছিল যাতে দীর্ঘ না হয় সেজন্যে এই মুহুর্তে দেশের সব অঞ্চলে যথাযথ চিকিৎসা সেবা নিশ্চিত করতে হবে। তাই সবার আগে প্রয়োজন ডাক্তার এবং স্বাস্থ্যকর্মীদের সুরক্ষা। তাদের পারসোনাল প্রোটেক্টিভ ইকুইপমেন্ট (পিপিই) এর যোগান দিচ্ছে বিদ্যানন্দ নামের একটি সংগঠন। তাদের অর্থের একমাত্র উৎস আমার আপনার দেয়া অনুদান।<br/><br/>
+
+                        এই লকডাউনে ঘরে বসে আছে রিকশাওয়ালা, দিনমজুর সহ বহু খেটে খাওয়া মানুষ। তাদের খাদ্যের যোগানও নিশ্চিত করছে বিদ্যানন্দ এবং গিফট ফর গুডস।<br/><br/>
+
+                        সবসময়ের মতই ঢাকা বিশ্ববিদ্যালয়ের সকল প্রাক্তন ও বর্তমান শিক্ষার্থী, শিক্ষক, কর্মকর্তা-কর্মচারী এই সংকট মোকাবিলায় এগিয়ে আসবেন এটাই আমাদের চাওয়া। <br/><br/>
+
+                        Let’s Donate and Fight For Life. Stay Home. Stay Safe.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 @endsection

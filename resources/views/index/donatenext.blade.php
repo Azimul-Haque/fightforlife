@@ -14,7 +14,13 @@
             <div class="row">
                 <!-- section title -->
                 <div class="col-md-6 col-sm-6 xs-margin-bottom-four">
-                    <span class="text-large letter-spacing-2 black-text font-weight-600 text-uppercase agency-title">Donate Now</span>
+                    <span class="text-large letter-spacing-2 black-text font-weight-600 text-uppercase agency-title">
+                        @if($donation->payment_status == 0)
+                            Donate Now
+                        @elseif($donation->payment_status == 1)
+                            Donation
+                        @endif
+                    </span>
                 </div>
                 <!-- end section title -->
                 <!-- section highlight text -->
@@ -50,10 +56,54 @@
                         </center>
                     @elseif($donation->payment_status == 1)
                         <center>
-                            <h3>Thank you for the payment <b>{{ $donation->name }}</b></h3>
-                            <div style="border: 2px solid #ddd; margin: 25px; max-width: 400px;">
-                                <span style="word-wrap: break-word;">Transaction ID: {{ $donation->trxid }}</span>
-                            </div>
+                            <h2>
+                                Thank you for your <big>Donation!</big>
+                            </h2>
+                            @mobile
+                                <div style="border: 2px solid #ddd; margin: 25px; padding: 5px;">
+                                    <img src="/images/logo-02.png" style="height: 70px; padding: 5px;">
+                                    <table>
+                                        <tr>
+                                            <td width="40%">Donor Name</td>
+                                            <td>: <b>{{ $donation->name }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contact</td>
+                                            <td>: {{ $donation->phone }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Amount</td>
+                                            <td>: ৳ {{ $donation->amount }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Donation Date:</td>
+                                            <td>: {{ date('F d, Y', strtotime($donation->created_at)) }}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            @elsemobile
+                                <div style="border: 2px solid #ddd; margin: 25px; padding: 15px 0px 15px 0px;">
+                                    <img src="/images/logo-02.png" style="height: 70px; padding: 5px;">
+                                    <table>
+                                        <tr>
+                                            <td width="40%"><big>Donor Name</big></td>
+                                            <td><big>: <b>{{ $donation->name }}</b></big></td>
+                                        </tr>
+                                        <tr>
+                                            <td><big>Contact</big></td>
+                                            <td><big>: {{ $donation->phone }}</big></td>
+                                        </tr>
+                                        <tr>
+                                            <td><big>Amount</big></td>
+                                            <td><big>: ৳ {{ $donation->amount }}</big></td>
+                                        </tr>
+                                        <tr>
+                                            <td><big>Donation Date:</big></td>
+                                            <td><big>: {{ date('F d, Y', strtotime($donation->created_at)) }}</big></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            @endmobile
                         </center>
                     @endif
                 </div>

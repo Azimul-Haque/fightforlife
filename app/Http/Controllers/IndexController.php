@@ -132,6 +132,23 @@ class IndexController extends Controller
         return view('index.donatepage');
     }
 
+    public function getDonationSummary()
+    {
+        $totaldonations = Donation::where('payment_status', 1)->count();
+        $totaldonationamount = DB::table('donations')
+                                 ->where('payment_status', 1)
+                                 ->select(DB::raw('SUM(amount) AS total'))
+                                 ->first();
+
+        $donors = Donation::where('payment_status', 1)->paginate(20);
+
+
+        return view('index.donationsummary')
+                    ->withtoTaldonations($totaldonations);
+                    ->withtoTotaldonationamount($totaldonationamount);
+                    ->withtoDonors($donors);
+    }
+
     public function getFaq()
     {
         return view('index.faq');
