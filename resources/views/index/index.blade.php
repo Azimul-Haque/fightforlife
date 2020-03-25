@@ -40,9 +40,9 @@
     </div>
     {{-- @include('partials._slider') --}}
     <!-- about section -->
-    <section class="parallax2 parallax-fix content-top-margin wow fadeIn">
-        <img class="parallax-background-img" src="/images/banner_back.png" alt="" />
-        <div class="slider-overlay bg-slider"></div>
+    <section class="fix-background white-text" style="background-image:url('/images/banner_back.png');">
+        {{-- <img class="parallax-background-img" src="/images/banner_back.png" alt="" />
+        <div class="slider-overlay bg-slider"></div> --}}
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 text-center center-col">
@@ -135,9 +135,9 @@
         </div>
     </section>
 
-    <section class="parallax2 parallax-fix">
-        <img class="parallax-background-img" src="/images/donation_background.jpg" alt="" />
-        <div class="slider-overlay bg-slider"></div>
+    <section class="fix-background white-text" style="background-image:url('/images/donation_background.jpg');">
+        {{-- <img class="parallax-background-img" src="/images/donation_background.jpg" alt="" />
+        <div class="slider-overlay bg-slider"></div> --}}
         <div class="container">
             <div class="row">
                 <!-- counter -->
@@ -193,7 +193,7 @@
     </section>
 
     <section class="fix-background white-text" style="background-image:url('/images/iit_du.jpg');">
-        <div class="opacity-full bg-white"></div>
+        {{-- <div class="opacity-full bg-white"></div> --}}
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 text-center center-col">
