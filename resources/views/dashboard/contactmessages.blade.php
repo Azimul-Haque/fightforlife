@@ -23,7 +23,7 @@
           <th width="20%">Name</th>
           <th width="20%">Email</th>
           <th width="15%">Contact</th>
-          <th>Datetime</th>
+          <th width="15%">Datetime</th>
           <th>Message</th>
         </tr>
       </thead>
