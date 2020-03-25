@@ -190,6 +190,11 @@ class IndexController extends Controller
                     ->withDonors($donors);
     }
 
+    public function getStatement()
+    {
+        return view('index.statement');
+    }
+
     public function getAffiliated()
     {
         return view('index.affiliated');

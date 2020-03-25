@@ -28,6 +28,7 @@ Route::post('donate/cancel', 'IndexController@donateCancelledPost')->name('donat
 Route::get('donate/cancel', 'IndexController@donateCancelled')->name('donate.cancel');
 
 Route::get('/donation/summary', ['as'=>'index.donationsummary','uses'=>'IndexController@getDonationSummary']);
+Route::get('/statement', ['as'=>'index.statement','uses'=>'IndexController@getStatement']);
 Route::get('/donation/affiliated', ['as'=>'index.affiliated','uses'=>'IndexController@getAffiliated']);
 Route::get('/donation/distribution', ['as'=>'index.distribution','uses'=>'IndexController@getDistribution']);
 
