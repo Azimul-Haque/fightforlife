@@ -61,7 +61,8 @@
                             </h2>
                             @mobile
                                 <div style="border: 2px solid #ddd; margin: 25px; padding: 5px;">
-                                    <img src="/images/logo-02.png" style="height: 70px; padding: 5px;"><br/><br/>
+                                    <img src="/images/logo-02.png" style="height: 70px; padding: 5px;"><br/>
+                                    <small>Initiative by IIT, University of Dhaka</small><br/><br/>
                                     <table>
                                         <tr>
                                             <td width="40%">Donor Name</td>
@@ -83,7 +84,8 @@
                                 </div>
                             @elsemobile
                                 <div style="border: 2px solid #ddd; margin: 25px; padding: 15px 0px 15px 0px;">
-                                    <img src="/images/logo-02.png" style="height: 70px; padding: 5px;"><br/><br/>
+                                    <img src="/images/logo-02.png" style="height: 70px; padding: 5px;"><br/>
+                                    <small>Initiative by IIT, University of Dhaka</small><br/><br/>
                                     <table>
                                         <tr>
                                             <td width="40%"><big>Donor Name</big></td>

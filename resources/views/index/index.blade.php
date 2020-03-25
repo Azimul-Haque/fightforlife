@@ -40,11 +40,32 @@
     </div>
     {{-- @include('partials._slider') --}}
     <!-- about section -->
-    <section class="content-top-margin wow fadeIn bg-gray">
+    <section class="parallax2 parallax-fix content-top-margin wow fadeIn">
+        <img class="parallax-background-img" src="/images/banner_back.png" alt="" />
+        <div class="slider-overlay bg-slider"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 text-center center-col">
                     {{-- <span class="margin-five no-margin-top display-block letter-spacing-2">EST. 2016</span> --}}
+                    <h1 class="white-text">Fight For Life</h1><br/><br/>
+                    <p class="text-med width-90 center-col white-text margin-five no-margin-bottom">
+                        বিদ্যানন্দ, এক টাকায় আহার, গিফট ফর গুডস - এই সংগঠনগুলো কাজ করছে আপনাকে, আমাকে বাঁচিয়ে রাখতে। তৈরি করছে ডাক্তারদের জন্য পারসোনাল প্রোটেক্টিভ ইকুইপমেন্ট (পিপিই), আমাদের জন্য স্যানিটাইজার। খাবার পৌঁছে দিচ্ছে লকডাউনে আটকে পরা মানুষগুলোর কাছে। অসহায় খেটে খাওয়া মানুষগুলো, যাদের রোজগা্রের পথ অনির্দিষ্টকালের জন্য বন্ধ, তাদের বেঁচে থাকার ব্যবস্থা করছে।
+                        তাদের কাছে পৌঁছে যাবে আপনার এ অনুদান।<br/><br/>
+
+                        আপনার দেয়া অর্থ দিয়ে তৈরি হবে ডাক্তার এবং সকল স্বাস্থ্যকর্মীদের জন্য পারসোনাল প্রোটেক্টিভ ইকুইপমেন্ট (পিপিই)। লকডাউনের দিনগুলোয় উপার্জন করতে না পারা অসহায় শ্রমজীবী মানুষগুলোর জন্য কেনা হবে বেঁচে থাকার জন্য প্রয়োজনীয় খাবার।<br/><br/>
+
+                        যারা আপনার জন্য লড়াই করছে, তাদের সাহায্য করুন। আর অসহায় খেটে খাওয়া মানুষগুলোর পাশে দাঁড়ান।<br/><br/>
+
+                        Let’s Fight For Life. Stay Home. Stay Safe.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- <section class="content-top-margin wow fadeIn bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 text-center center-col">
                     <h1>Fight For Life</h1>
                     <p class="text-med width-90 center-col margin-five no-margin-bottom">
                         বিদ্যানন্দ, এক টাকায় আহার, গিফট ফর গুডস - এই সংগঠনগুলো কাজ করছে আপনাকে, আমাকে বাঁচিয়ে রাখতে। তৈরি করছে ডাক্তারদের জন্য পারসোনাল প্রোটেক্টিভ ইকুইপমেন্ট (পিপিই), আমাদের জন্য স্যানিটাইজার। খাবার পৌঁছে দিচ্ছে লকডাউনে আটকে পরা মানুষগুলোর কাছে। অসহায় খেটে খাওয়া মানুষগুলো, যাদের রোজগা্রের পথ অনির্দিষ্টকালের জন্য বন্ধ, তাদের বেঁচে থাকার ব্যবস্থা করছে।
@@ -59,14 +80,7 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="container-fluid margin-five no-margin-bottom">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 bg-fast-yellow padding-three text-center">
-                    <span class="text-small text-uppercase font-weight-600 black-text letter-spacing-2">Professionalism &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Excellence &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Respect</span>
-                </div>
-            </div>
-        </div> --}}
-    </section>
+    </section> --}}
     <!-- end about section -->
 
     <section id="contact" class="xs-onepage-section">
