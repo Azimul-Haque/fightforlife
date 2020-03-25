@@ -115,6 +115,9 @@
                             <a href="http://iit.du.ac.bd/">IIT Website</a>
                         </li>
                         <li>
+                            <a href="https://iitdualumni.com/">IIT Alumni</a>
+                        </li>
+                        <li>
                             <a href="{{ route('index.donationsummary') }}">Donation Summary</a>
                         </li>
                         {{-- <li>
