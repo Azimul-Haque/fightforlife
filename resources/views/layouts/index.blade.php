@@ -112,6 +112,9 @@
                     <!-- link -->
                     <ul class="list-inline footer-link text-uppercase">
                         <li>
+                            <a href="http://iit.du.ac.bd/">IIT Website</a>
+                        </li>
+                        <li>
                             <a href="{{ route('index.donationsummary') }}">Donation Summary</a>
                         </li>
                         {{-- <li>
