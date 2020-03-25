@@ -77,8 +77,8 @@
                                             <td>: ৳ *****</td>
                                         </tr>
                                         <tr>
-                                            <td>Donation Date</td>
-                                            <td>: {{ date('F d, Y', strtotime($donation->created_at)) }}</td>
+                                            <td>Donation Datetime</td>
+                                            <td>: {{ date('F d, Y h:i A', strtotime($donation->created_at)) }}</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -100,8 +100,8 @@
                                             <td><big>: ৳ *****</big></td>
                                         </tr>
                                         <tr>
-                                            <td><big>Donation Date</big></td>
-                                            <td><big>: {{ date('F d, Y', strtotime($donation->created_at)) }}</big></td>
+                                            <td><big>Donation Datetime</big></td>
+                                            <td><big>: {{ date('F d, Y h:i A', strtotime($donation->created_at)) }}</big></td>
                                         </tr>
                                     </table>
                                 </div>
