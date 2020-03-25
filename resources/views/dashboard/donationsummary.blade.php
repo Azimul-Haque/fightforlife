@@ -21,9 +21,9 @@
         <thead>
           <tr>
             <th>Donor Name</th>
-            <th>Donor Contact</th>
             <th>Institution/ Organization</th>
             <th>Amount, TrxID</th>
+            <th>AamarPay Charge</th>
             <th>Payment Method</th>
             <th>Datetime</th>
             <th>Action</th>
@@ -33,10 +33,10 @@
           <tbody>
               @foreach($donors as $donor)
                   <tr>
-                      <td><a href="{{ route('index.donatenext', $donor->donation_id) }}">{{ $donor->name }}</a></td>
-                      <td>{{ $donor->phone }}</td>
+                      <td><a href="{{ route('index.donatenext', $donor->donation_id) }}">{{ $donor->name }}</a><br/>{{ $donor->phone }}</td>
                       <td>{{ $donor->institute }}</td>
                       <td><big><b>৳ {{ $donor->amount }}</b></big><br/>{{ $donor->trxid }}</td>
+                      <td><big><b>৳ {{ $donor->aamarpay_charge }}</b></big></td>
                       <td>{{ $donor->card_type }}</td>
                       <td>{{ date('F d, Y h:i A', strtotime($donor->created_at)) }}</td>
                       <td></td>
