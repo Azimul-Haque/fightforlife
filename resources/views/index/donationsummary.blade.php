@@ -58,7 +58,7 @@
     </section>
 
     {{-- <section class="wow fadeIn bg-gray"> --}}
-    <section class="fix-background wow fadeIn " style="background-image:url('/images/iit_du.jpg');">
+    <section class="fix-background wow fadeIn " style="background-image:url('/images/iit_du.jpg?unique_id=2242424543');">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
