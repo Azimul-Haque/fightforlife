@@ -192,9 +192,8 @@
         </div>
     </section>
 
-    <section class="parallax2 parallax-fix">
-        <img class="parallax-background-img" src="/images/iit_du.jpg" alt="" />
-        <div class="slider-overlay bg-slider"></div>
+    <section class="fix-background white-text" style="background-image:url('/images/iit_du.jpg');">
+        <div class="opacity-full bg-white"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 text-center center-col">
