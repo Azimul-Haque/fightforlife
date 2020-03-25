@@ -58,7 +58,7 @@
     </section>
 
     {{-- <section class="wow fadeIn bg-gray"> --}}
-    <section class="fix-background wow fadeIn " style="background-image:url('/images/donor_list_back.jpg');">
+    <section class="fix-background wow fadeIn " style="background-image:url('/images/donor_list_back.jpg?u_id=54354534');">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
