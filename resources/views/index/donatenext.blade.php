@@ -5,6 +5,11 @@
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/stylesheet.css') }}">
+    <style type="text/css">
+        .table {
+            margin-bottom: 0px !important; 
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -63,7 +68,7 @@
                                 <div style="border: 2px solid #ddd; margin: 25px; padding: 5px;">
                                     <img src="/images/logo-02.png" style="height: 70px; padding: 5px;"><br/>
                                     <small>Initiative by IIT, University of Dhaka</small><br/><br/>
-                                    <table>
+                                    <table class="table table-condensed">
                                         <tr>
                                             <td width="40%">Donor Name</td>
                                             <td>: <b>{{ $donation->name }}</b></td>
@@ -83,10 +88,10 @@
                                     </table>
                                 </div>
                             @elsemobile
-                                <div style="border: 2px solid #ddd; margin: 25px; padding: 15px 0px 15px 0px;">
+                                <div style="border: 2px solid #ddd; margin: 25px; padding: 5px;">
                                     <img src="/images/logo-02.png" style="height: 70px; padding: 5px;"><br/>
                                     <small>Initiative by IIT, University of Dhaka</small><br/><br/>
-                                    <table>
+                                    <table class="table table-condensed">
                                         <tr>
                                             <td width="40%"><big>Donor Name</big></td>
                                             <td><big>: <b>{{ $donation->name }}</b></big></td>
@@ -100,7 +105,7 @@
                                             <td><big>: ৳ *****</big></td>
                                         </tr>
                                         <tr>
-                                            <td><big>Donation Datetime</big></td>
+                                            <td><big>Datetime</big></td>
                                             <td><big>: {{ date('F d, Y h:i A', strtotime($donation->created_at)) }}</big></td>
                                         </tr>
                                     </table>
