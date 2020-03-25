@@ -57,11 +57,12 @@
         </div>
     </section>
 
-    <section class="wow fadeIn bg-gray">
+    {{-- <section class="wow fadeIn bg-gray"> --}}
+    <section class="fix-background wow fadeIn " style="background-image:url('/images/iit_du.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <center><h2>Donor List</h2></center><br/><br/>
+                    <center><h2 class="white-text">Donor List</h2></center><br/><br/>
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>

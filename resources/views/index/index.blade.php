@@ -40,7 +40,7 @@
     </div>
     {{-- @include('partials._slider') --}}
     <!-- about section -->
-    <section class="fix-background white-text" style="background-image:url('/images/banner_back.png');">
+    <section class="fix-background white-text content-top-margin wow fadeIn" style="background-image:url('/images/banner_back.png');">
         {{-- <img class="parallax-background-img" src="/images/banner_back.png" alt="" />
         <div class="slider-overlay bg-slider"></div> --}}
         <div class="container">
