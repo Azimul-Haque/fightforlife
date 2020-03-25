@@ -25,7 +25,7 @@
             <th>Institution/ Organization</th>
             <th>Amount, TrxID</th>
             <th>Payment Method</th>
-            <th>Donation Date</th>
+            <th>Datetime</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -38,7 +38,7 @@
                       <td>{{ $donor->institute }}</td>
                       <td><big><b>৳ {{ $donor->amount }}</b></big><br/>{{ $donor->trxid }}</td>
                       <td>{{ $donor->card_type }}</td>
-                      <td>{{ date('F d, Y', strtotime($donor->created_at)) }}</td>
+                      <td>{{ date('F d, Y h:i A', strtotime($donor->created_at)) }}</td>
                       <td></td>
                   </tr>
               @endforeach
