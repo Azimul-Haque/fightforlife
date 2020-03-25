@@ -34,56 +34,93 @@
     </section>
     <!-- end head section -->
 
-    <section class="bg-deep-yellow">
+    <section>
         <div class="container">
             <div class="row">
-                <!-- features item -->
-                <div class="col-md-3 col-sm-6 sm-margin-bottom-four">
-                    <div class="restaurant-features-main bg-white">
-                        <div class="restaurant-features text-center">
-                            <img src="images/restaurant-img13.png" alt=""/>
-                            <span class="text-uppercase font-weight-600 letter-spacing-1 black-text margin-ten display-block no-margin-bottom">International Food</span>
-                            <span class="text-small letter-spacing-1 text-uppercase">World Famous Recipes</span>
-                        </div>
+                <div class="col-md-4">
+                    <span class="text-large display-block">Payment Gateway and</span>
+                    <span class="title-large text-uppercase letter-spacing-1 font-weight-600 black-text">Donation Info</span>
+                    <div class="separator-line-thick bg-fast-pink no-margin-lr"></div>
+                </div>
+                <div class="col-md-2 col-md-offset-2 text-center xs-margin-bottom-ten col-sm-4">
+                    <div class="special-gifts-box ">
+                        <span class="text-uppercase text-small letter-spacing-1">Total Donation</span><br/>
+                        <span class="gifts-off bg-fast-pink white-text">৳ {{ $totaldonationamount->total }}</span>
                     </div>
                 </div>
-                <!-- end features item -->
-                <!-- features item -->
-                <div class="col-md-3 col-sm-6 sm-margin-bottom-four">
-                    <div class="restaurant-features-main bg-white">
-                        <div class="restaurant-features text-center">
-                            <img src="images/restaurant-img14.png" alt=""/>
-                            <span class="text-uppercase font-weight-600 letter-spacing-1 black-text margin-ten display-block no-margin-bottom">Breakfast Available</span>
-                            <span class="text-small letter-spacing-1 text-uppercase">Specialized Morning</span>
-                        </div>
+                <div class="col-md-2 text-center xs-margin-bottom-ten col-sm-4">
+                    <div class="special-gifts-box ">
+                        <span class="text-uppercase text-small letter-spacing-1">Gateway Charge</span><br/>
+                        <span class="gifts-off bg-fast-pink white-text">৳ {{ $totalcharge->total }}</span>
                     </div>
                 </div>
-                <!-- end features item -->
-                <!-- features item -->
-                <div class="col-md-3 col-sm-6 xs-margin-bottom-four">
-                    <div class="restaurant-features-main bg-white">
-                        <div class="restaurant-features text-center">
-                            <img src="images/restaurant-img15.png" alt=""/>
-                            <span class="text-uppercase  font-weight-600 letter-spacing-1 black-text margin-ten display-block no-margin-bottom">Quiet Cafe Dining</span>
-                            <span class="text-small letter-spacing-1 text-uppercase">Private & Personalized</span>
-                        </div>
+                <div class="col-md-2 text-center col-sm-4">
+                    <div class="special-gifts-box ">
+                        <span class="text-uppercase text-small letter-spacing-1">Total Balance</span><br/>
+                        <span class="gifts-off bg-fast-pink white-text">৳ {{ $totaldonationamount->total - $totalcharge->total }}</span>
                     </div>
                 </div>
-                <!-- end features item -->
-                <!-- features item -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="restaurant-features-main bg-white">
-                        <div class="restaurant-features text-center">
-                            <img src="images/restaurant-img16.png" alt=""/>
-                            <span class="text-uppercase font-weight-600 letter-spacing-1 black-text margin-ten display-block no-margin-bottom">Exclusive Bar</span>
-                            <span class="text-small letter-spacing-1 text-uppercase">Start getting high</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- end features item -->
             </div>
         </div>
     </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="text-large display-block">Partner Affiliation and</span>
+                    <span class="title-large text-uppercase letter-spacing-1 font-weight-600 black-text">Distribution Info</span>
+                    <div class="separator-line-thick bg-fast-pink no-margin-lr"></div>
+                </div>
+                <div class="col-md-2 col-md-offset-2 text-center xs-margin-bottom-ten col-sm-4">
+                    <div class="special-gifts-box ">
+                        <span class="text-uppercase text-small letter-spacing-1">1</span><br/>
+                        <span class="gifts-off bg-fast-pink white-text">৳ 0</span>
+                    </div>
+                </div>
+                <div class="col-md-2 text-center xs-margin-bottom-ten col-sm-4">
+                    <div class="special-gifts-box ">
+                        <span class="text-uppercase text-small letter-spacing-1">2</span><br/>
+                        <span class="gifts-off bg-fast-pink white-text">৳ 0</span>
+                    </div>
+                </div>
+                <div class="col-md-2 text-center col-sm-4">
+                    <div class="special-gifts-box ">
+                        <span class="text-uppercase text-small letter-spacing-1">3</span><br/>
+                        <span class="gifts-off bg-fast-pink white-text">$ 0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="text-large display-block">Partner Affiliation and</span>
+                    <span class="title-large text-uppercase letter-spacing-1 font-weight-600 black-text">Distribution Info</span>
+                    <div class="separator-line-thick bg-fast-pink no-margin-lr"></div>
+                </div>
+                <div class="col-md-2 col-md-offset-2 text-center xs-margin-bottom-ten col-sm-4">
+                    <div class="special-gifts-box ">
+                        <span class="text-uppercase text-small letter-spacing-1">বিদ্যানন্দ</span><br/>
+                        <span class="gifts-off bg-fast-pink white-text">৳ 0</span>
+                    </div>
+                </div>
+                <div class="col-md-2 text-center xs-margin-bottom-ten col-sm-4">
+                    <div class="special-gifts-box ">
+                        <span class="text-uppercase text-small letter-spacing-1">এক টাকায় আহার</span><br/>
+                        <span class="gifts-off bg-fast-pink white-text">৳ 0</span>
+                    </div>
+                </div>
+                <div class="col-md-2 text-center col-sm-4">
+                    <div class="special-gifts-box ">
+                        <span class="text-uppercase text-small letter-spacing-1">গিফট ফর গুড</span><br/>
+                        <span class="gifts-off bg-fast-pink white-text">$ 0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> --}}
 @endsection
 
 @section('js')

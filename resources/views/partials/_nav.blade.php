@@ -74,6 +74,9 @@
                         <li>
                             <a href="{{ route('index.donationsummary') }}">Donation Summary</a>
                         </li>
+                        <li>
+                            <a href="{{ route('index.statement') }}">Statement</a>
+                        </li>
                         {{-- <li>
                             <a href="{{ route('index.affiliated') }}">Affiliated Partners</a>
                         </li> --}}
