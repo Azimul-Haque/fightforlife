@@ -77,7 +77,7 @@
                                             <td>: ৳ *****</td>
                                         </tr>
                                         <tr>
-                                            <td>Donation Datetime</td>
+                                            <td>Datetime</td>
                                             <td>: {{ date('F d, Y h:i A', strtotime($donation->created_at)) }}</td>
                                         </tr>
                                     </table>

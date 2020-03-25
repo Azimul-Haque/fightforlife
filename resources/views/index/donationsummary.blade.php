@@ -70,7 +70,7 @@
                                     <th>Donor Contact</th>
                                     <th>Institution/ Organization</th>
                                     {{-- <th>Donation Amount</th> --}}
-                                    <th>Donation Date</th>
+                                    <th>Donation Datetime</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,7 +80,7 @@
                                         <td>{{ substr($donor->phone, 0, -4) }}****</td>
                                         <td>{{ $donor->institute }}</td>
                                         {{-- <td>৳ {{ $donor->amount }}</td> --}}
-                                        <td>{{ date('F d, Y', strtotime($donor->created_at)) }}</td>
+                                        <td>{{ date('F d, Y h:i A', strtotime($donor->created_at)) }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
