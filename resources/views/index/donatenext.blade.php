@@ -70,7 +70,7 @@
                                     <small>Initiative by IIT, University of Dhaka</small><br/><br/>
                                     <table class="table table-condensed">
                                         <tr>
-                                            <td width="40%">Donor Name</td>
+                                            <td width="30%">Donor Name</td>
                                             <td>: <b>{{ $donation->name }}</b></td>
                                         </tr>
                                         <tr>
@@ -93,7 +93,7 @@
                                     <small>Initiative by IIT, University of Dhaka</small><br/><br/>
                                     <table class="table table-condensed">
                                         <tr>
-                                            <td width="40%"><big>Donor Name</big></td>
+                                            <td width="30%"><big>Donor Name</big></td>
                                             <td><big>: <b>{{ $donation->name }}</b></big></td>
                                         </tr>
                                         <tr>
