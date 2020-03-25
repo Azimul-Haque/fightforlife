@@ -22,7 +22,8 @@
         <tr>
           <th width="20%">Name</th>
           <th width="20%">Email</th>
-          <th width="20%">Contact</th>
+          <th width="15%">Contact</th>
+          <th>Datetime</th>
           <th>Message</th>
         </tr>
       </thead>
@@ -32,6 +33,7 @@
           <td>{{ $message->name }}</td>
           <td>{{ $message->email }}</td>
           <td>{{ $message->phone }}</td>
+          <td>{{ date('F d, Y h:i A', strtotime($message->created_at)) }}</td>
           <td>{{ $message->message }}</td>
         </tr>
         @endforeach
