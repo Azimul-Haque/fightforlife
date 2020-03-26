@@ -9,6 +9,7 @@ use App\Adhocmember;
 use App\User;
 use App\Donation;
 use App\Formmessage;
+use App\Partner;
 
 use DB;
 use Auth;
@@ -56,6 +57,12 @@ class DashboardController extends Controller
                     ->withTotaldonations($totaldonations)
                     ->withTotaldonationamount($totaldonationamount)
                     ->withDonors($donors);
+    }
+
+    public function getPartners()
+    {
+        $partners = Partner::all();
+        return view('dashboard.partners')->withPartners($partners);
     }
 
     public function getCommittee()
@@ -191,8 +198,8 @@ class DashboardController extends Controller
     public function getMembers()
     {
         $members = User::where('payment_status', 1)
-                            ->where('role', 'alumni')
-                            ->get();
+                       ->where('role', 'alumni')
+                       ->get();
         return view('dashboard.members')->withMembers($members);
     }
 

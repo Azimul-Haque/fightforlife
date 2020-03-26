@@ -53,6 +53,12 @@
       ),
       4 => 
       array (
+        'text' => 'Partners',
+        'route' => 'dashboard.partners',
+        'icon' => 'handshake-o',
+      ),
+      5 => 
+      array (
         'text' => 'Messages',
         'route' => 'dashboard.contactmessages',
         'icon' => 'envelope',
@@ -81,7 +87,7 @@
     'timezone' => 'Asia/Dhaka',
     'locale' => 'en',
     'fallback_locale' => 'en',
-    'key' => 'base64:2u60rq61p4VEdX6YOyRyBTbOm/9W1t1ev9RBYfWQAFE=',
+    'key' => 'base64:UIIejB34H1fXP3l+ITU2DrXTOrsrXNH4Xjl00Cw5ihM=',
     'cipher' => 'AES-256-CBC',
     'log' => 'single',
     'providers' => 

@@ -55,6 +55,7 @@ Route::get('/dashboard', ['as'=>'dashboard.index','uses'=>'DashboardController@i
 
 Route::get('/dashboard/donations', ['as'=>'dashboard.donations','uses'=>'DashboardController@getDonations']);
 Route::get('/dashboard/contact/messages', ['as'=>'dashboard.contactmessages','uses'=>'DashboardController@getContactMessage']);
+Route::get('/dashboard/partners', ['as'=>'dashboard.partners','uses'=>'DashboardController@getPartners']);
 
 Route::get('/dashboard/members', ['as'=>'dashboard.members','uses'=>'DashboardController@getMembers']);
 Route::delete('/dashboard/deletemember/{id}', ['as'=>'dashboard.deletemember','uses'=>'DashboardController@deleteMember']);

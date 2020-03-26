@@ -10,6 +10,7 @@ return array(
     'AssertionError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
     'CreateDonationsTable' => $baseDir . '/database/migrations/2020_03_24_022734_create_donations_table.php',
     'CreateFormmessagesTable' => $baseDir . '/database/migrations/2020_03_25_011533_create_formmessages_table.php',
+    'CreatePartnersTable' => $baseDir . '/database/migrations/2020_03_26_173343_create_partners_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',

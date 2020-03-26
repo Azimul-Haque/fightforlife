@@ -401,6 +401,7 @@ class ComposerStaticInit5ba844acaeab7533148c65467b83a279
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'CreateDonationsTable' => __DIR__ . '/../..' . '/database/migrations/2020_03_24_022734_create_donations_table.php',
         'CreateFormmessagesTable' => __DIR__ . '/../..' . '/database/migrations/2020_03_25_011533_create_formmessages_table.php',
+        'CreatePartnersTable' => __DIR__ . '/../..' . '/database/migrations/2020_03_26_173343_create_partners_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',

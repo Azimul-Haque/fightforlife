@@ -119,7 +119,13 @@ return [
             'text' => 'Donations',
             'route'  => 'dashboard.donations',
             'icon' => 'line-chart',
-        ],[
+        ],
+        [
+            'text' => 'Partners',
+            'route'  => 'dashboard.partners',
+            'icon' => 'handshake-o',
+        ],
+        [
             'text' => 'Messages',
             'route'  => 'dashboard.contactmessages',
             'icon' => 'envelope',
