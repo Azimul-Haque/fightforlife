@@ -66,43 +66,21 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <span class="text-large display-block">Partner Affiliation and</span>
                     <span class="title-large text-uppercase letter-spacing-1 font-weight-600 black-text">Distribution Info</span>
                     <div class="separator-line-thick bg-fast-pink no-margin-lr"></div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-3 text-center xs-margin-bottom-ten">
-                            <div class="special-gifts-box ">
-                                <span class="text-uppercase text-small letter-spacing-1">1</span><br/>
-                                <span class="gifts-off bg-fast-pink white-text">৳ 0</span>
-                            </div><br/>
-                        </div>
-                        <div class="col-md-3 text-center xs-margin-bottom-ten">
-                            <div class="special-gifts-box ">
-                                <span class="text-uppercase text-small letter-spacing-1">2</span><br/>
-                                <span class="gifts-off bg-fast-pink white-text">৳ 0</span>
-                            </div><br/>
-                        </div>
-                        <div class="col-md-3 text-center xs-margin-bottom-ten">
-                            <div class="special-gifts-box ">
-                                <span class="text-uppercase text-small letter-spacing-1">3</span><br/>
-                                <span class="gifts-off bg-fast-pink white-text">$ 0</span>
-                            </div><br/>
-                        </div>
-                        <div class="col-md-3 text-center xs-margin-bottom-ten">
-                            <div class="special-gifts-box ">
-                                <span class="text-uppercase text-small letter-spacing-1">3</span><br/>
-                                <span class="gifts-off bg-fast-pink white-text">$ 0</span>
-                            </div><br/>
-                        </div>
-                        <div class="col-md-3 text-center xs-margin-bottom-ten">
-                            <div class="special-gifts-box ">
-                                <span class="text-uppercase text-small letter-spacing-1">3</span><br/>
-                                <span class="gifts-off bg-fast-pink white-text">$ 0</span>
-                            </div><br/>
-                        </div>
+                        @foreach($partners as $partner)
+                            <div class="col-md-4 col-sm-4 text-center xs-margin-bottom-ten">
+                                <div class="special-gifts-box ">
+                                    <span class="text-uppercase text-small">{{ $partner->name }}</span><br/>
+                                    <span class="gifts-off bg-fast-pink white-text">৳ {{ $partner->amount }}</span>
+                                </div><br/>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
                 

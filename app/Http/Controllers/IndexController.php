@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\User;
 use App\Donation;
 use App\Formmessage;
+use App\Partner;
 
 use Carbon\Carbon;
 use DB;
@@ -200,10 +201,12 @@ class IndexController extends Controller
                                  ->where('payment_status', 1)
                                  ->select(DB::raw('SUM(aamarpay_charge) AS total'))
                                  ->first();
+        $partners = Partner::all();                        
 
         return view('index.statement')
                     ->withTotaldonationamount($totaldonationamount)
-                    ->withTotalcharge($totalcharge);
+                    ->withTotalcharge($totalcharge)
+                    ->withPartners($partners);
     }
 
     public function getAffiliated()

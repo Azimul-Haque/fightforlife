@@ -65,6 +65,59 @@ class DashboardController extends Controller
         return view('dashboard.partners')->withPartners($partners);
     }
 
+    public function storePartner(Request $request)
+    {
+        $this->validate($request,array(
+            'name'                      => 'required|max:255',
+            'address'                   => 'required|max:255',
+            'phone'                     => 'sometimes|numeric',
+            'amount'                    => 'required'
+        ));
+
+        $partner = new Partner;
+        $partner->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
+        $partner->address = htmlspecialchars(preg_replace("/\s+/", " ", $request->address));
+        $partner->phone = htmlspecialchars(preg_replace("/\s+/", " ", $request->phone));
+        $partner->amount = $request->amount;
+
+        $partner->save();
+        
+        Session::flash('success', 'Saved Successfully!');
+        return redirect()->route('dashboard.partners');
+    }
+
+    public function updatePartner(Request $request, $id)
+    {
+        $this->validate($request,array(
+            'name'                      => 'required|max:255',
+            'address'                   => 'required|max:255',
+            'phone'                     => 'sometimes|numeric',
+            'amount'                    => 'required'
+        ));
+
+        $partner = Partner::find($id);
+        $partner->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
+        $partner->address = htmlspecialchars(preg_replace("/\s+/", " ", $request->address));
+        $partner->phone = htmlspecialchars(preg_replace("/\s+/", " ", $request->phone));
+        $partner->amount = $request->amount;
+
+        $partner->save();
+        
+        Session::flash('success', 'Updated Successfully!');
+        return redirect()->route('dashboard.partners');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     public function getCommittee()
     {
         $adhocmembers = Adhocmember::orderBy('id', 'desc')->get();
@@ -109,6 +162,8 @@ class DashboardController extends Controller
         Session::flash('success', 'Saved Successfully!');
         return redirect()->route('dashboard.committee');
     }
+
+    
 
     public function updateCommittee(Request $request, $id) {
         $this->validate($request,array(
