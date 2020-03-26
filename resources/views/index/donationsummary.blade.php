@@ -87,7 +87,9 @@
                             </tbody>
                         </table>
                     </div>
-                    {{ $donors->links() }}
+                    <center>
+                        {{ $donors->links() }}
+                    </center>
                 </div>
             </div>
         </div>
