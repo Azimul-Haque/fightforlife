@@ -118,7 +118,7 @@
                             <a href="https://iitdualumni.com/">IIT Alumni</a>
                         </li>
                         <li>
-                            <a href="{{ route('index.donationsummary') }}">Donation Summary</a>
+                            <a href="{{ route('index.donationsummary') }}">Summary</a>
                         </li>
                         <li>
                             <a href="{{ route('index.statement') }}">Statement</a>
