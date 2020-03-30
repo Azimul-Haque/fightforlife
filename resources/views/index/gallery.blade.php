@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('title')
-    Distribution Partners
+    Gallery
 @endsection
 
 @section('css')
@@ -14,7 +14,7 @@
             <div class="row">
                 <!-- section title -->
                 <div class="col-md-6 col-sm-6 xs-margin-bottom-four">
-                    <span class="text-large letter-spacing-2 black-text font-weight-600 text-uppercase agency-title">Distribution Partners</span>
+                    <span class="text-large letter-spacing-2 black-text font-weight-600 text-uppercase agency-title">Gallery</span>
                 </div>
                 <!-- end section title -->
                 <!-- section highlight text -->
