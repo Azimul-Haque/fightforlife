@@ -35,7 +35,7 @@
                     <img src="/images/partners/gfg.png" alt=""/>
                     <figure class="position-relative bg-white">
                         <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Gift for Good</span>
-                        <span class="team-post text-uppercase letter-spacing-2 display-block">Donation Amount: ৳ </span>
+                        <span class="team-post text-uppercase letter-spacing-2 display-block">Donation Amount: ৳ 62500</span>
                     </figure>
                     <div class="team-details">
                         <h5 class="team-headline white-text text-uppercase font-weight-600">Gift for Good</h5>

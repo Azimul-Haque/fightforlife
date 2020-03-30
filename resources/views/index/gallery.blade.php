@@ -38,8 +38,8 @@
                                     <figure>
                                         <div class="gallery-img"><a href="/images/gallery/1.jpg" title=""><img src="/images/gallery/1.jpg" alt=""></a></div>
                                         <figcaption>
-                                            <h3>Alexander Lewis</h3>
-                                            <p>Fashion Model</p>
+                                            <h3>Gift for Good</h3>
+                                            <p>Date: March 30, 2020</p>
                                         </figcaption>
                                     </figure>
                                 </li>
@@ -47,8 +47,8 @@
                                     <figure>
                                         <div class="gallery-img"><a href="/images/gallery/2.jpg" title=""><img src="/images/gallery/2.jpg" alt=""></a></div>
                                         <figcaption>
-                                            <h3>Alexander Lewis</h3>
-                                            <p>Fashion Model</p>
+                                            <h3>Gift for Good</h3>
+                                            <p>Date: March 30, 2020</p>
                                         </figcaption>
                                     </figure>
                                 </li>
@@ -56,8 +56,8 @@
                                     <figure>
                                         <div class="gallery-img"><a href="/images/gallery/3.jpg" title=""><img src="/images/gallery/3.jpg" alt=""></a></div>
                                         <figcaption>
-                                            <h3>Alexander Lewis</h3>
-                                            <p>Fashion Model</p>
+                                            <h3>Gift for Good</h3>
+                                            <p>Date: March 30, 2020</p>
                                         </figcaption>
                                     </figure>
                                 </li>
@@ -65,8 +65,8 @@
                                     <figure>
                                         <div class="gallery-img"><a href="/images/gallery/4.jpg" title=""><img src="/images/gallery/4.jpg" alt=""></a></div>
                                         <figcaption>
-                                            <h3>Alexander Lewis</h3>
-                                            <p>Fashion Model</p>
+                                            <h3>Gift for Good</h3>
+                                            <p>Date: March 30, 2020</p>
                                         </figcaption>
                                     </figure>
                                 </li>
