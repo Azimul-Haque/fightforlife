@@ -80,12 +80,12 @@
                         {{-- <li>
                             <a href="{{ route('index.affiliated') }}">Affiliated Partners</a>
                         </li> --}}
-                        {{-- <li>
-                            <a href="{{ route('index.distribution') }}">Distribution Partners</a>
-                        </li> --}}
-                        {{-- <li>
-                            <a href="{{ route('index.donate') }}">Donate</a>
-                        </li> --}}
+                        <li>
+                            <a href="{{ route('index.distribution') }}">Partners</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('index.gallery') }}">Gallery</a>
+                        </li>
                         <li>
                             <a href="{{ route('index.contact') }}">Contact</a>
                         </li>

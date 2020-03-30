@@ -27,38 +27,104 @@
     </section>
     <!-- end head section -->
 
-    <section id="approach" class="approach parallax1 parallax-fix  parallax-section-main">
-        <div class="carousel slide carousel-slide" id="myCarousel3"> 
-            <div class="container">
-                <div class="row">
-                    <!-- section title -->
-                    {{-- <div class="col-md-12 text-center">
-                        <h3 class="section-title section-title-services no-padding-bottom">Our Partners</h3>
-                    </div> --}}
-                    <!-- end section title -->
-                </div>
-                <div class="carousel-inner margin-seven no-margin-bottom">
-                    <div class="item active"> 
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 1</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 2</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 3</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 4</h5></div>
-                    </div>
-                    <div class="item"> 
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 5</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 6</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 7</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 8</h5></div>
+    <section id="approach" class="wow fadeInUp">
+        <div class="container">
+            <div class="row margin-ten no-margin-bottom">
+                <!-- team member -->
+                <div class="col-md-4 col-sm-6 text-center team-member position-relative wow fadeInUp" data-wow-duration="300ms">
+                    <img src="/images/partners/gfg.png" alt=""/>
+                    <figure class="position-relative bg-white">
+                        <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Gift for Good</span>
+                        <span class="team-post text-uppercase letter-spacing-2 display-block">Donation Amount: ৳ </span>
+                    </figure>
+                    <div class="team-details">
+                        <h5 class="team-headline white-text text-uppercase font-weight-600">Gift for Good</h5>
+                        <p class="width-70 center-col light-gray-text margin-five">+8801303-603771</p>
+                        <div class="separator-line-thick bg-white"></div>
                     </div>
                 </div>
+                <!-- end team member -->
+                <!-- team member -->
+                {{-- <div class="col-md-4 col-sm-6 text-center team-member position-relative wow fadeInUp" data-wow-duration="600ms">
+                    <img src="images/team-member9.jpg" alt=""/>
+                    <figure class="position-relative bg-white">
+                        <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Herman Miller</span>
+                        <span class="team-post text-uppercase letter-spacing-2 display-block">Co-Founder / Design</span>
+                        <div class="person-social margin-five no-margin-bottom"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-google-plus"></i></a></div>
+                    </figure>
+                    <div class="team-details">
+                        <h5 class="team-headline white-text text-uppercase font-weight-600">I am Creative</h5>
+                        <p class="width-70 center-col light-gray-text margin-five">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                        <div class="separator-line-thick bg-white"></div>
+                    </div>
+                </div> --}}
+                <!-- end team member -->
+                <!-- team member -->
+                {{-- <div class="col-md-4 col-sm-6 text-center team-member position-relative wow fadeInUp" data-wow-duration="900ms">
+                    <img src="images/team-member10.jpg" alt=""/>
+                    <figure class="position-relative bg-white">
+                        <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Bryan Jonhson</span>
+                        <span class="team-post text-uppercase letter-spacing-2 display-block">Art Director</span>
+                        <div class="person-social margin-five no-margin-bottom"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-google-plus"></i></a></div>
+                    </figure>
+                    <div class="team-details">
+                        <h5 class="team-headline white-text text-uppercase font-weight-600">I am Hungry</h5>
+                        <p class="width-70 center-col light-gray-text margin-five">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                        <div class="separator-line-thick bg-white"></div>
+                    </div>
+                </div> --}}
+                <!-- end team member -->
+                <!-- team member -->
+                {{-- <div class="col-md-4 col-sm-6 text-center team-member position-relative wow fadeInUp" data-wow-duration="300ms">
+                    <img src="images/team-member11.jpg" alt=""/>
+                    <figure class="position-relative bg-white">
+                        <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Jeremy Dupont</span>
+                        <span class="team-post text-uppercase letter-spacing-2 display-block">Creative Director</span>
+                        <div class="person-social margin-five no-margin-bottom"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-google-plus"></i></a></div>
+                    </figure>
+                    <div class="team-details">
+                        <h5 class="team-headline white-text text-uppercase font-weight-600">I am Creative</h5>
+                        <p class="width-70 center-col light-gray-text margin-five">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                        <div class="separator-line-thick bg-white"></div>
+                    </div>
+                </div> --}}
+                <!-- end team member -->
+                <!-- team member -->
+                {{-- <div class="col-md-4 col-sm-6 text-center team-member position-relative wow fadeInUp" data-wow-duration="600ms">
+                    <img src="images/team-member12.jpg" alt=""/>
+                    <figure class="position-relative bg-white">
+                        <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Steve Anders</span>
+                        <span class="team-post text-uppercase letter-spacing-2 display-block">Head Developer</span>
+                        <div class="person-social margin-five no-margin-bottom"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-google-plus"></i></a></div>
+                    </figure>
+                    <div class="team-details">
+                        <h5 class="team-headline white-text text-uppercase font-weight-600">I am Leader</h5>
+                        <p class="width-70 center-col light-gray-text margin-five">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                        <div class="separator-line-thick bg-white"></div>
+                    </div>
+                </div> --}}
+                <!-- end team member -->
+                <!-- team member -->
+                {{-- <div class="col-md-4 col-sm-6 text-center team-member position-relative wow fadeInUp" data-wow-duration="900ms">
+                    <img src="images/team-member13.jpg" alt=""/>
+                    <figure class="position-relative bg-white">
+                        <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Bryan Johnson</span>
+                        <span class="team-post text-uppercase letter-spacing-2 display-block">HR Manager</span>
+                        <div class="person-social margin-five no-margin-bottom"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-google-plus"></i></a></div>
+                    </figure>
+                    <div class="team-details">
+                        <h5 class="team-headline white-text text-uppercase font-weight-600">I am Creative</h5>
+                        <p class="width-70 center-col light-gray-text margin-five">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                        <div class="separator-line-thick bg-white"></div>
+                    </div>
+                </div> --}}
+                <!-- end team member -->
             </div>
-            <!-- slider controls --> 
-            <a data-slide="prev" href="#myCarousel3" class="left carousel-control"> <img alt="" src="/images/arrow-pre.png"> </a> <a data-slide="next" href="#myCarousel3" class="right carousel-control"> <img alt="" src="/images/arrow-next.png"> </a>
         </div>
     </section>
     
 @endsection
 
 @section('js')
-   
+
 @endsection

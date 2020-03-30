@@ -219,6 +219,11 @@ class IndexController extends Controller
         return view('index.distribution');
     }
 
+    public function getGallery()
+    {
+        return view('index.distribution');
+    }
+
     public function getFaq()
     {
         return view('index.faq');

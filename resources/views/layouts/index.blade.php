@@ -123,9 +123,12 @@
                         <li>
                             <a href="{{ route('index.statement') }}">Statement</a>
                         </li>
-                        {{-- <li>
-                            <a href="{{ route('index.distribution') }}">Distribution Partners</a>
-                        </li> --}}
+                        <li>
+                            <a href="{{ route('index.distribution') }}">Partners</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('index.gallery') }}">Gallery</a>
+                        </li>
                         <li>
                             <a href="{{ route('index.contact') }}">Contact</a>
                         </li>
@@ -220,15 +223,7 @@
     @yield('js')
 
     <script type="text/javascript">
-        $(".owl-carousel").owlCarousel({
-            autoPlay: 5000,
-            items : 1, // THIS IS IMPORTANT
-            responsive : {
-                480 : { items : 1  }, // from zero to 480 screen width 4 items
-                768 : { items : 2  }, // from 480 screen widthto 768 6 items
-                1024 : { items : 3 } // from 768 screen width to 1024 8 items 
-            },
-      });
+       
     </script>
 </body>
 

@@ -31,6 +31,7 @@ Route::get('/donation/summary', ['as'=>'index.donationsummary','uses'=>'IndexCon
 Route::get('/statement', ['as'=>'index.statement','uses'=>'IndexController@getStatement']);
 Route::get('/donation/affiliated', ['as'=>'index.affiliated','uses'=>'IndexController@getAffiliated']);
 Route::get('/donation/distribution', ['as'=>'index.distribution','uses'=>'IndexController@getDistribution']);
+Route::get('/gallery', ['as'=>'index.gallery','uses'=>'IndexController@getGallery']);
 
 Route::get('/faq', ['as'=>'index.faq','uses'=>'IndexController@getFaq']);
 Route::get('/members', ['as'=>'index.members','uses'=>'IndexController@getMembers']);
