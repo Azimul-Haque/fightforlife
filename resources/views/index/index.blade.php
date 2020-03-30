@@ -166,7 +166,7 @@
     </section>
 
     <section id="approach" class="approach parallax1 parallax-fix  parallax-section-main">
-        <div class="carousel slide carousel-slide" id="myCarousel3"> 
+        <div class="carousel slide carousel-slide" id="partnersCarousal"> 
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
@@ -188,7 +188,7 @@
                     </div> --}}
                 </div>
             </div> 
-            <a data-slide="prev" href="#myCarousel3" class="left carousel-control"> <img alt="" src="/images/arrow-pre.png"> </a> <a data-slide="next" href="#myCarousel3" class="right carousel-control"> <img alt="" src="/images/arrow-next.png"> </a>
+            <a data-slide="prev" href="#partnersCarousal" class="left carousel-control"> <img alt="" src="/images/arrow-pre.png"> </a> <a data-slide="next" href="#partnersCarousal" class="right carousel-control"> <img alt="" src="/images/arrow-next.png"> </a>
         </div>
     </section>
 
