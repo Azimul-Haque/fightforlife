@@ -88,9 +88,8 @@
                         </table>
                     </div>
                     <center>
-                        <center>
-                            @include('pagination.default', ['paginator' => $donors])
-                        </center>
+                        {{ $donors->links() }}
+                        {{-- @include('pagination.default', ['paginator' => $donors]) --}}
                     </center>
                 </div>
             </div>
