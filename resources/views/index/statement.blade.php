@@ -48,24 +48,24 @@
                 <div class="col-md-4">
                     <span class="text-large display-block">Payment Gateway and</span>
                     <span class="title-large text-uppercase letter-spacing-1 font-weight-600 black-text">Donation Info</span>
-                    <div class="separator-line-thick bg-fast-blue no-margin-lr"></div>
+                    <div class="separator-line-thick bg-fast-pink no-margin-lr"></div>
                 </div>
                 <div class="col-md-2 col-md-offset-2 text-center xs-margin-bottom-ten col-sm-4">
                     <div class="special-gifts-box ">
                         <span class="text-uppercase text-small letter-spacing-1">Total Donation</span><br/>
-                        <span class="gifts-off bg-fast-blue white-text">৳ {{ $totaldonationamount->total - $totalcharge->total }}</span>
+                        <span class="gifts-off bg-fast-pink white-text">৳ {{ $totaldonationamount->total - $totalcharge->total }}</span>
                     </div>
                 </div>
                 <div class="col-md-2 text-center xs-margin-bottom-ten col-sm-4">
                     <div class="special-gifts-box ">
                         <span class="text-uppercase text-small letter-spacing-1">Total Disbursed</span><br/>
-                        <span class="gifts-off bg-fast-blue white-text">৳ {{ $totaldusburse->total }}</span>
+                        <span class="gifts-off bg-fast-pink white-text">৳ {{ $totaldusburse->total }}</span>
                     </div>
                 </div>
                 <div class="col-md-2 text-center col-sm-4">
                     <div class="special-gifts-box ">
                         <span class="text-uppercase text-small letter-spacing-1">Balance</span><br/>
-                        <span class="gifts-off bg-fast-blue white-text">৳ {{ $totaldonationamount->total - $totalcharge->total - $totaldusburse->total }}</span>
+                        <span class="gifts-off bg-fast-pink white-text">৳ {{ $totaldonationamount->total - $totalcharge->total - $totaldusburse->total }}</span>
                     </div>
                 </div>
             </div>
