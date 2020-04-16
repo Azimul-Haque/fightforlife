@@ -201,11 +201,16 @@ class IndexController extends Controller
                                  ->where('payment_status', 1)
                                  ->select(DB::raw('SUM(aamarpay_charge) AS total'))
                                  ->first();
-        $partners = Partner::all();                        
+        $totaldusburse = DB::table('partners')
+                                 ->select(DB::raw('SUM(amount) AS total'))
+                                 ->first();
+
+        $partners = Partner::all();
 
         return view('index.statement')
                     ->withTotaldonationamount($totaldonationamount)
                     ->withTotalcharge($totalcharge)
+                    ->withTotaldusburse($totaldusburse)
                     ->withPartners($partners);
     }
 

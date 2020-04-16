@@ -45,19 +45,19 @@
                 <div class="col-md-2 col-md-offset-2 text-center xs-margin-bottom-ten col-sm-4">
                     <div class="special-gifts-box ">
                         <span class="text-uppercase text-small letter-spacing-1">Total Donation</span><br/>
-                        <span class="gifts-off bg-fast-pink white-text">৳ {{ $totaldonationamount->total }}</span>
+                        <span class="gifts-off bg-fast-pink white-text">৳ {{ $totaldonationamount->total - $totalcharge->total }}</span>
                     </div>
                 </div>
                 <div class="col-md-2 text-center xs-margin-bottom-ten col-sm-4">
                     <div class="special-gifts-box ">
-                        <span class="text-uppercase text-small letter-spacing-1">Gateway Charge</span><br/>
-                        <span class="gifts-off bg-fast-pink white-text">৳ {{ $totalcharge->total }}</span>
+                        <span class="text-uppercase text-small letter-spacing-1">Total Disbursed</span><br/>
+                        <span class="gifts-off bg-fast-pink white-text">৳ {{ $totaldusburse->total }}</span>
                     </div>
                 </div>
                 <div class="col-md-2 text-center col-sm-4">
                     <div class="special-gifts-box ">
-                        <span class="text-uppercase text-small letter-spacing-1">Total Balance</span><br/>
-                        <span class="gifts-off bg-fast-pink white-text">৳ {{ $totaldonationamount->total - $totalcharge->total }}</span>
+                        <span class="text-uppercase text-small letter-spacing-1">Balance</span><br/>
+                        <span class="gifts-off bg-fast-pink white-text">৳ {{ $totaldonationamount->total - $totalcharge->total - $totaldusburse->total }}</span>
                     </div>
                 </div>
             </div>
