@@ -73,19 +73,18 @@
                 </div>
                 <!-- end team member -->
                 <!-- team member -->
-                {{-- <div class="col-md-4 col-sm-6 text-center team-member position-relative wow fadeInUp" data-wow-duration="300ms">
-                    <img src="images/team-member11.jpg" alt=""/>
+                <div class="col-md-4 col-sm-6 text-center team-member position-relative wow fadeInUp" data-wow-duration="600ms">
+                    <img src="/images/partners/tg.jpg" alt="Gazipur Local Club"/>
                     <figure class="position-relative bg-white">
-                        <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Jeremy Dupont</span>
-                        <span class="team-post text-uppercase letter-spacing-2 display-block">Creative Director</span>
-                        <div class="person-social margin-five no-margin-bottom"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-google-plus"></i></a></div>
+                        <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Gazipur Local Club</span>
+                        <span class="team-post text-uppercase letter-spacing-2 display-block">Donation Amount: ৳ 20000</span>
                     </figure>
                     <div class="team-details">
-                        <h5 class="team-headline white-text text-uppercase font-weight-600">I am Creative</h5>
-                        <p class="width-70 center-col light-gray-text margin-five">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                        <h5 class="team-headline white-text text-uppercase font-weight-600">Gazipur Local Club</h5>
+                        <p class="width-70 center-col light-gray-text margin-five">+8801686-168911</p>
                         <div class="separator-line-thick bg-white"></div>
                     </div>
-                </div> --}}
+                </div>
                 <!-- end team member -->
                 <!-- team member -->
                 {{-- <div class="col-md-4 col-sm-6 text-center team-member position-relative wow fadeInUp" data-wow-duration="600ms">
