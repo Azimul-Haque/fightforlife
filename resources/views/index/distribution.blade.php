@@ -60,13 +60,13 @@
                 <!-- end team member -->
                 <!-- team member -->
                 <div class="col-md-4 col-sm-6 text-center team-member position-relative wow fadeInUp" data-wow-duration="600ms">
-                    <img src="/images/partners/tg.jpg" alt="Heroes Of COVID19, Thakurgaon"/>
+                    <img src="/images/partners/tg.jpg" alt="Heroes of COVID19, Thakurgaon"/>
                     <figure class="position-relative bg-white">
-                        <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Heroes Of COVID19, Thakurgaon</span>
+                        <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Heroes of COVID19, Thakurgaon</span>
                         <span class="team-post text-uppercase letter-spacing-2 display-block">Donation Amount: ৳ 21000</span>
                     </figure>
                     <div class="team-details">
-                        <h5 class="team-headline white-text text-uppercase font-weight-600">Heroes Of COVID19, Thakurgaon</h5>
+                        <h5 class="team-headline white-text text-uppercase font-weight-600">Heroes of COVID19, Thakurgaon</h5>
                         <p class="width-70 center-col light-gray-text margin-five">+8801521-429327</p>
                         <div class="separator-line-thick bg-white"></div>
                     </div>
