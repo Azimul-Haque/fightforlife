@@ -32,7 +32,7 @@
             <div class="row margin-ten no-margin-bottom">
                 <!-- team member -->
                 <div class="col-md-4 col-sm-6 text-center team-member position-relative wow fadeInUp" data-wow-duration="300ms">
-                    <img src="/images/partners/gfg.png" alt=""/>
+                    <img src="/images/partners/gfg.png" alt="Gift for Good"/>
                     <figure class="position-relative bg-white">
                         <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Gift for Good</span>
                         <span class="team-post text-uppercase letter-spacing-2 display-block">Donation Amount: ৳ 62500</span>
@@ -46,11 +46,10 @@
                 <!-- end team member -->
                 <!-- team member -->
                 <div class="col-md-4 col-sm-6 text-center team-member position-relative wow fadeInUp" data-wow-duration="600ms">
-                    <img src="images/team-member9.jpg" alt=""/>
+                    <img src="/images/partners/feni_leo.jpg" alt="Feni Muhuri Leo Club"/>
                     <figure class="position-relative bg-white">
                         <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Feni Muhuri Leo Club</span>
                         <span class="team-post text-uppercase letter-spacing-2 display-block">Donation Amount: ৳ 13750</span>
-                        <div class="person-social margin-five no-margin-bottom"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-google-plus"></i></a></div>
                     </figure>
                     <div class="team-details">
                         <h5 class="team-headline white-text text-uppercase font-weight-600">Feni Muhuri Leo Club</h5>
