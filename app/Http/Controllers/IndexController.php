@@ -34,9 +34,15 @@ class IndexController extends Controller
                                  ->where('payment_status', 1)
                                  ->select(DB::raw('SUM(amount) AS total'))
                                  ->first();
+        $totalcharge = DB::table('donations')
+                                 ->where('payment_status', 1)
+                                 ->select(DB::raw('SUM(aamarpay_charge) AS total'))
+                                 ->first();
+
         return view('index.index')
                     ->withTotaldonations($totaldonations)
-                    ->withTotaldonationamount($totaldonationamount);
+                    ->withTotaldonationamount($totaldonationamount)
+                    ->withTotalcharge($totalcharge);
     }
 
     public function getDonate()
@@ -179,6 +185,10 @@ class IndexController extends Controller
                                  ->where('payment_status', 1)
                                  ->select(DB::raw('SUM(amount) AS total'))
                                  ->first();
+        $totalcharge = DB::table('donations')
+                                 ->where('payment_status', 1)
+                                 ->select(DB::raw('SUM(aamarpay_charge) AS total'))
+                                 ->first();
 
         $donors = Donation::where('payment_status', 1)
                           ->orderBy('id', 'desc')
@@ -188,6 +198,7 @@ class IndexController extends Controller
         return view('index.donationsummary')
                     ->withTotaldonations($totaldonations)
                     ->withTotaldonationamount($totaldonationamount)
+                    ->withTotalcharge($totalcharge)
                     ->withDonors($donors);
     }
 
