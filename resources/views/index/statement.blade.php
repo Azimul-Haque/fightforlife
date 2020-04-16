@@ -74,7 +74,7 @@
                 <div class="col-md-9">
                     <div class="row">
                         @foreach($partners as $partner)
-                            <div class="col-md-4 col-sm-4 text-center xs-margin-bottom-ten">
+                            <div class="col-md-4 col-sm-6 text-center xs-margin-bottom-ten">
                                 <div class="special-gifts-box ">
                                     <span class="text-uppercase text-small">{{ $partner->name }}</span><br/>
                                     <span class="gifts-off bg-fast-pink white-text">৳ {{ $partner->amount }}</span>
