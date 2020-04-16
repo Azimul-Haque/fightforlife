@@ -42,7 +42,7 @@
                 <!-- counter -->
                 <div class="col-md-4 col-sm-4 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten" data-wow-duration="300ms">
                     <i class="icon-heart medium-icon"></i>
-                    <span class="timer counter-number" data-to="{{ $totaldonationamount->total }}" data-speed="3000"></span>
+                    <span class="timer counter-number" data-to="{{ $totaldonationamount->total - $totalcharge->total }}" data-speed="3000"></span>
                     <span class="counter-title gray-text">Donation (Tk.)</span>
                 </div>
                 <!-- end counter -->
