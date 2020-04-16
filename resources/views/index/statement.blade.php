@@ -9,6 +9,10 @@
         .table {
             margin-bottom: 0px !important; 
         }
+
+        .bg-fast-green {
+            background: #228B22 !important;
+        }
     </style>
 @endsection
 
@@ -69,7 +73,7 @@
                 <div class="col-md-3">
                     <span class="text-large display-block">Partner Affiliation and</span>
                     <span class="title-large text-uppercase letter-spacing-1 font-weight-600 black-text">Distribution Info</span>
-                    <div class="separator-line-thick bg-fast-pink no-margin-lr"></div>
+                    <div class="separator-line-thick bg-fast-green no-margin-lr"></div>
                 </div>
                 <div class="col-md-9">
                     <div class="row">
@@ -77,7 +81,7 @@
                             <div class="col-md-4 col-sm-6 text-center xs-margin-bottom-ten">
                                 <div class="special-gifts-box ">
                                     <span class="text-uppercase text-small">{{ $partner->name }}</span><br/>
-                                    <span class="gifts-off bg-fast-pink white-text">৳ {{ $partner->amount }}</span>
+                                    <span class="gifts-off bg-fast-green white-text">৳ {{ $partner->amount }}</span>
                                 </div><br/>
                             </div>
                         @endforeach
@@ -87,35 +91,6 @@
             </div>
         </div>
     </section>
-    {{-- <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="text-large display-block">Partner Affiliation and</span>
-                    <span class="title-large text-uppercase letter-spacing-1 font-weight-600 black-text">Distribution Info</span>
-                    <div class="separator-line-thick bg-fast-pink no-margin-lr"></div>
-                </div>
-                <div class="col-md-2 col-md-offset-2 text-center xs-margin-bottom-ten col-sm-4">
-                    <div class="special-gifts-box ">
-                        <span class="text-uppercase text-small letter-spacing-1">বিদ্যানন্দ</span><br/>
-                        <span class="gifts-off bg-fast-pink white-text">৳ 0</span>
-                    </div>
-                </div>
-                <div class="col-md-2 text-center xs-margin-bottom-ten col-sm-4">
-                    <div class="special-gifts-box ">
-                        <span class="text-uppercase text-small letter-spacing-1">এক টাকায় আহার</span><br/>
-                        <span class="gifts-off bg-fast-pink white-text">৳ 0</span>
-                    </div>
-                </div>
-                <div class="col-md-2 text-center col-sm-4">
-                    <div class="special-gifts-box ">
-                        <span class="text-uppercase text-small letter-spacing-1">গিফট ফর গুড</span><br/>
-                        <span class="gifts-off bg-fast-pink white-text">$ 0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 @endsection
 
 @section('js')
