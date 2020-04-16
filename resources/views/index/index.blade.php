@@ -178,7 +178,7 @@
                         <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="Gift for Good" src="/images/partners/gfg.png"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Gift for Good</h5></div>
                         <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="Feni Muhuri Leo Club" src="/images/partners/feni_leo.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Feni Muhuri Leo Club</h5></div>
                         <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/partners/tg.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Heroes of COVID19, Thakurgaon</h5></div>
-                        <div class="col-md-3 col-sm-6 text-center"><a href="#"><img alt="" src="/images/partners/tg.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 4</h5></div>
+                        <div class="col-md-3 col-sm-6 text-center"><a href="#"><img alt="" src="/images/partners/tg.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Gazipur Local Club</h5></div>
                     </div>
                     {{-- <div class="item"> 
                         <div class="col-md-3 col-sm-6 text-center xs-margin-bottom-ten"><a href="#"><img alt="" src="/images/slider/architecture-featured01.jpg"></a><h5 class="margin-ten no-margin-bottom xs-margin-top-five">Test 5</h5></div>
