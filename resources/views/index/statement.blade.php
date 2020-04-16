@@ -66,12 +66,12 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <span class="text-large display-block">Partner Affiliation and</span>
                     <span class="title-large text-uppercase letter-spacing-1 font-weight-600 black-text">Distribution Info</span>
                     <div class="separator-line-thick bg-fast-pink no-margin-lr"></div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-9">
                     <div class="row">
                         @foreach($partners as $partner)
                             <div class="col-md-4 col-sm-4 text-center xs-margin-bottom-ten">

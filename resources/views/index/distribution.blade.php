@@ -74,7 +74,7 @@
                 <!-- end team member -->
                 <!-- team member -->
                 <div class="col-md-4 col-sm-6 text-center team-member position-relative wow fadeInUp" data-wow-duration="600ms">
-                    <img src="/images/partners/tg.jpg" alt="Gazipur Local Club"/>
+                    <img src="/images/partners/gazipur_local.jpg" alt="Gazipur Local Club"/>
                     <figure class="position-relative bg-white">
                         <span class="team-name text-uppercase black-text letter-spacing-2 display-block font-weight-600">Gazipur Local Club</span>
                         <span class="team-post text-uppercase letter-spacing-2 display-block">Donation Amount: ৳ 20000</span>
