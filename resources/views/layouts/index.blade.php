@@ -31,7 +31,7 @@
     <meta property="og:title" content="Fight For Life | IIT, University of Dhaka">
     <meta property="og:description" content="Fight For Life is a charitable initiative of IITDU Alumni Association along with IITSec, University of Dhaka. Developed by A. H. M. Azimul Haque">
     <meta property="og:image" content="{{ asset('images/fb_back_du_iit.jpg') }}">
-    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:url" content="{{ Request::url() }}">
     <!-- animation -->
     
     <!-- animation -->
