@@ -77,7 +77,8 @@
           <tr>
             <th>Name</th>
             <th>Conatct Info</th>
-            <th>Donation Amount</th>
+            <th>Location</th>
+            <th>Donation Info</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -86,7 +87,8 @@
           <tr>
             <td>{{ $partner->name }}</td>
             <td>{{ $partner->phone }}<br/>{{ $partner->address }}</td>
-            <td>{{ $partner->amount }}</td>
+            <td>{{ $partner->latitude }}, {{ $partner->longitude }}</td>
+            <td>৳ {{ $partner->amount }}<br/><i class="fa fa-home"></i> {{ $partner->families }}</td>
 
             <td>
               <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editPartnerModal{{ $partner->id }}" data-backdrop="static" title="Edit Partner"><i class="fa fa-pencil"></i></button>

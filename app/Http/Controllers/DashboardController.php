@@ -83,15 +83,21 @@ class DashboardController extends Controller
         $this->validate($request,array(
             'name'                      => 'required|max:255',
             'address'                   => 'required|max:255',
+            'latitude'                  => 'required|max:255',
+            'longitude'                 => 'required|max:255',
             'phone'                     => 'sometimes|numeric',
-            'amount'                    => 'required'
+            'amount'                    => 'required',
+            'families'                  => 'required'
         ));
 
         $partner = new Partner;
         $partner->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
         $partner->address = htmlspecialchars(preg_replace("/\s+/", " ", $request->address));
+        $partner->latitude = $request->latitude;
+        $partner->longitude = $request->longitude;
         $partner->phone = htmlspecialchars(preg_replace("/\s+/", " ", $request->phone));
         $partner->amount = $request->amount;
+        $partner->families = $request->families;
 
         $partner->save();
         
@@ -104,15 +110,21 @@ class DashboardController extends Controller
         $this->validate($request,array(
             'name'                      => 'required|max:255',
             'address'                   => 'required|max:255',
+            'latitude'                  => 'required|max:255',
+            'longitude'                 => 'required|max:255',
             'phone'                     => 'sometimes|numeric',
-            'amount'                    => 'required'
+            'amount'                    => 'required',
+            'families'                  => 'required'
         ));
 
         $partner = Partner::find($id);
         $partner->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
         $partner->address = htmlspecialchars(preg_replace("/\s+/", " ", $request->address));
+        $partner->latitude = $request->latitude;
+        $partner->longitude = $request->longitude;
         $partner->phone = htmlspecialchars(preg_replace("/\s+/", " ", $request->phone));
         $partner->amount = $request->amount;
+        $partner->families = $request->families;
 
         $partner->save();
         

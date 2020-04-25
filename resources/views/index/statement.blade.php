@@ -141,9 +141,9 @@
         var marker = [];
 
         @foreach($partners as $partner)
-        marker[{{ $partner->id }}] = L.marker([26.0200532, 88.4694397])
+        marker[{{ $partner->id }}] = L.marker([{{ $partner->latitude }}, {{ $partner->longitude }}])
                     .addTo(map)
-                    .bindPopup("<big>{{ $partner->name }}</big><br/><small>{{ $partner->address }}</small><br/><b>Total Donation: ৳ {{ $partner->amount }}</b><br/><b>Families Being Helped: 500</b>", {closeOnClick: false, autoClose: false})
+                    .bindPopup("<big>{{ $partner->name }}</big><br/><small>{{ $partner->address }}</small><br/><b>Total Donation: ৳ {{ $partner->amount }}</b><br/><b>Families Helped: <i class='fa fa-home black-text'></i> {{ $partner->families }}</b>", {closeOnClick: false, autoClose: false})
                     .openPopup();
         @endforeach
         // marker1.bindPopup("Test<br/><a href='#!'>Click</a>"); // .openPopup() to open it onready
