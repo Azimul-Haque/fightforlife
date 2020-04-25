@@ -143,8 +143,9 @@
         @foreach($partners as $partner)
         marker[{{ $partner->id }}] = L.marker([{{ $partner->latitude }}, {{ $partner->longitude }}])
                     .addTo(map)
-                    .bindPopup("<big><b>{{ $partner->name }}</b></big><br/><small>{{ $partner->address }}</small><br/>Total Donation: ৳ {{ $partner->amount }}<br/>Families Helped: <i class='fa fa-home black-text'></i> {{ $partner->families }}", {closeOnClick: false, autoClose: false})
-                    .openPopup();
+                    .bindPopup("<big><b>{{ $partner->name }}</b></big><br/><small>{{ $partner->address }}</small><br/>Total Donation: ৳ {{ $partner->amount }}<br/>Families Being Helped: <i class='fa fa-home black-text'></i> {{ $partner->families }}", {closeOnClick: false, autoClose: true})
+                    .openPopup()
+                    .bindTooltip("my tooltip text").openTooltip();
         @endforeach
         // marker1.bindPopup("Test<br/><a href='#!'>Click</a>"); // .openPopup() to open it onready
 
