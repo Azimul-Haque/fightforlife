@@ -5,6 +5,7 @@
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/stylesheet.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     <style type="text/css">
         .table {
             margin-bottom: 0px !important; 
@@ -16,6 +17,11 @@
 
         .bg-fast-green {
             background: #228B22 !important;
+        }
+
+        #map {
+          height: 1000px;
+          width: 100%;
         }
     </style>
 @endsection
@@ -90,14 +96,22 @@
                             </div>
                         @endforeach
                     </div>
+
                     <br/><br/>
                     <div class="row">
                         <div class="col-md-12">
-                            <center>
-                               <img src="{{ asset('images/donation_map.png') }}" class="img-responsive">
-                            </center>
+                            <div id="map" class="shadow"></div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    
                 </div>
             </div>
         </div>
@@ -105,5 +119,36 @@
 @endsection
 
 @section('js')
-   
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script type="text/javascript">
+        var zoomlevel = 7.7;
+        if($(window).width() < 768) {
+        $('#map').css({"height": "550px"});
+        zoomlevel = 6.6;
+        }
+
+        var map = L.map('map', {
+         center: [23.7104, 90.40744],
+         zoom: zoomlevel,
+         zoomSnap: 0.1,
+         scrollWheelZoom: false,
+        });
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '<a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap</a> contributor'
+        }).addTo(map);
+
+        var marker = [];
+
+        @foreach($partners as $partner)
+        marker[{{ $partner->id }}] = L.marker([26.0200532, 88.4694397])
+                    .addTo(map)
+                    .bindPopup("<big>{{ $partner->name }}</big><br/><small>{{ $partner->address }}</small><br/><b>Total Donation: ৳ {{ $partner->amount }}</b><br/><b>Families Being Helped: 500</b>", {closeOnClick: false, autoClose: false})
+                    .openPopup();
+        @endforeach
+        // marker1.bindPopup("Test<br/><a href='#!'>Click</a>"); // .openPopup() to open it onready
+
+
+
+    </script>
 @endsection

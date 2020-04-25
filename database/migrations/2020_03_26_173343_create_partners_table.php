@@ -18,7 +18,10 @@ class CreatePartnersTable extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('address');
+            $table->string('latitude');
+            $table->string('longitude');
             $table->string('amount');
+            $table->integer('families');
             $table->timestamps();
         });
     }

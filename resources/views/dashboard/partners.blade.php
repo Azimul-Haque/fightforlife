@@ -32,6 +32,18 @@
               {!! Form::text('address', null, array('class' => 'form-control', 'required' => '')) !!}
             </div>
           </div><br/>
+
+          <div class="row">
+            <div class="col-md-6">
+              {!! Form::label('latitude', 'Latitude') !!}
+              {!! Form::text('latitude', null, array('class' => 'form-control', 'required' => '')) !!}
+            </div>
+            <div class="col-md-6">
+              {!! Form::label('longitude', 'Longitude') !!}
+              {!! Form::text('longitude', null, array('class' => 'form-control', 'required' => '')) !!}
+            </div>
+          </div><br/>
+
           <div class="row">
             <div class="col-md-6">
               {!! Form::label('phone', 'Phone') !!}
@@ -40,6 +52,16 @@
             <div class="col-md-6">
               {!! Form::label('amount', 'Amount') !!}
               {!! Form::text('amount', 0, array('class' => 'form-control', 'required' => '')) !!}
+            </div>
+          </div><br/>
+
+          <div class="row">
+            <div class="col-md-6">
+              {!! Form::label('families', 'Families') !!}
+              {!! Form::number('families', null, array('class' => 'form-control', 'required' => '')) !!}
+            </div>
+            <div class="col-md-6">
+              
             </div>
           </div>          
         </div>
@@ -89,6 +111,18 @@
                             {!! Form::text('address', null, array('class' => 'form-control', 'required' => '')) !!}
                           </div>
                         </div><br/>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            {!! Form::label('latitude', 'Latitude') !!}
+                            {!! Form::text('latitude', null, array('class' => 'form-control', 'required' => '')) !!}
+                          </div>
+                          <div class="col-md-6">
+                            {!! Form::label('longitude', 'Longitude') !!}
+                            {!! Form::text('longitude', null, array('class' => 'form-control', 'required' => '')) !!}
+                          </div>
+                        </div><br/>
+
                         <div class="row">
                           <div class="col-md-6">
                             {!! Form::label('phone', 'Phone') !!}
@@ -98,7 +132,17 @@
                             {!! Form::label('amount', 'Amount') !!}
                             {!! Form::text('amount', null, array('class' => 'form-control', 'required' => '')) !!}
                           </div>
-                        </div> 
+                        </div><br/>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            {!! Form::label('families', 'Families') !!}
+                            {!! Form::text('families', null, array('class' => 'form-control', 'required' => '')) !!}
+                          </div>
+                          <div class="col-md-6">
+
+                          </div>
+                        </div><br/>
                       </div>
                       <div class="modal-footer">
                           {!! Form::submit('Update', array('class' => 'btn btn-primary')) !!}
