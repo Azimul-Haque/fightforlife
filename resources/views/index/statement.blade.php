@@ -90,8 +90,15 @@
                             </div>
                         @endforeach
                     </div>
+                    <br/><br/>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <center>
+                               <img src="{{ asset('images/donation_map.png') }}" class="img-responsive">
+                            </center>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
         </div>
     </section>
